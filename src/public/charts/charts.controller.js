@@ -10,6 +10,8 @@
     .controller('ChartsController', ChartsController)
     .directive('gcGeochart', gcGeochart)
     .directive('gcTreemap', gcTreemap)
+    .directive('gcPolynomial', gcPolynomial)
+    .directive('gcGantt', gcGantt)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -20,10 +22,25 @@
 
         google.charts.load('current', {
 /*        callback: drawCharts,           */
-        packages: ['geochart', 'treemap']
+        packages: ['geochart', 'treemap', 'corechart', 'gantt']
         });
 
 
+    }
+
+gcGantt.$inject = [];
+function gcGantt() {
+  return {
+      templateUrl: 'src/public/charts/gc.directive.gantt.html'
+  };
+}
+
+
+    gcPolynomial.$inject = [];
+    function gcPolynomial() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.polynomial.html'
+      };
     }
 
     gcTreemap.$inject = [];
