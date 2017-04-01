@@ -12,6 +12,7 @@
     .directive('gcTreemap', gcTreemap)
     .directive('gcPolynomial', gcPolynomial)
     .directive('gcGantt', gcGantt)
+    .directive('gcGeointensity', gcGeointensity)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -22,7 +23,7 @@
 
         google.charts.load('current', {
 /*        callback: drawCharts,           */
-        packages: ['geochart', 'treemap', 'corechart', 'gantt']
+        packages: ['geochart', 'treemap', 'corechart', 'gantt', 'intensitymap']
         });
 
 
@@ -35,6 +36,13 @@ function gcGantt() {
   };
 }
 
+
+    gcGeointensity.$inject = [];
+    function gcGeointensity() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.geointensity.html'
+      };
+    }
 
     gcPolynomial.$inject = [];
     function gcPolynomial() {

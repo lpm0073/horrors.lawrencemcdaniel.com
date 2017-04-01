@@ -5,36 +5,41 @@
 <div id="google-chart-content" class="container">
   <div ng-if="chartsCtrl.isNew"><h2>Google Charts</h2></div>
 
-  <h3><a name="Regions" id="Regions"></a>Region GeoChart</h3>
+  <h3><a name="Regions" id="Regions"></a>Region Map</h3>
   <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.
   </p>
   <div id="regions_div" style="width: 900px; height: 500px;">
     <gc-geochart></gc-geochart>
   </div>
 
+  <h3><a name="Regions" id="Regions"></a>Geographical Intensity Map</h3>
+  <p>
+  </p>
+  <div id="tree_div" style="width: 900px; height: 500px;">
+    <gc-geointensity></gc-geointensity>
+  </div>
+
+  <h3><a name="Regions" id="Regions"></a>Treemap</h3>
+  <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
+  </p>
+  <div id="tree_div" style="width: 900px; height: 500px;">
+    <gc-treemap></gc-treemap>
+  </div>
 
 
-    <h3><a name="Regions" id="Regions"></a>Treemap</h3>
-    <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
-    </p>
-    <div id="tree_div" style="width: 900px; height: 500px;">
-      <gc-treemap></gc-treemap>
-    </div>
+  <h3><a name="Regions" id="Regions"></a>Polynomial Trend Line</h3>
+  <p>
+  </p>
+  <div id="tree_div" style="width: 900px; height: 500px;">
+    <gc-polynomial></gc-polynomial>
+  </div>
 
-
-    <h3><a name="Regions" id="Regions"></a>Polynomial Trend Line</h3>
-    <p>
-    </p>
-    <div id="tree_div" style="width: 900px; height: 500px;">
-      <gc-polynomial></gc-polynomial>
-    </div>
-
-    <h3><a name="Regions" id="Regions"></a>Gantt Critical Path</h3>
-    <p>
-    </p>
-    <div id="tree_div" style="width: 900px; height: 500px;">
-      <gc-gantt></gc-gantt>
-    </div>
+  <h3><a name="Regions" id="Regions"></a>Gantt Critical Path</h3>
+  <p>
+  </p>
+  <div id="tree_div" style="width: 900px; height: 500px;">
+    <gc-gantt></gc-gantt>
+  </div>
 
 
 </div>
