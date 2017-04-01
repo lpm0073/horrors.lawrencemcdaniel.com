@@ -8,7 +8,6 @@
 }
 
 .home-tile {
-  height: 500px;
   width: 100%;
   margin-bottom: 15px;
   position: relative;
@@ -19,12 +18,14 @@
 }
 .home-tile:hover {
   box-shadow: 0 1px 5px 1px #cccccc;
+  font-size: 1.15em;
+  border: 2px solid #CFCFCF;
 }
 .home-tile {
   background-color: eee;
   background-position: center;
-  box-shadow: 0 0 50px #3F0C1F;
-  border: 2px solid #3F0C1F;
+  box-shadow: 0 0 50px #8F8F8F;
+  border: 1px solid #EFEFEF;
 }
 
 .home-tile span {
@@ -39,6 +40,7 @@
   color: #fff;
   opacity: 1;
 }
+
 /* END HOME PAGE */
 
 
@@ -50,6 +52,9 @@
   .container {
     width: 100%;
   }
+  .home-tile {
+    height: 500px;
+  }
 }
 
 /********** Medium devices only **********/
@@ -57,6 +62,9 @@
   /* Home Page */
   .container {
     width: 100%;
+  }
+  .home-tile {
+    height: 406px;
   }
   /* End Home Page */
 }
@@ -66,6 +74,9 @@
   /* Home Page */
   .container {
     width: 100%;
+  }
+  .home-tile {
+    height: 314px;
   }
   /* End Home Page */
 }
@@ -78,8 +89,9 @@
     margin-top: 30px;
     padding: 0;
   }
-  #home-tile {
+  .home-tile {
     width: 360px;
+    height: 314px;
     margin: 0 auto 15px;
   }
 
@@ -89,8 +101,9 @@
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
   /* Home page */
-  #home-tile {
+  .home-tile {
     width: 280px;
+    height: 196px;
     margin: 0 auto 15px;
   }
 
