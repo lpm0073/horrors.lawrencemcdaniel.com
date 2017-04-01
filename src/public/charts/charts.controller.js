@@ -17,6 +17,7 @@
     .directive('gcBubble', gcBubble)
     .directive('gcSankey', gcSankey)
     .directive('gcCombochart', gcCombochart)
+    .directive('gcBarchart', gcBarchart)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -35,13 +36,19 @@
     }
 
 
+    gcBarchart.$inject = [];
+    function gcBarchart() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.barchart.html'
+      };
+    }
+
     gcCombochart.$inject = [];
     function gcCombochart() {
       return {
           templateUrl: 'src/public/charts/gc.directive.combochart.html'
       };
     }
-
 
     gcSankey.$inject = [];
     function gcSankey() {
