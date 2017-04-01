@@ -1,11 +1,7 @@
-<html>
-<body>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+<!--  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
 
 <script type="text/javascript">
-  google.charts.load("current", {packages:["sankey"]});
+/*  google.charts.load("current", {packages:["sankey"]}); */
   google.charts.setOnLoadCallback(drawChart);
    function drawChart() {
     var data = new google.visualization.DataTable();
@@ -71,5 +67,5 @@
     chart.draw(data, options);
    }
 </script>
-</body>
-</html>
+
+<div id="sankey_multiple" style="width: 900px; height: 300px;"></div>

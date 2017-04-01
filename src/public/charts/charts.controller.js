@@ -15,6 +15,7 @@
     .directive('gcGeointensity', gcGeointensity)
     .directive('gcScatter', gcScatter)
     .directive('gcBubble', gcBubble)
+    .directive('gcSankey', gcSankey)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -26,10 +27,17 @@
         google.charts.load('current', {
 /*        callback: drawCharts,           */
         packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                   'intensitymap', 'scatter', 'corechart']
+                   'intensitymap', 'scatter', 'corechart', 'sankey']
         });
 
 
+    }
+
+    gcSankey.$inject = [];
+    function gcSankey() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.sankey.html'
+      };
     }
 
     gcBubble.$inject = [];
