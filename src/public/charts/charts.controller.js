@@ -18,6 +18,7 @@
     .directive('gcSankey', gcSankey)
     .directive('gcCombochart', gcCombochart)
     .directive('gcBarchart', gcBarchart)
+    .directive('gcOrgchart', gcOrgchart)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -29,12 +30,18 @@
         google.charts.load('current', {
 /*        callback: drawCharts,           */
         packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                   'intensitymap', 'scatter', 'sankey']
+                   'intensitymap', 'scatter', 'sankey', 'orgchart']
         });
 
 
     }
 
+    gcOrgchart.$inject = [];
+    function gcOrgchart() {
+      return {
+          templateUrl: 'src/public/charts/fc.directive.orgchart.html'
+      };
+    }
 
     gcBarchart.$inject = [];
     function gcBarchart() {
