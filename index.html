@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David Chu's China Bistro</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/common.css">
+  </head>
+  <body ng-app="restaurant" ng-strict-di>
+
+    <!-- Fixed position loading indicator -->
+    <loading class="loading-indicator"></loading>
+
+    <header class="app-header"></header>
+
+    <ui-view>
+      <div class="text-center initial-loading">
+        <h2>Loading Site...</h2>
+      </div>
+    </ui-view>
+
+    <footer class="panel-footer">
+        <div class="row">
+          <section id="hours" class="col-sm-4">
+          </section>
+          <section id="address" class="col-sm-4">
+          </section>
+          <section id="testimonials" class="col-sm-4">
+          </section>
+        </div>
+        <div class="text-center">&copy; Copyright <a target="_blank" href="lawrencemcdaniel.com">lawrencemcdaniel.com</a></div>
+    </footer>
+
+    <!-- Libs -->
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Main Restaurant Module -->
+    <script src="src/restaurant.module.js"></script>
+
+    <!-- Common Module -->
+    <script src="src/common/common.module.js"></script>
+    <script src="src/common/loading/loading.component.js"></script>
+    <script src="src/common/loading/loading.interceptor.js"></script>
+    <script src="src/common/menu.service.js"></script>
+    <script src="src/common/user-info.service.js"></script>
+
+    <!-- Public Module -->
+    <script src="src/public/public.module.js"></script>
+    <script src="src/public/public.routes.js"></script>
+    <script src="src/public/menu/menu.controller.js"></script>
+    <script src="src/public/menu-category/menu-category.component.js"></script>
+    <script src="src/public/menu-items/menu-items.controller.js"></script>
+    <script src="src/public/menu-item/menu-item.component.js"></script>
+    <script src="src/public/signup/signup.controller.js"></script>
+    <script src="src/public/user-info/user-info.controller.js"></script>
+
+    <!-- ADMIN SITE -->
+
+    <!--Application files -->
+
+  </body>
+
+</html>

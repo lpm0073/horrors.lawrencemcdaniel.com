@@ -1,0 +1,97 @@
+<div class="signup">
+  <div ng-if="!signUpCtrl.saved"><h2>Lets Get You Signed Up!</h2></div>
+
+  <fieldset>
+    <legend></legend>
+
+      <form name="signupForm" novalidate>
+          <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text"
+                    class="form-control"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
+                    ng-model="signupCtrl.userInfo.firstName"
+                    required>
+              <span ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
+                  <small>First name is required</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text"
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
+                    ng-model="signupCtrl.userInfo.lastName"
+                    required>
+              <span ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
+                  <small>Last name is required</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="emailAddress">Email</label>
+              <input type="email"
+                    class="form-control"
+                    id="emailAddress"
+                    name="emailAddress"
+                    placeholder="Email"
+                    ng-model="signupCtrl.userInfo.emailAddress"
+                    required>
+              <span ng-if="signupForm.emailAddress.$invalid && signupForm.emailAddress.$touched">
+                  <small>Must be a valid email address: handle@domain format</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="phoneNumber">Phone</label>
+              <input type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    ng-model="signupCtrl.userInfo.phoneNumber"
+                    placeholder="Phone ###-###-####"
+                    pattern="(\d{3})-(\d{3})-(\d{4})">
+              <span ng-if="signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$touched">
+                  <small>Phone must be in the format ###-###-####</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="favoriteDish">Favorite Dish</label>
+              <input type="text"
+                    class="form-control"
+                    id="favoriteDish"
+                    name="favoriteDish"
+                    placeholder="Short Code of Your Favorite Dish"
+                    ng-model="signupCtrl.userInfo.favoriteDish"
+                    ng-blur="signupCtrl.validateFavdish()">
+              <span ng-if="signupCtrl.itemSearched && !signupCtrl.validShortCode">
+                  <small>No such menu number exists</small>
+              </span>
+              <span ng-if="signupCtrl.validShortCode">
+                <!-- <div class="panel panel-primary panel-body user-info" ng-if="signupCtrl.saved"> -->
+                <div id="search-results" class="panel panel-default" ng-if="signupCtrl.saved">
+                    <div  class="panel-heading">{{signupCtrl.userInfo.favoriteDish}}: {{signupCtrl.userInfo.dishInfo.name}}
+                      <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Description:</dt> <dd>{{signupCtrl.userInfo.dishInfo.description}}</dd>
+                            <dt>Price:</dt> <dd>{{signupCtrl.userInfo.dishInfo.price_large | currency}}</dd>
+                        </dl>
+                      </div>
+                    </div>
+                </div>
+              </span>
+          </div>
+          <button class="btn btn-primary"
+                  ng-disabled="signupForm.$invalid"
+                  ng-click="signupCtrl.setUserinfo()">Submit</button>
+      </form>
+  </fieldset>
+
+  <div ng-if="signupCtrl.saved">
+      <p class="alert alert-success">
+          {{signupCtrl.message}}
+      </p>
+  </div>
+</div>

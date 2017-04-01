@@ -1,0 +1,105 @@
+/* HOME PAGE */
+
+#main-content {
+}
+
+.container {
+/*  background: #aaa */
+}
+
+.home-tile {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+}
+.home-tile:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+.home-tile {
+  background-color: eee;
+  background-position: center;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+}
+
+.home-tile span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+/*  text-transform: uppercase; */
+  background-color: #563E7C;
+  color: #fff;
+  opacity: 1;
+}
+/* END HOME PAGE */
+
+
+
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Home Page */
+  .container {
+    width: 100%;
+  }
+  /* End Home Page */
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Home Page */
+  .container {
+    width: 100%;
+  }
+  /* End Home Page */
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Home Page */
+  .container {
+    width: 100%;
+    margin-top: 30px;
+    padding: 0;
+  }
+  #home-tile {
+    width: 360px;
+    margin: 0 auto 15px;
+  }
+
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Home page */
+  #home-tile {
+    width: 280px;
+    margin: 0 auto 15px;
+  }
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}

@@ -1,0 +1,61 @@
+body {
+  font-size: 16px;
+  color: #fff;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.initial-loading {
+  margin-top: 60px;
+}
+
+/** HEADER **/
+.app-header {
+  background-color: #aaa;
+  border-radius: 0;
+  border: 0;
+  background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
+  height: 500px;
+  margin-bottom: 25px;
+  background-color: #563d7c;
+  background-repeat: no-repeat;
+}
+
+/* END HEADER */
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+/* END FOOTER */
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+  /* Header */
+
+  /* End Header */
+
+  /* Footer */
+
+  /* End Footer */
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+@media (max-width: 479px) {
+  /* Header */
+
+  /* End Header */
+}
