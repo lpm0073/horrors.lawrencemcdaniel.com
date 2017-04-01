@@ -21,6 +21,7 @@
     .directive('gcOrgchart', gcOrgchart)
     .directive('gcGuages', gcGuages)
     .directive('gcCandlestick', gcCandlestick)
+    .directive('gcWordtree', gcWordtree)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -32,10 +33,18 @@
         google.charts.load('current', {
 /*        callback: drawCharts,           */
         packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                   'intensitymap', 'scatter', 'sankey', 'orgchart', 'gauge']
+                   'intensitymap', 'scatter', 'sankey',
+                   'orgchart', 'gauge', 'wordtree']
         });
 
 
+    }
+
+    gcWordtree.$inject = [];
+    function gcWordtree() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.wordtree.html'
+      };
     }
 
     gcCandlestick.$inject = [];
@@ -44,7 +53,6 @@
           templateUrl: 'src/public/charts/gc.directive.candlestick.html'
       };
     }
-
 
     gcGuages.$inject = [];
     function gcGuages() {
