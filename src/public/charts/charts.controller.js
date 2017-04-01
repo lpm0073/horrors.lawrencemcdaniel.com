@@ -22,6 +22,8 @@
     .directive('gcGuages', gcGuages)
     .directive('gcCandlestick', gcCandlestick)
     .directive('gcWordtree', gcWordtree)
+    .directive('gcPiechart', gcPiechart)
+    .directive('gcAreachart', gcAreachart)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -38,6 +40,20 @@
         });
 
 
+    }
+
+    gcAreachart.$inject = [];
+    function gcAreachart() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.areachart.html'
+      };
+    }
+
+    gcPiechart.$inject = [];
+    function gcPiechart() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.piechart.html'
+      };
     }
 
     gcWordtree.$inject = [];
