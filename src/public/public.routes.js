@@ -19,44 +19,29 @@ function routeConfig ($stateProvider) {
       url: '/',
       templateUrl: 'src/public/home/home.html'
     })
-    .state('public.menu', {
-      url: '/menu',
-      templateUrl: 'src/public/menu/menu.html',
-      controller: 'MenuController',
-      controllerAs: 'menuCtrl',
-      resolve: {
-        menuCategories: ['MenuService', function (MenuService) {
-          return MenuService.getCategories();
-        }]
-      }
+    .state('public.angularjs', {
+      url: '/angularjs',
+      templateUrl: 'src/public/angularjs/angularjs.html',
+      controller: 'AngularJSController',
+      controllerAs: 'angularjsCtrl'
     })
-    .state('public.menuitems', {
-      url: '/menu/{category}',
-      templateUrl: 'src/public/menu-items/menu-items.html',
-      controller: 'MenuItemsController',
-      controllerAs: 'menuItemsCtrl',
-      resolve: {
-        menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
-          return MenuService.getMenuItems($stateParams.category);
-        }]
-      }
+    .state('public.cognition', {
+      url: '/cognition',
+      templateUrl: 'src/public/cognition/cognition.html',
+      controller: 'CognitionController',
+      controllerAs: 'cognitionCtrl'
     })
-    .state('public.signup', {
-      url: '/signup',
-      templateUrl: 'src/public/signup/signup.html',
-      controller: 'SignupController',
-      controllerAs: 'signupCtrl'
+    .state('public.charts', {
+      url: '/charts',
+      templateUrl: 'src/public/charts/charts.html',
+      controller: 'ChartsController',
+      controllerAs: 'chartsCtrl'
     })
-    .state('public.userInfo', {
-      url: '/userInfo',
-      templateUrl: 'src/public/user-info/user-info.html',
-      controller: 'UserInfoController',
-      controllerAs: 'userInfoCtrl',
-      resolve: {
-        userInfo: ['UserInfoService', function(UserInfoService) {
-          return UserInfoService.getUserinfo();
-        }]
-      }
+    .state('public.d3', {
+      url: '/d3',
+      templateUrl: 'src/public/d3/d3.html',
+      controller: 'D3Controller',
+      controllerAs: 'd3Ctrl'
     });
 }
 })();
