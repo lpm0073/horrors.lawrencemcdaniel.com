@@ -19,6 +19,8 @@
     .directive('gcCombochart', gcCombochart)
     .directive('gcBarchart', gcBarchart)
     .directive('gcOrgchart', gcOrgchart)
+    .directive('gcGuages', gcGuages)
+    .directive('gcCandlestick', gcCandlestick)
 
     ChartsController.$inject = [];
     function ChartsController() {
@@ -30,16 +32,31 @@
         google.charts.load('current', {
 /*        callback: drawCharts,           */
         packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                   'intensitymap', 'scatter', 'sankey', 'orgchart']
+                   'intensitymap', 'scatter', 'sankey', 'orgchart', 'gauge']
         });
 
 
     }
 
+    gcCandlestick.$inject = [];
+    function gcCandlestick() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.candlestick.html'
+      };
+    }
+
+
+    gcGuages.$inject = [];
+    function gcGuages() {
+      return {
+          templateUrl: 'src/public/charts/gc.directive.guages.html'
+      };
+    }
+
     gcOrgchart.$inject = [];
     function gcOrgchart() {
       return {
-          templateUrl: 'src/public/charts/fc.directive.orgchart.html'
+          templateUrl: 'src/public/charts/gc.directive.orgchart.html'
       };
     }
 
