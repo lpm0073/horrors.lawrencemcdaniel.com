@@ -2,7 +2,8 @@
     "use strict";
 
     angular.module('public')
-    .controller('D3Controller', D3Controller);
+    .controller('D3Controller', D3Controller)
+    .directive('d3Gears', d3Gears);
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -13,4 +14,12 @@
 
 
     }
+
+    d3Gears.$inject = [];
+    function d3Gears() {
+      return {
+          templateUrl: 'src/public/d3/d3.directive.gears.html'
+      };
+    }
+
 })();
