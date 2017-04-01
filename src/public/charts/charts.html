@@ -1,59 +1,29 @@
-<div ng-if="d3Ctrl.isNew"><h2>Hello there!</h2></div>
 
-<div id="d3-content" class="container">
-  <div id="" class="row">
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.d3">
-        <div class="home-tile">
-        <span>Charts-1</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.charts">
-        <div class="home-tile">
-          <span>Charts-2</span>
-        </div>
-      </a>
-    </div>
+<script async defer
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHkLhDno7SF63GKneZsS08IpAfnpZzS4k&callback=drawRegionsMap">
+</script>
+<div id="google-chart-content" class="container">
+  <div ng-if="chartsCtrl.isNew"><h2>Google Charts</h2></div>
 
-
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.cognition">
-        <div class="home-tile">
-          <span>Charts-3</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.angularjs">
-        <div class="home-tile">
-        <span>Charts-4</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Charts-5</span>
-        </div>
-      </a>
-    </div>
-
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Charts-6</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Charts-7</span>
-        </div>
-      </a>
-    </div>
-
+  <h3><a name="Regions" id="Regions"></a>Region GeoChart</h3>
+  <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.
+  </p>
+  <div id="regions_div" style="width: 900px; height: 500px;">
+    <gc-geochart></gc-geochart>
   </div>
+
+
+
+    <h3><a name="Regions" id="Regions"></a>Treemap</h3>
+    <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
+    </p>
+    <div id="tree_div" style="width: 900px; height: 500px;">
+      <gc-treemap></gc-treemap>
+    </div>
+
+
+
+
+
+
 </div>

@@ -36,7 +36,8 @@ fill: #563d7c
 }
 
 svg {
-  margin-top: 8%;
+  position: absolute;
+  top: 0%;
 }
 
 </style>
@@ -57,8 +58,8 @@ var w_span = element.getBoundingClientRect().width;
 
 
 var width = w_span,
-    height = w_span / 2,
-    radius = w_span / 12,
+    height = w_span * (2/3),
+    radius = w_span / 9,
     x = Math.sin(2 * Math.PI / 3),
     y = Math.cos(2 * Math.PI / 3);
 

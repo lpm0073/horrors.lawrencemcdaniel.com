@@ -1,9 +1,15 @@
+/*
+ *  read http://stackoverflow.com/questions/16156445/multiple-versions-of-a-script-on-the-same-page-d3-js
+ *  for background on how to hand NoConflict with the various D3 library versions.
+ *
+ */
 (function () {
     "use strict";
 
     angular.module('public')
     .controller('D3Controller', D3Controller)
-    .directive('d3Gears', d3Gears);
+    .directive('d3Gears', d3Gears)
+    .directive('d3Geodesic', d3Geodesic);
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -13,6 +19,13 @@
         console.log('D3Controller instantiated');
 
 
+    }
+
+    d3Geodesic.$inject = [];
+    function d3Geodesic() {
+      return {
+          templateUrl: 'src/public/d3/d3.directive.geodesic.html'
+      };
     }
 
     d3Gears.$inject = [];
