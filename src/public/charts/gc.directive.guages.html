@@ -13,8 +13,6 @@
         ]);
 
         var options = {
-          width: 1000,
-          height: 666,
           redFrom: 90, redTo: 100,
           yellowFrom:75, yellowTo: 90,
           minorTicks: 5
@@ -36,6 +34,21 @@
           data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
           chart.draw(data, options);
         }, 26000);
+
+        function resizeChart () {
+            console.log('resizeChart - guages');
+            chart.draw(data, options);
+        }
+        if (document.addEventListener) {
+            window.addEventListener('resize', resizeChart);
+        }
+        else if (document.attachEvent) {
+            window.attachEvent('onresize', resizeChart);
+        }
+        else {
+            window.resize = resizeChart;
+        }
+
       }
     </script>
     <div id="guages_div" class="widget-object"></div>

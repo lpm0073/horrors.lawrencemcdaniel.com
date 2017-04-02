@@ -19,13 +19,27 @@
       vAxis: {title: 'Cups'},
       hAxis: {title: 'Month'},
       seriesType: 'bars',
-      series: {5: {type: 'line'}},
-      width: 1000,
-      height: 666
+      series: {5: {type: 'line'}}
     };
 
     var chart = new google.visualization.ComboChart(document.getElementById('combochart_div'));
     chart.draw(data, options);
+
+    function resizeChart () {
+        console.log('resizeChart - combo');
+        chart.draw(data, options);
+    }
+    if (document.addEventListener) {
+        window.addEventListener('resize', resizeChart);
+    }
+    else if (document.attachEvent) {
+        window.attachEvent('onresize', resizeChart);
+    }
+    else {
+        window.resize = resizeChart;
+    }
+
   }
+
     </script>
     <div id="combochart_div" class="widget-object"></div>

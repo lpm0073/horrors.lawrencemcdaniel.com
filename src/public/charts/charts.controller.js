@@ -32,16 +32,8 @@
 
         console.log('ChartsController instantiated');
 
-        google.charts.load('current', {
-/*        callback: drawCharts,           */
-        packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                   'intensitymap', 'scatter', 'sankey',
-                   'orgchart', 'gauge', 'wordtree']
-        });
-
-
     }
-
+    
     gcAreachart.$inject = [];
     function gcAreachart() {
       return {

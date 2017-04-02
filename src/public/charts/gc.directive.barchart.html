@@ -21,13 +21,26 @@
 
           var options = {
             title: "Density of Precious Metals, in g/cm^3",
-            width: 1000,
-            height: 666,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
           };
           var chart = new google.visualization.BarChart(document.getElementById("barchart_div"));
           chart.draw(view, options);
+
+          function resizeChart () {
+            console.log('resizeChart - bar');
+              chart.draw(data, options);
+          }
+          if (document.addEventListener) {
+              window.addEventListener('resize', resizeChart);
+          }
+          else if (document.attachEvent) {
+              window.attachEvent('onresize', resizeChart);
+          }
+          else {
+              window.resize = resizeChart;
+          }
+
       }
       </script>
     <div id="barchart_div" class="widget-object"></div>

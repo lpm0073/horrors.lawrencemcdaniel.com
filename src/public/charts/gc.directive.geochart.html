@@ -8,6 +8,8 @@
         ['Country', 'Popularity'],
         ['Germany', 200],
         ['United States', 300],
+        ['Mexico', 1000],
+        ['United States', 300],
         ['Brazil', 400],
         ['Canada', 500],
         ['France', 600],
@@ -15,13 +17,26 @@
       ]);
 
       var options = {
-        width: 1000,
-        height: 666        
+         title: "Popularity by Country"
       };
-
       var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
       chart.draw(data, options);
+
+      function resizeChart () {
+          console.log('resizeChart - geo');
+          chart.draw(data, options);
+      }
+      if (document.addEventListener) {
+          window.addEventListener('resize', resizeChart);
+      }
+      else if (document.attachEvent) {
+          window.attachEvent('onresize', resizeChart);
+      }
+      else {
+          window.resize = resizeChart;
+      }
+
     }
   </script>
 

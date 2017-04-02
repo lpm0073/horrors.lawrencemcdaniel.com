@@ -4,20 +4,41 @@
   position: absolute;
   float: right;
   margin-right: 25px;
+  background-color: transparent;
 
-  top: 350px;
+  top: 250px;
   right: 0px;
-  width: 450px;
+  width: 275px;
 }
 </style>
+  <script type="text/javascript">
+      google.charts.load('current', {
+      packages: ['geochart', 'treemap', 'corechart', 'gantt',
+                 'intensitymap', 'scatter', 'sankey',
+                 'orgchart', 'gauge', 'wordtree']
+      });
+
+
+  </script>
 
 <a href="https://developers.google.com/"><img class="google-logo" src="images/google-logo.svg"></a>
 
 <div id="google-chart-content" class="container">
   <div ng-if="chartsCtrl.isNew"><h2>Google Charts</h2></div>
 
+  <p>Custom charts provide a perfect way to visualize data on your website. From simple line charts to complex hierarchical tree maps, the chart gallery provides a large number of ready-to-use chart types.</p>
+  <p>The sample charts below are rendered real-time using HTML5. They are fast and flexible, with unlimited options.</p>
+  <p>With minimal custom programming I can integrate your data sources with charts just like these.</p>
+
   <div id="geochart" class="widget widget-left">
     <h3>Region Map</h3>
+    <p>A geochart is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
+      <ul>
+        <li>The region mode colors whole regions, such as countries, provinces, or states.</li>
+        <li>The markers mode uses circles to designate regions that are scaled according to a value that you specify.</li>
+        <li>The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").</li>
+      </ul>
+    <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
     <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
     <gc-geochart></gc-geochart>
   </div>

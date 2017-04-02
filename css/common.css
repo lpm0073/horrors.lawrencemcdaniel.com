@@ -1,3 +1,8 @@
+.initial-loading {
+  margin-top: 60px;
+}
+
+
 .loading-indicator {
     display: block;
     width: 70px;

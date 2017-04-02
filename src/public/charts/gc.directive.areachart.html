@@ -15,13 +15,26 @@
         var options = {
           title: 'Company Performance',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0},
-          width: 1000,
-          height: 666,
+          vAxis: {minValue: 0}
         };
 
         var chart = new google.visualization.AreaChart(document.getElementById('areachart_div'));
         chart.draw(data, options);
+
+        function resizeChart () {
+            console.log('resizeChart - area');
+            chart.draw(data, options);
+        }
+        if (document.addEventListener) {
+            window.addEventListener('resize', resizeChart);
+        }
+        else if (document.attachEvent) {
+            window.attachEvent('onresize', resizeChart);
+        }
+        else {
+            window.resize = resizeChart;
+        }
+
       }
     </script>
     <div id="areachart_div" class="widget-object"></div>

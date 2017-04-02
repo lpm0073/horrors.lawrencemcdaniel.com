@@ -33,8 +33,6 @@
   ]);
 
     var options = {
-      width: 1000,
-      height: 666,
       gantt: {
         criticalPathEnabled: true,
         criticalPathStyle: {
@@ -47,8 +45,21 @@
     var chart = new google.visualization.Gantt(document.getElementById('gantt_div'));
 
     chart.draw(data, options);
+
+    function resizeChart () {
+        console.log('resizeChart - gentt');
+        chart.draw(data, options);
+    }
+    if (document.addEventListener) {
+        window.addEventListener('resize', resizeChart);
+    }
+    else if (document.attachEvent) {
+        window.attachEvent('onresize', resizeChart);
+    }
+    else {
+        window.resize = resizeChart;
+    }
+
   }
-
-
    </script>
    <div id="gantt_div" class="widget-object"></div>

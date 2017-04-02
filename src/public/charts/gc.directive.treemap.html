@@ -34,20 +34,33 @@
           ['Zaire',     'Africa',             8,                               10]
         ]);
 
-        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
-
-        tree.draw(data, {
-          width: 1000,
-          height: 666,
+        var options = {
           minColor: '#f00',
           midColor: '#ddd',
           maxColor: '#0d0',
           headerHeight: 15,
           fontColor: 'black',
           showScale: true
-        });
+        };
+
+        var tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, options);
+
+        function resizeChart () {
+            console.log('resizeChart - tree');
+            tree.draw(data, options);
+        }
+        if (document.addEventListener) {
+            window.addEventListener('resize', resizeChart);
+        }
+        else if (document.attachEvent) {
+            window.attachEvent('onresize', resizeChart);
+        }
+        else {
+            window.resize = resizeChart;
+        }
 
       }
-
     </script>
     <div id="chart_div" class="widget-object"></div>

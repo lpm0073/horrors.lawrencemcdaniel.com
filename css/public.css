@@ -1,48 +1,53 @@
-/* HOME PAGE */
-
-#main-content {
+/* GLOBAL */
+* {
+    margin:0;
+    padding:0;
+    background-color: #F1F1F1;
 }
+
+body {
+  font-size: 16px;
+  color: black;
+  font-family: 'Oxygen', sans-serif;
+
+}
+
 
 .container {
 }
 
-.home-tile {
-  width: 100%;
-  margin-bottom: 15px;
-  position: relative;
-  border: 2px solid #3F0C1F;
-  border-radius: 5px;
-  overflow: hidden;
-  background: #FFFFFF;
-}
-.home-tile:hover {
-  box-shadow: 0 1px 5px 1px #cccccc;
-  font-size: 1.15em;
-  border: 2px solid #CFCFCF;
-}
-.home-tile {
-  background-color: eee;
-  background-position: center;
-/*  box-shadow: 0 0 50px #8F8F8F; */
-  border: 1px solid #EFEFEF;
-}
+/* END GLOBAL */
 
-.home-tile span {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  font-size: 1.6em;
-/*  text-transform: uppercase; */
-  background-color: #563E7C;
-  color: #fff;
-  opacity: 1;
-}
+/* NAVIGATION MENU */
 
-/* END HOME PAGE */
+/* END NAVIGATION MENU */
 
 
+/** HEADER **/
+.app-header {
+  border-radius: 0;
+  border: 0;
+  background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
+  height: 300px;
+  margin-top: 50px;
+  background-color: #563d7c;
+  background-repeat: no-repeat;
+}
+
+/* END HEADER */
+
+/* FOOTER */
+.panel-footer {
+  margin-top: 30px;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  background-color: #222;
+  border-top: 0;
+}
+.panel-footer div.row {
+  margin-bottom: 35px;
+}
+/* END FOOTER */
 
 
 
@@ -52,7 +57,7 @@
     width: 100%;
   }
   .home-tile {
-    height: 500px;
+    min-height: 250px;
   }
 }
 
@@ -63,7 +68,7 @@
     width: 100%;
   }
   .home-tile {
-    height: 406px;
+    min-height: 200px;
   }
   /* End Home Page */
 }
@@ -75,7 +80,7 @@
     width: 100%;
   }
   .home-tile {
-    height: 314px;
+    min-height: 150px;
   }
   /* End Home Page */
 }
@@ -90,7 +95,7 @@
   }
   .home-tile {
     width: 360px;
-    height: 314px;
+    min-height: 125px;
     margin: 0 auto 15px;
   }
 
@@ -102,7 +107,7 @@
   /* Home page */
   .home-tile {
     width: 280px;
-    height: 196px;
+    min-height: 100px;
     margin: 0 auto 15px;
   }
 
