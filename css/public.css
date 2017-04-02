@@ -90,13 +90,13 @@ body {
   /* Home Page */
   .container {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 2%;
     padding: 0;
   }
   .home-tile {
-    width: 360px;
+    width: 95%;
     min-height: 125px;
-    margin: 0 auto 15px;
+    margin: 0 auto 2%;
   }
 
 }
