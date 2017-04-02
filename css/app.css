@@ -6,12 +6,6 @@
   margin-top: 15px;
 }
 
-#charts-content {
-  margin: 0px;
-  background-color: white
-  overflow: hidden;
-}
-
 .home-tile {
   width: 100%;
   margin-bottom: 15px;
@@ -48,14 +42,19 @@
 
 
 /** Begin Google Chart Widget Page **/
-#google-chart-content {
-
+#charts-content {
+  margin: 0px;
+  padding: 10px;
+  background-color: white
+  overflow: hidden;
 }
+
 /** End Google Chart Widget Page **/
 
 /** Begin Widgets **/
 .widget {
     background-color: white;
+    border-radius: 5px;
     width: 75%%;
     margin: 5%;
     padding: 2.5%;
