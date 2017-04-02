@@ -37,6 +37,8 @@
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
 
         tree.draw(data, {
+          width: 1000,
+          height: 666,
           minColor: '#f00',
           midColor: '#ddd',
           maxColor: '#0d0',
@@ -48,4 +50,4 @@
       }
 
     </script>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_div" class="widget-object"></div>

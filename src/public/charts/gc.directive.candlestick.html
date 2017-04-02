@@ -14,7 +14,9 @@
     ], true);
 
     var options = {
-      legend:'none'
+      legend:'none',
+      width: 1000,
+      height: 666
     };
 
     var chart = new google.visualization.CandlestickChart(document.getElementById('candlestick_div'));
@@ -22,4 +24,4 @@
     chart.draw(data, options);
   }
     </script>
-    <div id="candlestick_div" style="width: 900px; height: 500px;"></div>
+    <div id="candlestick_div" class="widget-object"></div>

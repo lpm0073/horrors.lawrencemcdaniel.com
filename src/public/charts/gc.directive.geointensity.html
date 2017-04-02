@@ -13,9 +13,15 @@
           ['BR',            187,            8514877]
         ]);
 
+        var options = {
+          title: "Geointensity Chart Sample",
+          width: 440,
+          height: 220,
+        };
+
         var chart = new google.visualization.IntensityMap(document.getElementById('geointensity_div'));
 
-        chart.draw(data, {});
+        chart.draw(data, options);
       }
     </script>
-    <div id="geointensity_div"></div>
+    <div id="geointensity_div" class="widget-object"></div>

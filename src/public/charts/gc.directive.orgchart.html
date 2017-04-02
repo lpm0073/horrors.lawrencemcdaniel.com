@@ -20,10 +20,17 @@
           ['Carol', 'Bob', '']
         ]);
 
+        var options = {
+          title: "Lawrence's Empire",
+          allowHtml:true,
+          width: 1000,
+          height: 666
+
+        };
         // Create the chart.
         var chart = new google.visualization.OrgChart(document.getElementById('orgchart_div'));
         // Draw the chart, setting the allowHtml option to true for the tooltips.
-        chart.draw(data, {allowHtml:true});
+        chart.draw(data, options);
       }
    </script>
-    <div id="orgchart_div"></div>
+    <div id="orgchart_div" class="widget-object"></div>

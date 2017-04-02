@@ -1,15 +1,11 @@
 
-<script async defer
- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHkLhDno7SF63GKneZsS08IpAfnpZzS4k">
-</script>
-
 <style>
 .google-logo {
   position: absolute;
   float: right;
   margin-right: 25px;
 
-  top: 425px;
+  top: 350px;
   right: 0px;
   width: 450px;
 }
@@ -20,116 +16,115 @@
 <div id="google-chart-content" class="container">
   <div ng-if="chartsCtrl.isNew"><h2>Google Charts</h2></div>
 
-  <h3><a name="Regions" id="Regions"></a>Region Map</h3>
-  <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.
-  </p>
-  <div id="regions_div" style="width: 900px; height: 500px;">
+  <div id="geochart" class="widget widget-left">
+    <h3>Region Map</h3>
+    <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
     <gc-geochart></gc-geochart>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Geographical Intensity Map</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="geointensity" class="widget widget-right">
+    <h3>Geographical Intensity Map</h3>
+    <p>
+    </p>
     <gc-geointensity></gc-geointensity>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Pie Chart</h3>
-  <p> </p>
-  <div id="regions_div" style="width: 900px; height: 500px;">
+  <div id="piechart" class="widget widget-left">
+    <h3>Pie Chart</h3>
+    <p> </p>
     <gc-piechart></gc-piechart>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Line/Area Chart</h3>
-  <p> </p>
-  <div id="regions_div" style="width: 900px; height: 500px;">
+  <div id="areachart" class="widget widget-right">
+    <h3>Line/Area Chart</h3>
+    <p> </p>
     <gc-areachart></gc-areachart>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Combo Chart</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="combochart" class="widget widget-left">
+    <h3>Combo Chart</h3>
+    <p>
+    </p>
     <gc-combochart></gc-combochart>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Bar Chart</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="barchart" class="widget widget-right">
+    <h3>Bar Chart</h3>
+    <p>
+    </p>
     <gc-barchart></gc-barchart>
   </div>
 
 
-  <h3><a name="Regions" id="Regions"></a>High-Low-Close Candlestick</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="candlestick" class="widget widget-left">
+    <h3>High-Low-Close Candlestick</h3>
+    <p>
+    </p>
     <gc-candlestick></gc-candlestick>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Word Tree</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="wordtree" class="widget widget-left">
+    <h3>Word Tree</h3>
+    <p>
+    </p>
     <gc-wordtree></gc-wordtree>
   </div>
 
 
-  <h3><a name="Regions" id="Regions"></a>Treemap</h3>
-  <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="treemap" class="widget widget-right">
+    <h3>Tree Map</h3>
+    <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
+    </p>
     <gc-treemap></gc-treemap>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Guages</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="guages" class="widget widget-left">
+    <h3>Guages</h3>
+    <p>
+    </p>
     <gc-guages></gc-guages>
   </div>
 
 
-  <h3><a name="Regions" id="Regions"></a>Polynomial Trend Line</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="polynomial" class="widget widget-right">
+    <h3></a>Polynomial Trend Line</h3>
+    <p>
+    </p>
     <gc-polynomial></gc-polynomial>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Gantt Critical Path</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="gantt" class="widget widget-left">
+    <h3>Gantt Critical Path</h3>
+    <p>
+    </p>
     <gc-gantt></gc-gantt>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Scatter Diagram</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="scatter" class="widget widget-right">
+    <h3>Scatter Diagram</h3>
+    <p>
+    </p>
     <gc-scatter></gc-scatter>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Bubble Correlation</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="bubble" class="widget widget-left">
+    <h3>Bubble Correlation</h3>
+    <p>
+    </p>
     <gc-bubble></gc-bubble>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Sankey Diagram</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="sankey" class="widget widget-right">
+    <h3>Sankey Diagram</h3>
+    <p>
+    </p>
     <gc-sankey></gc-sankey>
   </div>
 
-  <h3><a name="Regions" id="Regions"></a>Org Chart</h3>
-  <p>
-  </p>
-  <div id="tree_div" style="width: 900px; height: 500px;">
+  <div id="orgchart" class="widget widget-left">
+    <h3>Org Chart</h3>
+    <p>
+    </p>
     <gc-orgchart></gc-orgchart>
   </div>
 

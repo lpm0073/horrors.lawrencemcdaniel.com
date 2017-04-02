@@ -14,7 +14,10 @@
         ['RU', 700]
       ]);
 
-      var options = {};
+      var options = {
+        width: 1000,
+        height: 666        
+      };
 
       var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
@@ -22,4 +25,4 @@
     }
   </script>
 
-<div id="regions_div"></div>
+<div id="regions_div" class="widget-object"></div>

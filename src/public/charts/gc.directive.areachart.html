@@ -15,11 +15,13 @@
         var options = {
           title: 'Company Performance',
           hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-          vAxis: {minValue: 0}
+          vAxis: {minValue: 0},
+          width: 1000,
+          height: 666,
         };
 
         var chart = new google.visualization.AreaChart(document.getElementById('areachart_div'));
         chart.draw(data, options);
       }
     </script>
-    <div id="areachart_div" style="width: 100%; height: 500px;"></div>
+    <div id="areachart_div" class="widget-object"></div>
