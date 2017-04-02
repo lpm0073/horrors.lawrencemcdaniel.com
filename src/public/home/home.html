@@ -1,4 +1,6 @@
 <div id="home-content" >
+  <script type="text/javascript">google.charts.load('current', {'packages':['geochart', 'wordtree', 'sankey', 'gantt']});</script>
+
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <a ui-sref="public.d3">
         <div class="home-tile">
@@ -9,8 +11,9 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <a ui-sref="public.charts">
         <div class="home-tile">
-          <script type="text/javascript">google.charts.load('current', {'packages':['geochart']});</script>
-          <gc-geochart></gc-geochart>
+          <div id="geochart" class="widget widget-left">
+            <gc-geochart></gc-geochart>
+          </div>
         <span>Custom HTML5 Charts</span>
         </div>
       </a>
@@ -35,8 +38,10 @@
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
       <a ui-sref="public.home">
         <div class="home-tile">
-        Box 3
-        <span>Favorite</span>
+          <div id="wordtree" class="widget widget-left">
+            <gc-wordtree></gc-wordtree>
+          </div>
+        <span>Word Tree</span>
         </div>
       </a>
     </div>
@@ -44,16 +49,20 @@
     <div class="col-lg-6 col-sm-12 col-xs-12">
       <a ui-sref="public.home">
         <div class="home-tile">
-        Box 1
-        <span>Favorite</span>
+          <div id="gantt" class="widget widget-left">
+            <gc-gantt></gc-gantt>
+          </div>
+        <span>Gantt Critical Path</span>
         </div>
       </a>
     </div>
     <div class="col-lg-6 col-sm-12 col-xs-12">
       <a ui-sref="public.home">
         <div class="home-tile">
-        Box 1
-        <span>Favorite</span>
+          <div id="sankey" class="widget widget-right">
+            <gc-sankey></gc-sankey>
+          </div>
+        <span>Sankey Diagram</span>
         </div>
       </a>
     </div>
