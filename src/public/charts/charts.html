@@ -22,15 +22,16 @@
   </script>
 </head>
 
-<!-- -------------------------------------------------------------------------------- -->
+  <a href="https://developers.google.com/"><img class="google-logo" src="images/google-logo.svg"></a>
+
+  <div id="charts-content" ng-controller="ChartsController">
+
+<!-- ------------------------------------- TEST ZONE ------------------------------------------- -->
 
 
-<!-- -------------------------------------------------------------------------------- -->
+<!-- ------------------------------------- TEST ZONE ------------------------------------------- -->
 
 
-<a href="https://developers.google.com/"><img class="google-logo" src="images/google-logo.svg"></a>
-
-<div id="charts-content" ng-controller="ChartsController">
   <div><h2>Custom HTML5 Charts</h2></div>
 
 
@@ -51,7 +52,15 @@
     <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
     <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
 
-        <gc-geochart></gc-geochart>
+        <gc-geochart
+        uib-popover-html="htmlPopoverGeo"
+        popover-placement="top"
+        popover-trigger="'mouseenter'"
+        popover-animation="true"
+        popover-is-open="popoverIsOpen"
+        ng-click="popoverIsOpen = !popoverIsOpen"
+        >
+        </gc-geochart>
 
   </div>
 
@@ -59,33 +68,62 @@
     <h3>Geographical Intensity Map</h3>
     <p>
     </p>
-    <gc-geointensity></gc-geointensity>
+    <gc-geointensity
+    uib-tooltip="This intensity gradiation chart shows two alterative ways to highlight regaional map areas."
+    tooltip-placement="bottom"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-areachart>
+    </gc-geointensity>
   </div>
 
   <div id="piechart" class="widget widget-left">
     <h3>Pie Chart</h3>
     <p> </p>
-    <gc-piechart></gc-piechart>
+    <gc-piechart
+    uib-tooltip="Hover your mouse over the pie slices to see how this chart is animated."
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-piechart>
   </div>
 
   <div id="areachart" class="widget widget-right">
     <h3>Line/Area Chart</h3>
     <p> </p>
-    <gc-areachart></gc-areachart>
+    <gc-areachart
+    uib-popover-html="htmlPopoverArea"
+    popover-placement="top-left"
+    popover-trigger="'mouseenter'"
+    popover-animation="true"
+    popover-is-open="popoverIsOpen"
+    ng-click="popoverIsOpen = !popoverIsOpen"
+    >
+    </gc-areachart>
   </div>
 
   <div id="combochart" class="widget widget-left">
     <h3>Combo Chart</h3>
     <p>
     </p>
-    <gc-combochart></gc-combochart>
+    <gc-combochart
+    uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
+    tooltip-placement="top-left"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-combochart>
   </div>
 
   <div id="barchart" class="widget widget-right">
     <h3>Bar Chart</h3>
     <p>
     </p>
-    <gc-barchart></gc-barchart>
+    <gc-barchart
+    uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-barchart>
   </div>
 
 
@@ -93,14 +131,28 @@
     <h3>High-Low-Close Candlestick</h3>
     <p>
     </p>
-    <gc-candlestick></gc-candlestick>
+    <gc-candlestick
+    uib-popover-html="htmlPopoverCandlestick"
+    popover-placement="top-left"
+    popover-trigger="'mouseenter'"
+    popover-animation="true"
+    popover-is-open="popoverIsOpen"
+    ng-click="popoverIsOpen = !popoverIsOpen"
+    >
+    </gc-candlestick>
   </div>
 
   <div id="wordtree" class="widget widget-left">
     <h3>Word Tree</h3>
     <p>
     </p>
-    <gc-wordtree></gc-wordtree>
+    <gc-wordtree
+    uib-tooltip="Charts can shine a spotlight on more than just numbers and statistics. Using HTML5 and Angular it is possible to bring attention to just about anything!"
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-candlestick>
+    </gc-wordtree>
   </div>
 
 

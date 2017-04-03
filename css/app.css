@@ -59,6 +59,12 @@
   font-style:italic;
 }
 
+.chart-html-popover {
+  margin: 10px;
+  font-style: italic;
+  background-color: white;
+}
+
 /** End Google Chart Widget Page **/
 
 /** Begin Widgets **/
