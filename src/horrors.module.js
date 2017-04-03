@@ -4,7 +4,7 @@
 /**
  * Restaurant module that includes the public module as a dependency
  */
-angular.module('horrors', ['public'])
+angular.module('Horrors', ['public', 'ui.bootstrap', 'ui.router'])
 .config(config);
 
 config.$inject = ['$urlRouterProvider'];
