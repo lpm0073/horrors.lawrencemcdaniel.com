@@ -49,6 +49,16 @@
   overflow: hidden;
 }
 
+.chart-alert {
+  margin: 25px;
+}
+
+.chart-alert div {
+  background-color: #f2dede;
+  margin: 3%;
+  font-style:italic;
+}
+
 /** End Google Chart Widget Page **/
 
 /** Begin Widgets **/
@@ -77,7 +87,6 @@
   object-fit: scale-down;
 
 }
-
 
 .widget-left {
 

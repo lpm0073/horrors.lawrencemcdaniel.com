@@ -27,34 +27,22 @@
 
     ChartsController.$inject = ['$scope', '$log'];
     function ChartsController($scope, $log) {
-        var ctrl = this;
-        ctrl.isNew = true;
-
         console.log('ChartsController instantiated');
+        var ctrl = this;
 
-        $scope.items = [
-          'The first choice!',
-          'And another choice for you.',
-          'but wait! A third!'
+        /* ---------- initializatoin of closeable alert ----------*/
+        $scope.alerts = [
+          { type: 'danger', msg: 'Did you know? All of these charts are made with HTML5, and, they are highly interactive. Hover your cursor over the graph to see popout annotations and graph animations.' },
         ];
 
-        $scope.status = {
-          isopen: false
+        $scope.addAlert = function() {
+          $scope.alerts.push({msg: 'Another alert!'});
         };
 
-        $scope.toggled = function(open) {
-          $log.log('Dropdown is now: ', open);
+        $scope.closeAlert = function(index) {
+          $scope.alerts.splice(index, 1);
         };
-
-        $scope.toggleDropdown = function($event) {
-          $event.preventDefault();
-          $event.stopPropagation();
-          $scope.status.isopen = !$scope.status.isopen;
-        };
-
-        $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
-
-
+        /* ---------- end initializatoin of closeable alert ----------*/
 
     }
 
