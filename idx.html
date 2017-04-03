@@ -1,28 +1,18 @@
-<head>
-<style>
-.google-logo {
-  position: absolute;
-  float: right;
-  margin-right: 10px;
-  background-color: transparent;
+<!DOCTYPE html>
+<html lang="en" ng-app="Horrors" ng-strict-di>
+  <head>
+    <title>Shop of Horrors</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  top: 55px;
-  right: 0px;
-  width: 275px;
-}
-</style>
-  <script type="text/javascript">
-      google.charts.load('current', {
-      packages: ['geochart', 'treemap', 'corechart', 'gantt',
-                 'intensitymap', 'scatter', 'sankey',
-                 'orgchart', 'gauge', 'wordtree']
-      });
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
 
 
-  </script>
-</head>
-<!-- -------------------------------------------------------------------------------- -->
-<div ng-controller="ChartsController">
+
+<div ng-controller="DropdownCtrl">
     <!-- Simple dropdown -->
     <span uib-dropdown on-toggle="toggled(open)">
       <a href id="simple-dropdown" uib-dropdown-toggle>
@@ -166,135 +156,26 @@
     </script>
 </div>
 
-<!-- -------------------------------------------------------------------------------- -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
 
 
-<a href="https://developers.google.com/"><img class="google-logo" src="images/google-logo.svg"></a>
+<!-- added for directives libraries -->
+<script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<div id="charts-content">
-  <div ng-if="chartsCtrl.isNew"><h2>Google Charts</h2></div>
+<!-- Main Horrors Module -->
+<script type="text/javascript" src="idx.js"></script>
 
-  <p>Custom charts provide a perfect way to visualize data on your website. From simple line charts to complex hierarchical tree maps, the chart gallery provides a large number of ready-to-use chart types.</p>
-  <p>The sample charts below are rendered real-time using HTML5. They are fast and flexible, with unlimited options.</p>
-  <p>With minimal custom programming I can integrate your data sources with charts just like these.</p>
+</body>
 
-  <div id="geochart" class="widget widget-left">
-    <h3>Region Map</h3>
-    <p>A geochart is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
-      <ul>
-        <li>The region mode colors whole regions, such as countries, provinces, or states.</li>
-        <li>The markers mode uses circles to designate regions that are scaled according to a value that you specify.</li>
-        <li>The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").</li>
-      </ul>
-    <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
-    <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
-    <gc-geochart></gc-geochart>
-  </div>
-
-  <div id="geointensity" class="widget widget-right">
-    <h3>Geographical Intensity Map</h3>
-    <p>
-    </p>
-    <gc-geointensity></gc-geointensity>
-  </div>
-
-  <div id="piechart" class="widget widget-left">
-    <h3>Pie Chart</h3>
-    <p> </p>
-    <gc-piechart></gc-piechart>
-  </div>
-
-  <div id="areachart" class="widget widget-right">
-    <h3>Line/Area Chart</h3>
-    <p> </p>
-    <gc-areachart></gc-areachart>
-  </div>
-
-  <div id="combochart" class="widget widget-left">
-    <h3>Combo Chart</h3>
-    <p>
-    </p>
-    <gc-combochart></gc-combochart>
-  </div>
-
-  <div id="barchart" class="widget widget-right">
-    <h3>Bar Chart</h3>
-    <p>
-    </p>
-    <gc-barchart></gc-barchart>
-  </div>
-
-
-  <div id="candlestick" class="widget widget-left">
-    <h3>High-Low-Close Candlestick</h3>
-    <p>
-    </p>
-    <gc-candlestick></gc-candlestick>
-  </div>
-
-  <div id="wordtree" class="widget widget-left">
-    <h3>Word Tree</h3>
-    <p>
-    </p>
-    <gc-wordtree></gc-wordtree>
-  </div>
-
-
-  <div id="treemap" class="widget widget-right">
-    <h3>Tree Map</h3>
-    <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
-    </p>
-    <gc-treemap></gc-treemap>
-  </div>
-
-  <div id="guages" class="widget widget-left">
-    <h3>Guages</h3>
-    <p>
-    </p>
-    <gc-guages></gc-guages>
-  </div>
-
-
-  <div id="polynomial" class="widget widget-right">
-    <h3></a>Polynomial Trend Line</h3>
-    <p>
-    </p>
-    <gc-polynomial></gc-polynomial>
-  </div>
-
-  <div id="gantt" class="widget widget-left">
-    <h3>Gantt Critical Path</h3>
-    <p>
-    </p>
-    <gc-gantt></gc-gantt>
-  </div>
-
-  <div id="scatter" class="widget widget-right">
-    <h3>Scatter Diagram</h3>
-    <p>
-    </p>
-    <gc-scatter></gc-scatter>
-  </div>
-
-  <div id="bubble" class="widget widget-left">
-    <h3>Bubble Correlation</h3>
-    <p>
-    </p>
-    <gc-bubble></gc-bubble>
-  </div>
-
-  <div id="sankey" class="widget widget-right">
-    <h3>Sankey Diagram</h3>
-    <p>
-    </p>
-    <gc-sankey></gc-sankey>
-  </div>
-
-  <div id="orgchart" class="widget widget-left">
-    <h3>Org Chart</h3>
-    <p>
-    </p>
-    <gc-orgchart></gc-orgchart>
-  </div>
-
-</div>
+</html>

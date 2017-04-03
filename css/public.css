@@ -28,6 +28,8 @@ body {
   border-radius: 0;
   border: 0;
   background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
+  background-position: left bottom;
+  background-size: 400px;
   height: 300px;
   margin-top: 50px;
   background-color: #563d7c;
