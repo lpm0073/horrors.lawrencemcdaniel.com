@@ -71,7 +71,6 @@
         /* ---------- popover initializations ----------*/
 /*        $scope.htmlPopover = $sce.trustAsHtml('<b style="color: red">I can</b> have <div class="label label-success">HTML</div> content');  */
 
-/* <img href="/images/favicon.jpg"> */
         var htmlPrefix = '<div class="chart-html-popover"><img src="http://cdn.lawrencemcdaniel.com/angry-nun.jpg" alt="Angry Nun" width="75">';
         var htmlSuffix = '</div>';
         $scope.htmlPopoverGeo = $sce.trustAsHtml(htmlPrefix + 'There are near infinite ways to colorize and illuminate your geographical data. This example uses scaled shading.' + htmlSuffix);

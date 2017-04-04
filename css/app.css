@@ -42,12 +42,6 @@
 
 
 /** Begin Google Chart Widget Page **/
-#charts-content {
-  margin: 0px;
-  padding: 10px;
-  background-color: white
-  overflow: hidden;
-}
 
 .chart-html-popover {
   margin: 10px;
