@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="text-center">My Info</h2>
+
+    <div class="nemoinfo">
+      <div class="panel panel-info" ng-if="nemoInfoCtrl.saved">
+          <div class="panel-body panel-info">
+              <dl class="dl-horizontal">
+                  <dt>First Name:</dt> <dd>{{nemoInfoCtrl.nemoInfo.firstName}}</dd>
+                  <dt>Last Name:</dt> <dd>{{nemoInfoCtrl.nemoInfo.lastName}}</dd>
+                  <dt>Email:</dt> <dd>{{nemoInfoCtrl.nemoInfo.emailAddress}}</dd>
+                  <dt>Phone:</dt> <dd>{{nemoInfoCtrl.nemoInfo.phoneNumber}}</dd>
+                  <dt>Favorite Dish:</dt> <dd>{{nemoInfoCtrl.nemoInfo.favoriteDish}}</dd>
+              </dl>
+
+              <menu-item menu-item="nemoInfoCtrl.nemoInfo.dishInfo"></menu-item>
+          </div>
+      </div>
+    </div>
+    <div class="alert alert-warning" ng-if="!nemoInfoCtrl.saved">
+        <h2>Not Signed Up Yet.</h2>
+        <button type="button" ui-sref="public.signup" class="btn btn-primary">Sign up Now!</button>
+    </div>
+</div>
+
+<!-- -->
