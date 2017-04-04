@@ -12,26 +12,69 @@
 
   <a href="https://developers.google.com/"><img class="google-logo" src="images/google-logo.svg"></a>
 
-  <div id="charts-content" ng-controller="ChartsController">
+  <div class="page-content" ng-controller="ChartsController">
 
-<!-- ------------------------------------- TEST ZONE ------------------------------------------- -->
+    <div class="page-header">
+      <h2>Custom HTML5 Charts</h2>
 
+      <p>Custom charts provide a perfect way to visualize data on your website. From simple line charts to complex hierarchical tree maps, the chart gallery provides a large number of ready-to-use chart types. The sample charts below are rendered real-time using HTML5. They are fast and flexible, with unlimited options. With minimal custom programming I can integrate your data sources with charts just like these.</p>
 
-<!-- ------------------------------------- TEST ZONE ------------------------------------------- -->
+      <div class="three-column-div">
+        <p><span>Customizable</span> Make the charts your own. Configure an extensive set of options to perfectly match the look and feel of your website.</p>
+        <p><span>HTML5/SVG</span> Cross-browser compatibility (adopting VML for older IE versions) and cross-platform portability to iOS and new Android releases. No plugins are needed.</p>
+        <p><span>Dynamic Data</span> Connect to your data in real time using a variety of data connection tools and protocols.</p>
+      </div>
 
+      <div class="page-alert" uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+    </div>
 
-  <div><h2>Custom HTML5 Charts</h2></div>
+  <div id="sankey" class="widget widget-right">
+    <h3>Sankey Diagram</h3>
+    <p>A <code>sankey</code> diagram is a visualization used to depict a flow from one set of values to another. The things being connected are called nodes and the connections are called links. Sankeys are best used when you want to show a many-to-many mapping between two domains (e.g., universities and majors) or multiple paths through a set of stages (for instance, Google Analytics uses sankeys to show how traffic flows from pages to other pages on your web site).</p>
+    <p>For the curious, they're named after Captain Sankey, who created a diagram of steam engine efficiency that used arrows having widths proportional to heat loss.</p>
+    <p>Example: Suppose you had several countries -- USA, Mexico, Canada and Brasil -- that connect to several other countries -- Portugal, Spain, England, France. Some of those connections are heavier than others. For instance, Brasil has a thin connection to England and a much thicker connection to Portugal.</p>
+    <gc-sankey></gc-sankey>
+  </div>
 
+  <div id="wordtree" class="widget widget-left">
+    <h3>Word Tree</h3>
+    <p>A <code>word tree</code> depicts multiple parallel sequences of words. It could be used to show which words most often follow or precede a target word (e.g., "Cats are...") or to show a hierarchy of terms (e.g., a decision tree).</p>
+    <p>Word trees are rendered in the browser using SVG, which means it will work in all modern browsers (e.g., Chrome, Firefox, Opera, and Internet Explorer 9+). Like all Google charts, word trees display tooltips when the user hovers over the data.</p>
+    <p>Example: Suppose you've collected a set of phrases about cats (e.g., "cats eat mice", "cats are better than kittens") and you want to highlight the most important attributes from the set.</p>
+    <gc-wordtree
+    uib-tooltip="Charts can shine a spotlight on more than just numbers and statistics. Using HTML5 and Angular it is possible to bring attention to just about anything!"
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-candlestick>
+    </gc-wordtree>
+  </div>
 
-  <p>Custom charts provide a perfect way to visualize data on your website. From simple line charts to complex hierarchical tree maps, the chart gallery provides a large number of ready-to-use chart types.</p>
-  <p>The sample charts below are rendered real-time using HTML5. They are fast and flexible, with unlimited options.</p>
-  <p>With minimal custom programming I can integrate your data sources with charts just like these.</p>
+  <div id="candlestick" class="widget widget-left">
+    <h3>High-Low-Close Candlestick</h3>
+    <p>A <code>candlestick</code> chart is used to show an opening and closing value overlaid on top of a total variance. Candlestick charts are often used to show stock value behavior. In this chart, items where the opening value is less than the closing value (a gain) are drawn as filled boxes, and items where the opening value is more than the closing value (a loss) are drawn as hollow boxes.</p>
+    <gc-candlestick
+    uib-popover-html="htmlPopoverCandlestick"
+    popover-placement="top-left"
+    popover-trigger="'mouseenter'"
+    popover-animation="true"
+    popover-is-open="popoverIsOpen"
+    ng-click="popoverIsOpen = !popoverIsOpen"
+    >
+    </gc-candlestick>
+  </div>
 
-  <div class="chart-alert" uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+  <div id="bubble" class="widget widget-left">
+    <h3>Bubble Correlation</h3>
+    <p>A <code>bubble</code> chart that is rendered within the browser using SVG or VML. Displays tips when hovering over bubbles.</p>
+    <p>A bubble chart is used to visualize a data set with two to four dimensions. The first two dimensions are visualized as coordinates, the third as color and the fourth as size.</p>
+    <gc-bubble></gc-bubble>
+  </div>
+
 
   <div id="geochart" class="widget widget-left">
     <h3>Region Map</h3>
-    <p>A geochart is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
+    <p>A <code>geochart</code> is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
       <ul>
         <li>The region mode colors whole regions, such as countries, provinces, or states.</li>
         <li>The markers mode uses circles to designate regions that are scaled according to a value that you specify.</li>
@@ -52,153 +95,108 @@
 
   </div>
 
-  <div id="geointensity" class="widget widget-right">
-    <h3>Geographical Intensity Map</h3>
-    <p>
-    </p>
-    <gc-geointensity
-    uib-tooltip="This intensity gradiation chart shows two alterative ways to highlight regaional map areas."
-    tooltip-placement="bottom"
-    tooltip-trigger="'mouseenter'"
-    tooltip-enable="!false">
-    </gc-areachart>
-    </gc-geointensity>
-  </div>
+<!--
+<div id="geointensity" class="widget widget-right">
+  <h3>Geographical Intensity Map</h3>
+  <p>
+  </p>
+  <gc-geointensity
+  uib-tooltip="This intensity gradiation chart shows two alterative ways to highlight regaional map areas."
+  tooltip-placement="bottom"
+  tooltip-trigger="'mouseenter'"
+  tooltip-enable="!false">
+  </gc-areachart>
+  </gc-geointensity>
+</div>
 
-  <div id="piechart" class="widget widget-left">
-    <h3>Pie Chart</h3>
-    <p> </p>
-    <gc-piechart
-    uib-tooltip="Hover your mouse over the pie slices to see how this chart is animated."
-    tooltip-placement="top"
-    tooltip-trigger="'mouseenter'"
-    tooltip-enable="!false">
-    </gc-piechart>
-  </div>
-
-  <div id="areachart" class="widget widget-right">
-    <h3>Line/Area Chart</h3>
-    <p> </p>
-    <gc-areachart
-    uib-popover-html="htmlPopoverArea"
-    popover-placement="top-left"
-    popover-trigger="'mouseenter'"
-    popover-animation="true"
-    popover-is-open="popoverIsOpen"
-    ng-click="popoverIsOpen = !popoverIsOpen"
-    >
-    </gc-areachart>
-  </div>
-
-  <div id="combochart" class="widget widget-left">
-    <h3>Combo Chart</h3>
-    <p>
-    </p>
-    <gc-combochart
-    uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
-    tooltip-placement="top-left"
-    tooltip-trigger="'mouseenter'"
-    tooltip-enable="!false">
-    </gc-combochart>
-  </div>
-
-  <div id="barchart" class="widget widget-right">
-    <h3>Bar Chart</h3>
-    <p>
-    </p>
-    <gc-barchart
-    uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
-    tooltip-placement="top"
-    tooltip-trigger="'mouseenter'"
-    tooltip-enable="!false">
-    </gc-barchart>
-  </div>
+-->
+<div id="gantt" class="widget widget-left">
+  <h3>Gantt Critical Path</h3>
+  <p>A <code>Gantt</code> chart is a type of chart that illustrates the breakdown of a project into its component tasks. Google Gantt charts illustrate the start, end, and duration of tasks within a project, as well as any dependencies a task may have. Google Gantt charts are rendered in the browser using SVG. Like all Google charts, Gantt charts display tooltips when the user hovers over the data.</p>
+  <gc-gantt></gc-gantt>
+</div>
 
 
-  <div id="candlestick" class="widget widget-left">
-    <h3>High-Low-Close Candlestick</h3>
-    <p>
-    </p>
-    <gc-candlestick
-    uib-popover-html="htmlPopoverCandlestick"
-    popover-placement="top-left"
-    popover-trigger="'mouseenter'"
-    popover-animation="true"
-    popover-is-open="popoverIsOpen"
-    ng-click="popoverIsOpen = !popoverIsOpen"
-    >
-    </gc-candlestick>
-  </div>
+<div id="combochart" class="widget widget-left">
+  <h3>Combo Chart</h3>
+  <p>A <code>combo</code> chart lets you render each series as a different marker type from the following list: line, area, bars, candlesticks, and stepped area.</p>
+  <p>To assign a default marker type for series, specify the seriesType property. Use the series property to specify properties of each series individually.</p>
+  <gc-combochart
+  uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
+  tooltip-placement="top-left"
+  tooltip-trigger="'mouseenter'"
+  tooltip-enable="!false">
+  </gc-combochart>
+</div>
 
-  <div id="wordtree" class="widget widget-left">
-    <h3>Word Tree</h3>
-    <p>
-    </p>
-    <gc-wordtree
-    uib-tooltip="Charts can shine a spotlight on more than just numbers and statistics. Using HTML5 and Angular it is possible to bring attention to just about anything!"
-    tooltip-placement="top"
-    tooltip-trigger="'mouseenter'"
-    tooltip-enable="!false">
-    </gc-candlestick>
-    </gc-wordtree>
-  </div>
+<div id="piechart" class="widget widget-left">
+  <h3>Pie Chart</h3>
+  <p>A <code>pie</code> chart that is rendered within the browser using SVG or VML. Displays tooltips when hovering over slices.</p>
+  <gc-piechart
+  uib-tooltip="Hover your mouse over the pie slices to see how this chart is animated."
+  tooltip-placement="top"
+  tooltip-trigger="'mouseenter'"
+  tooltip-enable="!false">
+  </gc-piechart>
+</div>
+
+<div id="areachart" class="widget widget-right">
+  <h3>Line/Area Chart</h3>
+  <p>An <code>area</code> chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.</p>
+  <gc-areachart
+  uib-popover-html="htmlPopoverArea"
+  popover-placement="top-left"
+  popover-trigger="'mouseenter'"
+  popover-animation="true"
+  popover-is-open="popoverIsOpen"
+  ng-click="popoverIsOpen = !popoverIsOpen"
+  >
+  </gc-areachart>
+</div>
+
+<div id="barchart" class="widget widget-right">
+  <h3>Bar Chart</h3>
+  <p><code>bar</code> charts are rendered in the browser using SVG or VML, whichever is appropriate for the user's browser. Bar charts display tooltips when the user hovers over the data.</p>
+  <gc-barchart
+  uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
+  tooltip-placement="top"
+  tooltip-trigger="'mouseenter'"
+  tooltip-enable="!false">
+  </gc-barchart>
+</div>
 
 
-  <div id="treemap" class="widget widget-right">
-    <h3>Tree Map</h3>
-    <p>A visual representation of a data tree, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
-    </p>
-    <gc-treemap></gc-treemap>
-  </div>
+<div id="treemap" class="widget widget-right">
+  <h3>Tree Map</h3>
+  <p>A visual representation of a data <code>tree</code>, where each node can have zero or more children, and one parent (except for the root, which has no parents). Each node is displayed as a rectangle, sized and colored according to values that you assign. Sizes and colors are valued relative to all other nodes in the graph. You can specify how many levels to display simultaneously, and optionally to display deeper levels in a hinted fashion. If a node is a leaf node, you can specify a size and color; if it is not a leaf, it will be displayed as a bounding box for leaf nodes. The default behavior is to move down the tree when a user left-clicks a node, and to move back up the tree when a user right-clicks the graph
+  </p>
+  <gc-treemap></gc-treemap>
+</div>
 
-  <div id="guages" class="widget widget-left">
-    <h3>Guages</h3>
-    <p>
-    </p>
-    <gc-guages></gc-guages>
-  </div>
+<div id="guages" class="widget widget-left">
+  <h3>Guages</h3>
+  <p>Vrooooom!!!</p>
+  <gc-guages></gc-guages>
+</div>
 
 
-  <div id="polynomial" class="widget widget-right">
-    <h3></a>Polynomial Trend Line</h3>
-    <p>
-    </p>
-    <gc-polynomial></gc-polynomial>
-  </div>
+<div id="polynomial" class="widget widget-right">
+  <h3></a>Polynomial Trend Line</h3>
+  <p>A trendline is a line superimposed on a chart revealing the overall direction of the data. Google Charts can automatically generate trendlines for Scatter Charts, Bar Charts, Column Charts, and Line Charts.</p>
 
-  <div id="gantt" class="widget widget-left">
-    <h3>Gantt Critical Path</h3>
-    <p>
-    </p>
-    <gc-gantt></gc-gantt>
-  </div>
+  <gc-polynomial></gc-polynomial>
+</div>
 
-  <div id="scatter" class="widget widget-right">
-    <h3>Scatter Diagram</h3>
-    <p>
-    </p>
-    <gc-scatter></gc-scatter>
-  </div>
+<div id="scatter" class="widget widget-right">
+  <h3>Scatter Diagram</h3>
+  <p><code>Scatter</code> charts plot points on a graph. When the user hovers over the points, tooltips are displayed with more information.</p>
+  <gc-scatter></gc-scatter>
+</div>
 
-  <div id="bubble" class="widget widget-left">
-    <h3>Bubble Correlation</h3>
-    <p>
-    </p>
-    <gc-bubble></gc-bubble>
-  </div>
-
-  <div id="sankey" class="widget widget-right">
-    <h3>Sankey Diagram</h3>
-    <p>
-    </p>
-    <gc-sankey></gc-sankey>
-  </div>
-
-  <div id="orgchart" class="widget widget-left">
-    <h3>Org Chart</h3>
-    <p>
-    </p>
-    <gc-orgchart></gc-orgchart>
-  </div>
+<div id="orgchart" class="widget widget-left">
+  <h3>Org Chart</h3>
+  <p><code>Org</code> charts are diagrams of a hierarchy of nodes, commonly used to portray superior/subordinate relationships in an organization. A family tree is a type of org chart.</p>
+  <gc-orgchart></gc-orgchart>
+</div>
 
 </div>

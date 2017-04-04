@@ -11,6 +11,10 @@ body {
   background-color: #F1F1F1;
 }
 
+h2 {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
 
 .container {
 }
@@ -32,6 +36,70 @@ body {
 
 /* END NAVIGATION MENU */
 
+/* BEGIN PAGE */
+
+#charts-header {
+  padding-right: 10%;
+}
+
+.page-content {
+  margin: 0px;
+  padding: 10px;
+  background-color: white
+  overflow: hidden;
+}
+
+.page-header p {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.three-column-div {
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: justify;
+  column-rule: 2px outset rgba(86, 61, 123, 0.40);
+  column-gap: 10px;
+}
+
+.three-column-div span {
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-right: 5px;
+  color: #563d7c;
+}
+
+.three-column-div p {
+  padding-right: 20px;
+  padding-left: 20px;
+/*
+border-bottom: : 1px;
+border-bottom-style: inset;
+border-bottom-width: medium;
+border-bottom-color: gray;
+*/
+}
+
+
+.page-alert {
+  margin: 25px;
+}
+
+.page-alert div {
+  background-color: #f2dede;
+  margin: 3%;
+  font-style:italic;
+}
+
+
+/** End Google Chart Widget Page **/
+
+/* END PAGE */
 
 /** HEADER **/
 .app-header {

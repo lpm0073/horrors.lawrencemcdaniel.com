@@ -49,23 +49,12 @@
   overflow: hidden;
 }
 
-.chart-alert {
-  margin: 25px;
-}
-
-.chart-alert div {
-  background-color: #f2dede;
-  margin: 3%;
-  font-style:italic;
-}
-
 .chart-html-popover {
   margin: 10px;
   font-style: italic;
   background-color: white;
 }
 
-/** End Google Chart Widget Page **/
 
 /** Begin Widgets **/
 .widget {
@@ -106,6 +95,10 @@
   background-color: inherit;
   margin-left: 25px;
 }
+.widget h3 {
+  color: #563d7c;
+}
+
 .widget p {
   text-align: justify;
 }
@@ -206,7 +199,9 @@
 }
 
 .columns {
-	column-count: 3;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
   list-style-position: inside;
 	padding: .75em .5em .75em 1em;
  	margin-bottom: 0;
