@@ -2,16 +2,16 @@
     "use strict";
 
     angular.module('common')
-    .service('NemoInfoService', NemoInfoService);
+    .service('NemoService', NemoService);
 
-    NemoInfoService.$inject = [];
-    function NemoInfoService() {
+    NemoService.$inject = [];
+    function NemoService() {
+        console.log('NemoService instantiated');
         var service = this;
         service.userInfo = {};
 
         service.setNemoinfo = function(userInfo) {
             service.userInfo = userInfo;
-            console.log('NemoInfoService.registerUser() - userInfo:', service.userInfo);
         };
 
         service.getNemoinfo = function () {

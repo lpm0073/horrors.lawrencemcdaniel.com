@@ -1,5 +1,5 @@
-<div class="finding-nemo-form">
-  <div ng-if="!NemoFormCtrl.saved"><h2>Missing Fish Report</h2></div>
+<div class="finding-nemo-form" ng-controller="NemoformController as ctrl">
+  <div ng-if="!ctrl.saved"><h2>Missing Fish Report</h2></div>
   <div><img id="nemo-banner-image" src="images/nemo-banner.jpeg" alt="Nemo banner"></div>
 
   <fieldset>
@@ -12,7 +12,7 @@
                     id="firstName"
                     name="firstName"
                     placeholder="First Name"
-                    ng-model="NemoFormCtrl.userInfo.firstName"
+                    ng-model="ctrl.userInfo.firstName"
                     required>
               <span ng-if="nemoForm.firstName.$error.required && nemoForm.firstName.$touched">
                   <small>First name is required</small>
@@ -25,7 +25,7 @@
                     id="lastName"
                     name="lastName"
                     placeholder="Last Name"
-                    ng-model="NemoFormCtrl.userInfo.lastName"
+                    ng-model="ctrl.userInfo.lastName"
                     required>
               <span ng-if="nemoForm.lastName.$error.required && nemoForm.lastName.$touched">
                   <small>Last name is required</small>
@@ -38,7 +38,7 @@
                     id="emailAddress"
                     name="emailAddress"
                     placeholder="Email"
-                    ng-model="NemoFormCtrl.userInfo.emailAddress"
+                    ng-model="ctrl.userInfo.emailAddress"
                     required>
               <span ng-if="nemoForm.emailAddress.$invalid && nemoForm.emailAddress.$touched">
                   <small>Must be a valid email address: handle@domain format</small>
@@ -50,7 +50,7 @@
                     class="form-control"
                     id="phoneNumber"
                     name="phoneNumber"
-                    ng-model="NemoFormCtrl.userInfo.phoneNumber"
+                    ng-model="ctrl.userInfo.phoneNumber"
                     placeholder="Phone ###-###-####"
                     pattern="(\d{3})-(\d{3})-(\d{4})">
               <span ng-if="nemoForm.phoneNumber.$invalid && nemoForm.phoneNumber.$touched">
@@ -64,19 +64,19 @@
                     id="favoriteDish"
                     name="favoriteDish"
                     placeholder="Name of your favorite Nemo character (example: Marlin)"
-                    ng-model="NemoFormCtrl.userInfo.favoriteDish"
-                    ng-blur="NemoFormCtrl.validateFavdish()">
-              <span ng-if="NemoFormCtrl.itemSearched && !NemoFormCtrl.validShortCode">
+                    ng-model="ctrl.userInfo.favoriteDish"
+                    ng-blur="ctrl.validateFavdish()">
+              <span ng-if="ctrl.itemSearched && !ctrl.validShortCode">
                   <small>No such character exists</small>
               </span>
-              <span ng-if="NemoFormCtrl.validShortCode">
-                <!-- <div class="panel panel-primary panel-body user-info" ng-if="NemoFormCtrl.saved"> -->
-                <div id="search-results" class="panel panel-default" ng-if="NemoFormCtrl.saved">
-                    <div  class="panel-heading">{{NemoFormCtrl.userInfo.favoriteDish}}: {{NemoFormCtrl.userInfo.dishInfo.name}}
+              <span ng-if="ctrl.validShortCode">
+                <!-- <div class="panel panel-primary panel-body user-info" ng-if="ctrl.saved"> -->
+                <div id="search-results" class="panel panel-default" ng-if="ctrl.saved">
+                    <div  class="panel-heading">{{ctrl.userInfo.favoriteDish}}: {{ctrl.userInfo.dishInfo.name}}
                       <div class="panel-body">
                         <dl class="dl-horizontal">
-                            <dt>Description:</dt> <dd>{{NemoFormCtrl.userInfo.dishInfo.description}}</dd>
-                            <dt>Price:</dt> <dd>{{NemoFormCtrl.userInfo.dishInfo.price_large | currency}}</dd>
+                            <dt>Description:</dt> <dd>{{ctrl.userInfo.dishInfo.description}}</dd>
+                            <dt>Price:</dt> <dd>{{ctrl.userInfo.dishInfo.price_large | currency}}</dd>
                         </dl>
                       </div>
                     </div>
@@ -85,13 +85,13 @@
           </div>
           <button class="btn btn-primary"
                   ng-disabled="nemoForm.$invalid"
-                  ng-click="NemoFormCtrl.setNemoinfo()">Submit</button>
+                  ng-click="ctrl.setNemoinfo()">Submit</button>
       </form>
   </fieldset>
 
-  <div ng-if="NemoFormCtrl.saved">
+  <div ng-if="ctrl.saved">
       <p class="alert alert-success">
-          {{NemoFormCtrl.message}}
+          {{ctrl.message}}
       </p>
   </div>
 </div>

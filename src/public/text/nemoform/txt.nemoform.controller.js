@@ -4,8 +4,8 @@
     angular.module('public')
     .controller('NemoformController', NemoformController);
 
-    NemoformController.$inject = ['NemoInfoService'];
-    function NemoformController(NemoInfoService) {
+    NemoformController.$inject = ['NemoService'];
+    function NemoformController(NemoService) {
       console.log('NemoformController instantiated');
         var ctrl = this;
         ctrl.userInfo = {};
@@ -17,7 +17,7 @@
 
         ctrl.setNemoinfo = function() {
             console.log('NemoformController.setNemoinfo()');
-            NemoInfoService.setNemoinfo(ctrl.userInfo);
+            NemoService.setNemoinfo(ctrl.userInfo);
 
             ctrl.saved = true;
             ctrl.message = 'Your information has been saved!';
