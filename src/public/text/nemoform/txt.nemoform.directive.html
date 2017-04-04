@@ -1,0 +1,97 @@
+<div class="signup">
+  <div ng-if="!NemoFormCtrl.saved"><h2>Missing Fish Report</h2></div>
+
+  <fieldset>
+    <legend></legend>
+
+      <form name="nemoForm" novalidate>
+          <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text"
+                    class="form-control"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
+                    ng-model="NemoFormCtrl.userInfo.firstName"
+                    required>
+              <span ng-if="nemoForm.firstName.$error.required && nemoForm.firstName.$touched">
+                  <small>First name is required</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text"
+                    class="form-control"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
+                    ng-model="NemoFormCtrl.userInfo.lastName"
+                    required>
+              <span ng-if="nemoForm.lastName.$error.required && nemoForm.lastName.$touched">
+                  <small>Last name is required</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="emailAddress">Email</label>
+              <input type="email"
+                    class="form-control"
+                    id="emailAddress"
+                    name="emailAddress"
+                    placeholder="Email"
+                    ng-model="NemoFormCtrl.userInfo.emailAddress"
+                    required>
+              <span ng-if="nemoForm.emailAddress.$invalid && nemoForm.emailAddress.$touched">
+                  <small>Must be a valid email address: handle@domain format</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="phoneNumber">Phone</label>
+              <input type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    name="phoneNumber"
+                    ng-model="NemoFormCtrl.userInfo.phoneNumber"
+                    placeholder="Phone ###-###-####"
+                    pattern="(\d{3})-(\d{3})-(\d{4})">
+              <span ng-if="nemoForm.phoneNumber.$invalid && nemoForm.phoneNumber.$touched">
+                  <small>Phone must be in the format ###-###-####</small>
+              </span>
+          </div>
+          <div class="form-group">
+              <label for="favoriteDish">Favorite Dish</label>
+              <input type="text"
+                    class="form-control"
+                    id="favoriteDish"
+                    name="favoriteDish"
+                    placeholder="Short Code of Your Favorite Dish"
+                    ng-model="NemoFormCtrl.userInfo.favoriteDish"
+                    ng-blur="NemoFormCtrl.validateFavdish()">
+              <span ng-if="NemoFormCtrl.itemSearched && !NemoFormCtrl.validShortCode">
+                  <small>No such menu number exists</small>
+              </span>
+              <span ng-if="NemoFormCtrl.validShortCode">
+                <!-- <div class="panel panel-primary panel-body user-info" ng-if="NemoFormCtrl.saved"> -->
+                <div id="search-results" class="panel panel-default" ng-if="NemoFormCtrl.saved">
+                    <div  class="panel-heading">{{NemoFormCtrl.userInfo.favoriteDish}}: {{NemoFormCtrl.userInfo.dishInfo.name}}
+                      <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Description:</dt> <dd>{{NemoFormCtrl.userInfo.dishInfo.description}}</dd>
+                            <dt>Price:</dt> <dd>{{NemoFormCtrl.userInfo.dishInfo.price_large | currency}}</dd>
+                        </dl>
+                      </div>
+                    </div>
+                </div>
+              </span>
+          </div>
+          <button class="btn btn-primary"
+                  ng-disabled="nemoForm.$invalid"
+                  ng-click="NemoFormCtrl.setNemoinfo()">Submit</button>
+      </form>
+  </fieldset>
+
+  <div ng-if="NemoFormCtrl.saved">
+      <p class="alert alert-success">
+          {{NemoFormCtrl.message}}
+      </p>
+  </div>
+</div>

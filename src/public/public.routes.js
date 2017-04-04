@@ -37,6 +37,12 @@ function routeConfig ($stateProvider) {
       controller: 'ChartsController',
       controllerAs: 'chartsCtrl'
     })
+    .state('public.text', {
+      url: '/text',
+      templateUrl: 'src/public/text/text.html',
+      controller: 'TextController',
+      controllerAs: 'textCtrl'
+    })
     .state('public.d3', {
       url: '/d3',
       templateUrl: 'src/public/d3/d3.html',

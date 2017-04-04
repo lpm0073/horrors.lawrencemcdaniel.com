@@ -23,7 +23,7 @@
     .directive('gcCandlestick', gcCandlestick)
     .directive('gcWordtree', gcWordtree)
     .directive('gcPiechart', gcPiechart)
-    .directive('gcAreachart', gcAreachart)
+    .directive('gcAreachart', gcAreachart);
 
     ChartsController.$inject = ['$scope', '$log', '$sce'];
     function ChartsController($scope, $log, $sce) {
