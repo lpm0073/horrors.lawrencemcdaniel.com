@@ -1,9 +1,9 @@
-<div class="signup">
+<div class="finding-nemo-form">
   <div ng-if="!NemoFormCtrl.saved"><h2>Missing Fish Report</h2></div>
+  <div><img id="nemo-banner-image" src="images/nemo-banner.jpeg" alt="Nemo banner"></div>
 
   <fieldset>
-    <legend></legend>
-
+<!--    <legend></legend> -->
       <form name="nemoForm" novalidate>
           <div class="form-group">
               <label for="firstName">First Name</label>
@@ -58,16 +58,16 @@
               </span>
           </div>
           <div class="form-group">
-              <label for="favoriteDish">Favorite Dish</label>
+              <label for="favoriteDish">Favorite Character</label>
               <input type="text"
                     class="form-control"
                     id="favoriteDish"
                     name="favoriteDish"
-                    placeholder="Short Code of Your Favorite Dish"
+                    placeholder="Name of your favorite Nemo character (example: Marlin)"
                     ng-model="NemoFormCtrl.userInfo.favoriteDish"
                     ng-blur="NemoFormCtrl.validateFavdish()">
               <span ng-if="NemoFormCtrl.itemSearched && !NemoFormCtrl.validShortCode">
-                  <small>No such menu number exists</small>
+                  <small>No such character exists</small>
               </span>
               <span ng-if="NemoFormCtrl.validShortCode">
                 <!-- <div class="panel panel-primary panel-body user-info" ng-if="NemoFormCtrl.saved"> -->
