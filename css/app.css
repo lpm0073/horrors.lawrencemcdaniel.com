@@ -192,7 +192,7 @@
   background-color: yellow;
 }
 
-.columns {
+.nemo-columns {
   -webkit-column-count: 3; /* Chrome, Safari, Opera */
   -moz-column-count: 3; /* Firefox */
   column-count: 3;
@@ -216,27 +216,39 @@
 }
 /* END Nemo Info */
 
+
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+
+}
+
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
 
 }
 
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) {
+  .nemo-columns {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
+}
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-  /* Header */
-
-  /* End Header */
-
-  /* Footer */
-
-  /* End Footer */
+  .nemo-columns {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
+  }
 }
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
-  /* Header */
 
-  /* End Header */
 }

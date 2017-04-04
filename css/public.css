@@ -164,6 +164,11 @@ border-bottom-color: gray;
     min-height: 150px;
   }
   /* End Home Page */
+  .three-column-div {
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+  }
 }
 
 /********** Extra small devices only **********/
@@ -178,6 +183,11 @@ border-bottom-color: gray;
     width: 95%;
     min-height: 125px;
     margin: 0 auto 2%;
+  }
+  .three-column-div {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
   }
 
 }
