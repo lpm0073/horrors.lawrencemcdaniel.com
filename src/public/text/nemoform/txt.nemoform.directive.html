@@ -6,33 +6,76 @@
 <!--    <legend></legend> -->
       <form name="nemoForm" novalidate>
 
+
+        <!-- ---------------------------------------- -->
+        <!-- UI Bootstrap Typeahead using http: Google Maps API  -->
+        <div class="form-group">
+            <label for="lastLocation">Anonymous Tip</label>
+            <input type="text"
+            class="form-control"
+            id="lastLocation"
+            name="lastLocation"
+            ng-model="ctrl.userInfo.lastLocation"
+            required
+            placeholder="Where did you last see Nemo? (ex: Saint Thomas, VI)"
+            uib-typeahead="address for address in getLocation($viewValue)"
+            typeahead-loading="loadingLocations"
+            typeahead-no-results="noResults">
+            <span ng-if="nemoForm.lastLocation.$invalid && nemoForm.lastLocation.$touched">
+                <small>We must know where you last saw Nemo.</small>
+            </span>
+            <span ng-if="nemoForm.lastLocation.$touched">
+<!--                <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>   -->
+              <div ng-show="noResults">
+                <i class="glyphicon glyphicon-remove"></i> No Results Found
+              </div>
+            </span>
+        </div>
+        <!-- ---------------------------------------- -->
+
+        <h4>Leave a full report</h4>
         <div class="finding-nemo-form-column">
           <div class="form-group">
-              <label for="firstName">First Name</label>
+              <label for="fullName">Full Name</label>
               <input type="text"
                     class="form-control"
-                    id="firstName"
-                    name="firstName"
-                    placeholder="First Name"
-                    ng-model="ctrl.userInfo.firstName"
+                    id="fullName"
+                    name="fullName"
+                    placeholder="Your full name (eg Thurston Howell III)"
+                    ng-model="ctrl.userInfo.fullName"
                     required>
-              <span ng-if="nemoForm.firstName.$error.required && nemoForm.firstName.$touched">
-                  <small>First name is required</small>
+              <span ng-if="nemoForm.fullName.$error.required && nemoForm.fullName.$touched">
+                  <small>Your full name is required</small>
               </span>
           </div>
+
+          <!-- ---------------------------------------- -->
+          <!-- UI Bootstrap Typeahead using http -- Microsoft Cognitive Services - Bing Spellcheck  -->
           <div class="form-group">
-              <label for="lastName">Last Name</label>
+              <label for="cognitiveName">Full Name (With cognitive spell checking)</label>
               <input type="text"
-                    class="form-control"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last Name"
-                    ng-model="ctrl.userInfo.lastName"
-                    required>
-              <span ng-if="nemoForm.lastName.$error.required && nemoForm.lastName.$touched">
-                  <small>Last name is required</small>
+              class="form-control"
+              id="cognitiveName"
+              name="cognitiveName"
+              ng-model="ctrl.userInfo.cognitiveName"
+              required
+              placeholder="Full name (with automagical spell checking)"
+              uib-typeahead="suggestion for suggestions in getCognitivename($viewValue)"
+              typeahead-loading="loadingSuggestions"
+              typeahead-no-results="noResults">
+              <span ng-if="nemoForm.cognitiveName.$invalid && nemoForm.cognitiveName.$touched">
+                  <small>Full name is required</small>
+              </span>
+              <span ng-if="nemoForm.fullName.$touched">
+<!--                <i ng-show="loadingSuggestions" class="glyphicon glyphicon-refresh"></i>  -->
+                <div ng-show="noResults">
+                  <i class="glyphicon glyphicon-remove"></i> No Results Found
+                </div>
               </span>
           </div>
+          <!-- ---------------------------------------- -->
+
+
           <div class="form-group">
               <label for="emailAddress">Email</label>
               <input type="email"
@@ -62,31 +105,6 @@
                   <small>Phone must be in the format ###-###-####</small>
               </span>
           </div>
-
-
-          <!-- ---------------------------------------- -->
-          <!-- UI Bootstrap Typeahead using http  -->
-          <div class="form-group">
-              <label for="lastLocation">Last Seen Near</label>
-              <input type="text"
-              class="form-control"
-              id="lastLocation"
-              name="lastLocation"
-              ng-model="ctrl.userInfo.lastLocation"
-              required
-              placeholder="Last place you saw Nemo (ex: Saint Thomas, VI)"
-              uib-typeahead="address for address in getLocation($viewValue)"
-              typeahead-loading="loadingLocations"
-              typeahead-no-results="noResults">
-              <span ng-if="nemoForm.lastLocation.$invalid && nemoForm.lastLocation.$touched">
-                  <small>We must know where you last saw Nemo.</small>
-              </span>
-              <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-              <div ng-show="noResults">
-                <i class="glyphicon glyphicon-remove"></i> No Results Found
-              </div>
-          </div>
-          <!-- ---------------------------------------- -->
 
           <div class="form-group">
               <label for="favoriteDish">Favorite Character</label>

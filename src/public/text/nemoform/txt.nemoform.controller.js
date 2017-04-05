@@ -24,7 +24,7 @@
         };
 
 
-        /*-----------------------BOOTSTRAP TYPEAHEAD ------------------------------*/
+        /*-----------------------BOOTSTRAP TYPEAHEAD (Location) ------------------------------*/
 
           $scope.getLocation = function(val) {
             return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
@@ -39,6 +39,38 @@
             });
           };
 
-          /*-----------------------BOOTSTRAP TYPEAHEAD ------------------------------*/
+          /*-----------------------END BOOTSTRAP TYPEAHEAD (Location) ------------------------------*/
+
+          /*-----------------------BOOTSTRAP TYPEAHEAD (Last Name) ------------------------------*/
+          /*
+          Microsoft Bing AI spell check service
+
+            https://dev.cognitive.microsoft.com/docs/services/56e73033cf5ff80c2008c679/operations/57855119bca1df1c647bc358
+
+            request header:
+            Ocp-Apim-Subscription-Key -
+                Key 1:1e15390f589d42c1ba463633acecf226
+                Key 2:97ff210ab2984c7891145d8645f28fea
+                * provide either key (but not both)
+            documentation on setting up authorization URL: https://www.microsoft.com/cognitive-services/en-us/Computer-Vision-API/documentation/vision-api-how-to-topics/HowToCallVisionAPI
+
+          --------------------------------------------------------------------------------------------*/
+          /*
+          $scope.getCognitivename = function(val) {
+            return $http.get('https://api.cognitive.microsoft.com/bing/v5.0/spellcheck', {
+              params: {
+                text: val,
+                mode: 'proof',
+                preContextText: 'last name: '
+              }
+            }).then(function(response){
+              console.log('response:', response );
+              });
+            });
+          };
+          */
+
+            /*-----------------------BOOTSTRAP TYPEAHEAD (Last Name) ------------------------------*/
+
     }
 })();

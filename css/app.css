@@ -124,10 +124,22 @@
   padding: : 0%;
 }
 
-.finding-nemo-form h2  {
+.finding-nemo-form h2, h4  {
   margin-top: 20px;
   text-align: center;
 }
+
+.finding-nemo-form h4  {
+  color: red;
+  font-size: 1.4em;
+  height: 40px;
+  border-bottom: 2px white solid;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-bottom: 25px;
+}
+
+
 
 .finding-nemo-form-column  {
   float: left;
@@ -148,7 +160,7 @@
   margin-bottom: 20px;
 }
 .finding-nemo-form label  {
-  width: 50%;
+  width: 95%;
   margin-left: 5px;
 }
 
@@ -268,6 +280,12 @@
 @media (max-width: 479px) {
   .finding-nemo-form-column  {
     width: 95%;
+  }
+
+  .multi-column-list {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 1; /* Firefox */
+    column-count: 1;
   }
 
 
