@@ -129,15 +129,22 @@
   text-align: center;
 }
 
+.finding-nemo-form-column  {
+  float: left;
+  width: 50%;
+}
+
+
 #nemo-banner-image {
-  width: 100%;
+  width: 95%;
   padding: 5%;
   align-self: center;
 }
 
 .finding-nemo-form input  {
-  width: 50%;
-  margin-left: 10px;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   margin-bottom: 20px;
 }
 .finding-nemo-form label  {
@@ -231,24 +238,26 @@
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
-  .nemo-columns {
-    -webkit-column-count: 2; /* Chrome, Safari, Opera */
-    -moz-column-count: 2; /* Firefox */
-    column-count: 2;
+  .finding-nemo-form-column  {
+    width: 95%;
   }
+
 }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
-  .nemo-columns {
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
+  .finding-nemo-form-column  {
+    width: 95%;
   }
+
 }
 
 
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
+  .finding-nemo-form-column  {
+    width: 95%;
+  }
+
 
 }

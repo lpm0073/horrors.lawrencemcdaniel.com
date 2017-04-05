@@ -5,6 +5,8 @@
   <fieldset>
 <!--    <legend></legend> -->
       <form name="nemoForm" novalidate>
+
+        <div class="finding-nemo-form-column">
           <div class="form-group">
               <label for="firstName">First Name</label>
               <input type="text"
@@ -44,6 +46,9 @@
                   <small>Must be a valid email address: handle@domain format</small>
               </span>
           </div>
+        </div>   <!-- finding-nemo-form-column -->
+
+        <div class="finding-nemo-form-column">
           <div class="form-group">
               <label for="phoneNumber">Phone</label>
               <input type="tel"
@@ -83,7 +88,6 @@
           </div>
           <!-- ---------------------------------------- -->
 
-
           <div class="form-group">
               <label for="favoriteDish">Favorite Character</label>
               <input type="text"
@@ -110,6 +114,11 @@
                 </div>
               </span>
           </div>
+
+        </div> <!-- finding-nemo-form-column -->
+
+
+
           <button class="btn btn-primary"
                   ng-disabled="nemoForm.$invalid"
                   ng-click="ctrl.setNemoinfo()">Submit</button>
