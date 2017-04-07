@@ -7,6 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Initializations: hide page until all js is loaded -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        document.getElementsByTagName("html")[0].style.visibility = "visible";
+      });
+    </script>
+
+
+
     <!-- facebook open graph for fb and whatsapp links -->
     <meta name="description" content="Code samples for AngularJS, Bootstrap, HTML5, CSS, D3, Google Charts, and more!">
     <meta property="og:title" content="Lawrence McDaniel - Freelancer" />
@@ -28,6 +38,7 @@
 
     <link rel="icon" type="image/jpeg" href="images/favicon.jpg" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/d3.css">
@@ -123,6 +134,10 @@
         </nav>
         <!-- -------------------------------- end navigation --------------------------------  -->
       </div>
+      <div class="app-header">
+        <a href="https://developers.google.com/"><img class="google-logo" src="images/angularjs-logo.png"></a>
+      </div>
+
     </header>
 
 
@@ -131,6 +146,8 @@
         <h2>Loading Site...</h2>
       </div>
     </ui-view>
+
+
 
     <footer class="panel-footer">
         <div class="row">
@@ -147,7 +164,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
@@ -184,6 +200,9 @@
 
     <!-- googleapis -->
     <script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHkLhDno7SF63GKneZsS08IpAfnpZzS4k"></script>
+    <script type="text/javascript">google.charts.load('current', {'packages':['geochart', 'wordtree', 'sankey', 'gantt']});</script>
+
+
   </body>
 
 </html>
