@@ -23,7 +23,7 @@
     d3Gears.$inject = [];
     function d3Gears() {
       return {
-          templateUrl: 'src/public/d3/d3.directive.gears.html'
+          templateUrl: 'src/public/d3/d3.gears.directive.html'
       };
     }
 
