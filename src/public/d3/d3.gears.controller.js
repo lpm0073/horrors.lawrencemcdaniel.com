@@ -19,6 +19,9 @@
         svg = null,
         frame = null;
 
+   /*----------------------------------------------------------------------------------
+    * primary animation drawing function
+    *----------------------------------------------------------------------------------*/
     function draw() {
 
       d3.select("svg").remove();
@@ -109,7 +112,9 @@
       frame.selectAll("path").attr("transform", transform);
       frame.attr("transform", transform); // frame of reference
     });
+    /* --------------------------- draw() ----------------------------------------------------------*/
 
+    /* --------------------------- Responsive behavior ------------------------------------*/
     function resizeChart () {
         draw();
     }
@@ -122,6 +127,7 @@
     else {
         window.resize = resizeChart;
     }
+    /* --------------------------- Responsive behavior ------------------------------------*/
 
     /* invoke the draw function */
     draw();
