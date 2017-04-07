@@ -9,7 +9,6 @@
     angular.module('public')
     .controller('D3Controller', D3Controller)
     .directive('d3Gears', d3Gears)
-    .directive('d3Geodesic', d3Geodesic);
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -19,13 +18,6 @@
         console.log('D3Controller instantiated');
 
 
-    }
-
-    d3Geodesic.$inject = [];
-    function d3Geodesic() {
-      return {
-          templateUrl: 'src/public/d3/d3.directive.geodesic.html'
-      };
     }
 
     d3Gears.$inject = [];

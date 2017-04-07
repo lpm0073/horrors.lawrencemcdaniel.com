@@ -1,14 +1,18 @@
-<!-- <!DOCTYPE html>
-<meta charset="utf-8">  -->
+<meta charset="utf-8">
 <style>
 
-/*body {
+/*
+body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 960px;
   height: 500px;
   position: relative;
 }
 */
+#gears {
+  width: 100%;
+  height: 500px;
+}
 
 form {
   position: absolute;
@@ -19,25 +23,25 @@ form {
 path {
   fill-rule: evenodd;
   stroke: #333;
-  stroke-width: 1px;
+  stroke-width: 2px;
 }
 
 .sun path {
-  fill: red;
+  fill: #6baed6;
 }
 
 .planet path {
-/*  shop of horrors purple */
-fill: #563d7c
+  fill: #9ecae1;
 }
 
 .annulus path {
-    fill: yellow;
+  fill: #c6dbef;
 }
 
 svg {
   position: absolute;
-  top: 0%;
+  top: 0px;
+  left: 0px;
 }
 
 </style>
@@ -50,78 +54,90 @@ svg {
   <label for="ref-sun">Sun</label>
 </form>
 
-<!-- <script src="https://d3js.org/d3.v4.min.js"></script>  -->
+<div id="gears"></div>
 <script>
 
-var element = d3.select('span').node();
-var w_span = element.getBoundingClientRect().width;
-
-
-var width = w_span,
-    height = w_span * (2/3),
-    radius = w_span / 9,
+var element = d3.select('#gears').node(),
     x = Math.sin(2 * Math.PI / 3),
-    y = Math.cos(2 * Math.PI / 3);
-
-console.log(x, y);
-
-var offset = 0,
+    y = Math.cos(2 * Math.PI / 3),
+    width = 0,
+    height = 0,
+    radius = 0,
+    offset = 0,
     speed = 4,
     start = Date.now();
 
- var svg = d3.select("d3-gears").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
-  .append("g");
+    var svg = d3.select("#gears").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
+        .append("g");
 
-var frame = svg.append("g")
-    .datum({radius: Infinity});
+    var frame = svg.append("g").datum({radius: Infinity});
 
-frame.append("g")
-    .attr("class", "annulus")
-    .datum({teeth: 80, radius: -radius * 5, annulus: true})
-  .append("path")
-    .attr("d", gear);
+function draw() {
 
-frame.append("g")
-    .attr("class", "sun")
-    .datum({teeth: 16, radius: radius})
-  .append("path")
-    .attr("d", gear);
+  d3.select("svg").remove();
+  width = element.getBoundingClientRect().width;
+  height = element.getBoundingClientRect().height;
+  radius = width / 10;
 
-frame.append("g")
-    .attr("class", "planet")
-    .attr("transform", "translate(0,-" + radius * 3 + ")")
-    .datum({teeth: 32, radius: -radius * 2})
-  .append("path")
-    .attr("d", gear);
+  svg = d3.select("#gears").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
+      .append("g");
 
-frame.append("g")
-    .attr("class", "planet")
-    .attr("transform", "translate(" + -radius * 3 * x + "," + -radius * 3 * y + ")")
-    .datum({teeth: 32, radius: -radius * 2})
-  .append("path")
-    .attr("d", gear);
+  frame = svg.append("g").datum({radius: Infinity});
 
-frame.append("g")
-    .attr("class", "planet")
-    .attr("transform", "translate(" + radius * 3 * x + "," + -radius * 3 * y + ")")
-    .datum({teeth: 32, radius: -radius * 2})
-  .append("path")
-    .attr("d", gear);
 
-d3.selectAll("input[name=reference]")
-  .data([radius * 5, Infinity, -radius])
-    .on("change", function(radius1) {
-      var radius0 = frame.datum().radius, angle = (Date.now() - start) * speed;
-      frame.datum({radius: radius1});
-      svg.attr("transform", "rotate(" + (offset += angle / radius0 - angle / radius1) + ")");
-    });
+  frame.append("g")
+      .attr("class", "annulus")
+      .datum({teeth: 80, radius: -radius * 5, annulus: true})
+    .append("path")
+      .attr("d", gear);
 
-d3.selectAll("input[name=speed]")
-    .on("change", function() { speed = +this.value; });
+  frame.append("g")
+      .attr("class", "sun")
+      .datum({teeth: 16, radius: radius})
+    .append("path")
+      .attr("d", gear);
+
+  frame.append("g")
+      .attr("class", "planet")
+      .attr("transform", "translate(0,-" + radius * 3 + ")")
+      .datum({teeth: 32, radius: -radius * 2})
+    .append("path")
+      .attr("d", gear);
+
+  frame.append("g")
+      .attr("class", "planet")
+      .attr("transform", "translate(" + -radius * 3 * x + "," + -radius * 3 * y + ")")
+      .datum({teeth: 32, radius: -radius * 2})
+    .append("path")
+      .attr("d", gear);
+
+  frame.append("g")
+      .attr("class", "planet")
+      .attr("transform", "translate(" + radius * 3 * x + "," + -radius * 3 * y + ")")
+      .datum({teeth: 32, radius: -radius * 2})
+    .append("path")
+      .attr("d", gear);
+
+  d3.selectAll("input[name=reference]")
+    .data([radius * 5, Infinity, -radius])
+      .on("change", function(radius1) {
+        var radius0 = frame.datum().radius, angle = (Date.now() - start) * speed;
+        frame.datum({radius: radius1});
+        svg.attr("transform", "rotate(" + (offset += angle / radius0 - angle / radius1) + ")");
+      });
+
+  d3.selectAll("input[name=speed]")
+      .on("change", function() { speed = +this.value; });
+
+}
 
 function gear(d) {
   var n = d.teeth,
@@ -150,5 +166,24 @@ d3.timer(function() {
   frame.selectAll("path").attr("transform", transform);
   frame.attr("transform", transform); // frame of reference
 });
+
+function resizeChart () {
+    console.log('resizeChart - d3.gears');
+    draw();
+/*    chart.draw(data, options); */
+}
+if (document.addEventListener) {
+    window.addEventListener('resize', resizeChart);
+}
+else if (document.attachEvent) {
+    window.attachEvent('onresize', resizeChart);
+}
+else {
+    window.resize = resizeChart;
+}
+
+/* invoke the draw function */
+draw();
+
 
 </script>
