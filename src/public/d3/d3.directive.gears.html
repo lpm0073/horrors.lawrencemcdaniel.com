@@ -1,14 +1,6 @@
 <meta charset="utf-8">
 <style>
 
-/*
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
-  position: relative;
-}
-*/
 #gears {
   width: 100%;
   height: 500px;
@@ -27,7 +19,7 @@ path {
 }
 
 .sun path {
-  fill: #6baed6;
+  fill: yellow;
 }
 
 .planet path {
@@ -35,7 +27,7 @@ path {
 }
 
 .annulus path {
-  fill: #c6dbef;
+  fill: #563d7c;      /* royal purple */
 }
 
 svg {
@@ -45,6 +37,7 @@ svg {
 }
 
 </style>
+<!--
 <form>
   <input type="radio" name="reference" id="ref-annulus">
   <label for="ref-annulus">Annulus</label><br>
@@ -53,6 +46,7 @@ svg {
   <input type="radio" name="reference" id="ref-sun">
   <label for="ref-sun">Sun</label>
 </form>
+-->
 
 <div id="gears"></div>
 <script>
@@ -65,16 +59,9 @@ var element = d3.select('#gears').node(),
     radius = 0,
     offset = 0,
     speed = 4,
-    start = Date.now();
-
-    var svg = d3.select("#gears").append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .append("g")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
-        .append("g");
-
-    var frame = svg.append("g").datum({radius: Infinity});
+    start = Date.now(),
+    svg = null,
+    frame = null;
 
 function draw() {
 
@@ -168,9 +155,7 @@ d3.timer(function() {
 });
 
 function resizeChart () {
-    console.log('resizeChart - d3.gears');
     draw();
-/*    chart.draw(data, options); */
 }
 if (document.addEventListener) {
     window.addEventListener('resize', resizeChart);
