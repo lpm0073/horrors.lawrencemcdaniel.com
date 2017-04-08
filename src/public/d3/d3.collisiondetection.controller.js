@@ -22,7 +22,7 @@
 
        var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
            root = nodes[0],
-           color = d3.scale.category10();
+           color = d3.scale.category20b();
 
        var force = d3.layout.force()
            .gravity(0.05)
@@ -96,7 +96,7 @@
 
      /* --------------------------- Responsive behavior ------------------------------------*/
      function resizeChart () {
-         draw();
+      /*   draw(); */
      }
      if (document.addEventListener) {
          window.addEventListener('resize', resizeChart);
