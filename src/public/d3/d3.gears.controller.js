@@ -24,7 +24,8 @@
     *----------------------------------------------------------------------------------*/
     function draw() {
 
-      d3.select("svg").remove();
+      d3.select("#gears").select("svg").remove();
+
       width = element.getBoundingClientRect().width;
       height = element.getBoundingClientRect().height;
       radius = width / 10;

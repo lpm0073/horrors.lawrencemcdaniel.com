@@ -14,6 +14,8 @@
      *----------------------------------------------------------------------------------*/
      function draw() {
 
+       d3.select("#collision-detection").select("svg").remove();
+
        var element = d3.select('#collision-detection').node(),
            width = element.getBoundingClientRect().width,
            height = element.getBoundingClientRect().height;
@@ -30,19 +32,9 @@
 
        var svg = d3.select("#collision-detection").append("svg")
            .attr("width", width)
-           .attr("height", height);;
-
-/*
-       d3.select("svg").remove();
-
-       element = d3.select('#collision-detection').node();
-       width = element.getBoundingClientRect().width;
-       height = element.getBoundingClientRect().height;
-
-       svg = d3.select("#collision-detection").append("svg")
-           .attr("width", width)
            .attr("height", height);
-*/
+
+
        root.radius = 0;
        root.fixed = true;
        force.start();

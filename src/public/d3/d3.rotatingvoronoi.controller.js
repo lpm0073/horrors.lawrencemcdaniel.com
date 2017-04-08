@@ -1,19 +1,22 @@
 (function () {
 
   angular.module('public')
-  .controller('D3rotatingvoroniController', D3rotatingvoroniController);
+  .controller('D3rotatingvoronoiController', D3rotatingvoronoiController);
 
-  D3rotatingvoroniController.$inject = [];
-  function D3rotatingvoroniController() {
-    console.log('D3rotatingvoroniController instantiated');
+  D3rotatingvoronoiController.$inject = [];
+  function D3rotatingvoronoiController() {
+    console.log('D3rotatingvoronoiController instantiated');
 
     /*----------------------------------------------------------------------------------
      * primary animation drawing function
      *----------------------------------------------------------------------------------*/
      function draw() {
 
-       var width = 960,
-           height = 500;
+       d3.select("#rotating-voronoi").select("svg").remove();
+
+       var element = d3.select('#rotating-voronoi').node(),
+           width = element.getBoundingClientRect().width,
+           height = element.getBoundingClientRect().height;
 
        var start = Date.now(),
            points = [];
@@ -41,7 +44,7 @@
        var line = d3.svg.line()
            .interpolate("basis-closed");
 
-       var svg = d3.select("#rotating-voroni").append("svg")
+       var svg = d3.select("#rotating-voronoi").append("svg")
            .attr("width", width)
            .attr("height", height)
          .append("g")
@@ -91,7 +94,8 @@
 
      /* --------------------------- Responsive behavior ------------------------------------*/
      function resizeChart () {
-         draw();
+       console.log('resize()');
+       draw();
      }
      if (document.addEventListener) {
          window.addEventListener('resize', resizeChart);

@@ -1,6 +1,15 @@
-#rotating-voroni path {
+#rotating-voronoi  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 625px;
+  height: 500px;
+}
+
+#rotating-voronoi path {
   fill: #fff;
-  stroke: #000;
+  stroke: #563d7c;      /* royal purple */
   stroke-width: 1.5px;
 }
 

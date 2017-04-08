@@ -10,7 +10,7 @@
     .controller('D3Controller', D3Controller)
     .directive('d3Gears', d3Gears)
     .directive('d3CollisionDetection', d3CollisionDetection)
-    .directive('d3RotatingVoroni', d3RotatingVoroni)
+    .directive('d3RotatingVoronoi', d3RotatingVoronoi)
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -36,10 +36,10 @@
       };
     }
 
-    d3RotatingVoroni.$inject = [];
-    function d3RotatingVoroni() {
+    d3RotatingVoronoi.$inject = [];
+    function d3RotatingVoronoi() {
       return {
-          templateUrl: 'src/public/d3/d3.rotatingvoroni.directive.html'
+          templateUrl: 'src/public/d3/d3.rotatingvoronoi.directive.html'
       };
     }
 
