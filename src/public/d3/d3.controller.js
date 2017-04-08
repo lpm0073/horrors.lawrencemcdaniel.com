@@ -11,6 +11,7 @@
     .directive('d3Gears', d3Gears)
     .directive('d3CollisionDetection', d3CollisionDetection)
     .directive('d3RotatingVoronoi', d3RotatingVoronoi)
+    .directive('d3Particles', d3Particles)
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -40,6 +41,13 @@
     function d3RotatingVoronoi() {
       return {
           templateUrl: 'src/public/d3/d3.rotatingvoronoi.directive.html'
+      };
+    }
+
+    d3Particles.$inject = [];
+    function d3Particles() {
+      return {
+          templateUrl: 'src/public/d3/d3.particles.directive.html'
       };
     }
 
