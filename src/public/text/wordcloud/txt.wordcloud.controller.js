@@ -16,9 +16,6 @@
         width = element.getBoundingClientRect().width,
         height = element.getBoundingClientRect().height;
 
-        console.log('width: ', width);
-        console.log('height: ', height);
-
     d3.layout.cloud().size([300, 300])
             .words(frequency_list)
             .rotate(0)
@@ -32,8 +29,6 @@
           height = element.getBoundingClientRect().height,
           viewboxsettings = "200 50 300 300",
           aspect = width / height;
-
-          console.log('string: ', viewboxsettings)
 
         d3.select("#txt-wordcloud").select("svg").remove();
 
