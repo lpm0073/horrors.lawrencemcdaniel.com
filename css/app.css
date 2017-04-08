@@ -11,7 +11,7 @@
   height: 500px;
   margin-bottom: 15px;
   position: relative;
-  border: 2px solid #3F0C1F;
+  border: 2px solid #F1F1F1 ;
   border-radius: 5px;
   overflow:visible;
   background-color: white;
@@ -25,7 +25,7 @@
   border: 2px solid #CFCFCF;
 }
 
-.home-tile span {
+.home-tile-title  {
   position: absolute;
   top: 0;
   right: 0;
@@ -37,6 +37,33 @@
   color: #fff;
   opacity: 1;
 }
+
+.home-tile-credit  {
+  position: absolute;
+  bottom: 0;
+
+  width: 50%;
+  text-align: center;
+  font-size: .65em;
+  background-color: #563E7C;
+  overflow: hidden;
+  color: #fff;
+  opacity: .5;
+}
+
+.home-tile-credit:hover  {
+  opacity: 1;
+}
+
+.home-tile-credit-author  {
+  right: 0;
+}
+
+.home-tile-credit-sourcecode  {
+  left: 0;
+}
+
+
 
 /* END HOME PAGE TILES */
 

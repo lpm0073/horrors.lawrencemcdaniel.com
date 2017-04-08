@@ -1,3 +1,11 @@
+/*-------------------------- D3  ----------------------------------*/
+.d3-directive {
+  background-color: #fff;      /* royal purple */
+}
+
+/*-------------------------- D3 - END ----------------------------------*/
+
+/*-------------------------- D3 Particles  ----------------------------------*/
 #d3-particles {
   position: absolute;
   top: 0;
@@ -17,6 +25,9 @@
   fill: none;
   stroke-width: 2.5px;
 }
+/*-------------------------- D3 Particles - END ----------------------------------*/
+
+/*-------------------------- D3 Rotating Voronoi ----------------------------------*/
 
 #rotating-voronoi  {
   position: absolute;
@@ -28,10 +39,13 @@
 }
 
 #rotating-voronoi path {
-  fill: #fff;
+  fill: #fff;            /* NOTE:  fill color needs to match general d3-directive class background-color*/
   stroke: #563d7c;      /* royal purple */
   stroke-width: 1.5px;
 }
+/*-------------------------- D3 Rotating Voronoi - END ----------------------------------*/
+
+/*-------------------------- D3 Collision ----------------------------------*/
 
 #collision-detection {
   position: absolute;
@@ -40,11 +54,12 @@
   height: 500px;
   width: 100%;
 }
+/*-------------------------- D3 Collision - END ----------------------------------*/
 
+/*-------------------------- D3 Gears ----------------------------------*/
 #gears {
   width: 100%;
   height: 500px;
-  background-color: gray;
 }
 
 .gears-form form {
@@ -80,3 +95,4 @@
 .gears-annulus path {
   fill: #563d7c;      /* royal purple */
 }
+/*-------------------------- D3 Gears - END ----------------------------------*/
