@@ -1,27 +1,13 @@
-<div ng-if="d3Ctrl.isNew"><h2>Hello there!</h2></div>
-
-<div id="d3-content" class="container">
-  <div id="" class="row">
+<div id="d3-content">
     <div id="d3-01" class="col-lg-6 col-sm-12 col-xs-12">
         <div class="home-tile">
-          <div class="gears-form">
-            <form>
-              <input type="radio" name="reference" id="ref-annulus">
-              <label for="ref-annulus">Annulus</label><br>
-              <input type="radio" name="reference" id="ref-planet" checked>
-              <label for="ref-planet">Planets</label><br>
-              <input type="radio" name="reference" id="ref-sun">
-              <label for="ref-sun">Sun</label>
-            </form>
-          </div>
-          <d3-gears></d3-gears>
+          <d3-collision-detection></d3-collision-detection>
           <span>D3-1</span>
         </div>
     </div>
 
     <div id="d3-02" class="col-lg-6 col-sm-12 col-xs-12">
         <div class="home-tile">
-          <d3-collision-detection></d3-collision-detection>
         </div>
     </div>
 
@@ -62,5 +48,4 @@
       </a>
     </div>
 
-  </div>
 </div>

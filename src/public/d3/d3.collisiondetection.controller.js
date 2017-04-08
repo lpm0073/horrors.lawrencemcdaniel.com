@@ -7,30 +7,30 @@
   function D3collisiondetectionController() {
     console.log('D3collisiondetectionController instantiated');
 
-    var element = null,
-        width = 950,
-        height = 500;
-
-    var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
-        root = nodes[0],
-        color = d3.scale.category10();
-    /*    color = d3.scaleOrdinal(d3.schemeCategory10); */
-
-    var force = d3.layout.force()
-        .gravity(0.05)
-        .charge(function(d, i) { return i ? 0 : -2000; })
-        .nodes(nodes)
-        .size([width, height]);
-
-    var svg = d3.select("#collision-detection").append("svg")
-        .attr("width", width)
-        .attr("height", height);;
 
 
     /*----------------------------------------------------------------------------------
      * primary animation drawing function
      *----------------------------------------------------------------------------------*/
      function draw() {
+
+       var element = d3.select('#collision-detection').node(),
+           width = element.getBoundingClientRect().width,
+           height = element.getBoundingClientRect().height;
+
+       var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
+           root = nodes[0],
+           color = d3.scale.category10();
+
+       var force = d3.layout.force()
+           .gravity(0.05)
+           .charge(function(d, i) { return i ? 0 : -2000; })
+           .nodes(nodes)
+           .size([width, height]);
+
+       var svg = d3.select("#collision-detection").append("svg")
+           .attr("width", width)
+           .attr("height", height);;
 
 /*
        d3.select("svg").remove();
