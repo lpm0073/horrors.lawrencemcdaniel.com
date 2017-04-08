@@ -1,15 +1,18 @@
 /*-------------------------- D3  ----------------------------------*/
 .txt-directive {
-  background-color: #fff;      /* royal purple */
+  margin: auto;
+  height: inherit;
+  /*background-color: orange;*/
 }
 
 .txt-directive svg {
-
-  width: 100%;
-  
+  /*background-color: tan;*/
+  margin: auto;
+  height: inherit;
 }
 
-
+#txt-wordcloud {
+}
 
 
 
