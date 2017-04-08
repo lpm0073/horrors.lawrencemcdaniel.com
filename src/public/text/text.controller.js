@@ -4,6 +4,7 @@
     angular.module('public')
     .controller('TextController', TextController)
     .directive('txtNemoform', txtNemoform)
+    .directive('txtWordcloud', txtWordcloud)
 
     TextController.$inject = [];
     function TextController() {
@@ -20,4 +21,10 @@
       };
     }
 
+    txtWordcloud.$inject = [];
+    function txtWordcloud() {
+      return {
+          templateUrl: 'src/public/text/wordcloud/txt.wordcloud.directive.html'
+      };
+    }
 })();
