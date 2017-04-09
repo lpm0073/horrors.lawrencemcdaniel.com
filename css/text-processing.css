@@ -74,7 +74,7 @@
   margin-left: 2.5%;
   margin-right: 2.5%;
   margin-bottom: 20px;
-  
+
 }
 
 
@@ -109,6 +109,25 @@
 
 .finding-nemo-form dl, dt, dd {
   color: green;
+}
+
+.finding-nemo-form-alert {
+  margin-top: 25px;
+  margin-right: 25px;
+}
+
+.finding-nemo-form-table  {
+  border-radius: 5px;
+  border: 2px solid #4D7D52;
+  margin: 25px;
+  margin-bottom: 50px;
+  background-color: #DEF0D8;    /* matches light green of alert box */
+  color: #4D7D52;               /* matches light green text of alert box */
+}
+
+.finding-nemo-form-table table {
+  width: 90%;
+  margin: 5%;
 }
 
 

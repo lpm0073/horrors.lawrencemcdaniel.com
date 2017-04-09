@@ -115,21 +115,34 @@
       </form>
 
   </fieldset>
-  <button class="btn btn-primary"
+  <button class="btn btn-warning"
           ng-disabled="nemoForm.$invalid"
           ng-click="ctrl.setNemoinfo()">Submit</button>
 
-  <div ng-if="ctrl.saved">
+  <div ng-if="ctrl.saved" class="finding-nemo-form-alert">
       <p class="alert alert-success">
           {{ctrl.message}}
       </p>
   </div>
 
-  <p>{{ctrl.userInfo.incidentReport}}</p>
-
-  <div ng-repeat="token in ctrl.response.flaggedTokens">
-    <p >
-        {{token.offset}}: {{token.token}} - change to: <span ng-repeat="suggestion in token.suggestions">{{suggestion.suggestion}} </span>
-    </p>
+  <div ng-if="ctrl.receivedResultsFromBingProofService" class="finding-nemo-form-table">
+    <span>We Recommend Editing Your Report</span>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Text</th>
+          <th>Suggested Change</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="token in ctrl.response.flaggedTokens">
+          <tr>
+            <td>{{token.offset}}</td>
+            <td>{{token.token}}
+            <td><p ng-repeat="suggestion in token.suggestions">{{suggestion.suggestion}} ({{ suggestion.score * 100 | number:2 }}%)</p></td>
+          </tr>
+      </tbody>
+    </table>
   </div>
+
 </div>

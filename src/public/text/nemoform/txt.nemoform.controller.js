@@ -10,6 +10,7 @@
         var ctrl = this;
         ctrl.userInfo = {};
         ctrl.saved = false;
+        ctrl.receivedResultsFromBingProofService = false;
         ctrl.message = '';
         ctrl.response = '';
         ctrl.userInfo.incidentReport = 'Ha vefun triingf owt theBin gspeller by typying a sentance or clcking teh sampels bellow';
@@ -24,7 +25,8 @@
             promise.then(
               function success(response) {
                 ctrl.response = response.data;
-                console.log('http promise success.');
+                ctrl.receivedResultsFromBingProofService = true;
+                console.log('http promise success.', response.data);
               },
               function failure(response) {
                 console.log('http promise failure. something terrible happened: ', response);
