@@ -24,14 +24,21 @@
 .app-banner-title-lawrence {
   width: 500px;
   position: absolute;
-  top: 35px;
-  left: 0px;
-  text-align: left;
+  top: 150px;
+  right: 200px;
+  text-align: right;
   color:#F1F1F1;
-  font-family: "Pacifico", Helvetica, serif;
-  font-size: 4em;
+  font-family: 'Permanent Marker', cursive;
+
+  opacity: 0.5;
+  font-size: 3.5em;
   padding-left: 5px;
   padding-top:5px;
+
+  -ms-transform: rotate(-25deg); /* IE 9 */
+  -webkit-transform: rotate(-25deg); /* Chrome, Safari, Opera */
+  transform: rotate(-25deg);
+}
 }
 .app-banner-title-lawrence span {
   color:#266CF8;        /* matching blue to the shop of horrors "OF" text */
