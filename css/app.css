@@ -74,20 +74,29 @@
 .app-header {
   border-radius: 0;
   border: 0;
-  background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
+  /*background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
   background-position: left bottom;
   background-size: 300px;
   background-blend-mode: luminosity;
+  background-repeat: no-repeat;*/
   height: 300px;
   margin-top: 50px;
   background-color: #563d7c;      /* royal purple */
-  background-repeat: no-repeat;
   overflow: hidden;
 }
 
 .app-header img {
-  opacity: 0.250;
+  opacity: 0.15;
 }
+.little-shop-of-horrors {
+  position: absolute;
+  top: 180px;
+  left: 0px;
+  background-blend-mode: luminosity;
+  width: 300px;
+  -webkit-filter: grayscale(100%);}
+
+
 
 .google-logo {
   position: relative;
@@ -162,7 +171,7 @@
   background-color: #563E7C;
   overflow: hidden;
   color: #fff;
-  opacity: .5;
+  opacity: .75;
 }
 
 .home-tile-credit:hover  {
@@ -172,9 +181,22 @@
 .home-tile-credit-author  {
   right: 0;
 }
+.home-tile-credit-author a {
+  color: white;
+}
+.home-tile-credit-author a:hover {
+  color: gold;
+}
 
 .home-tile-credit-sourcecode  {
   left: 0;
+}
+
+.home-tile-credit-sourcecode a {
+  color: white;
+}
+.home-tile-credit-sourcecode a:hover {
+  color: gold;
 }
 
 
@@ -248,6 +270,45 @@
 .widget p {
   text-align: justify;
 }
+
+.widget-credit  {
+  position: relative;
+  margin-top: 10px;
+  width: 50%;
+  text-align: center;
+  font-size: .65em;
+  background-color: #fff;
+  overflow: hidden;
+  color: #563d7c;      /* royal purple */;
+  opacity: .75;
+}
+.widget-credit:hover  {
+  opacity: 1;
+}
+
+.widget-credit-author  {
+  float: right;
+  right: 0;
+}
+.widget-credit-author a {
+  color: #563d7c;      /* royal purple */;
+}
+.widget-credit-author a:hover {
+  color: gold;
+}
+
+.widget-credit-sourcecode  {
+  float: left;
+  left: 0;
+}
+
+.widget-credit-sourcecode a {
+  color: #563d7c;      /* royal purple */;
+}
+.widget-credit-sourcecode a:hover {
+  color: gold;
+}
+
 
 /** End Widgets **/
 
