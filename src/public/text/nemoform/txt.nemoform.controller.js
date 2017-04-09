@@ -16,8 +16,8 @@
         ctrl.userInfo.incidentReport = '';
 
         // Form initializations
-        var htmlPrefix_ms = '<div class="chart-html-popover"><img src="images/logo-microsoft.png" alt="MS Cognitive Services Logo" width="75"><p>';
-        var htmlPrefix_google = '<div class="chart-html-popover"><img src="images/logo-google-maps-api.png" alt="Google Maps API Logo" width="75"><p>';
+        var htmlPrefix_ms = '<div class="chart-html-popover"><img src="http://cdn-horrors.lawrencemcdaniel.com/logo-microsoft.png" alt="MS Cognitive Services Logo" width="75"><p>';
+        var htmlPrefix_google = '<div class="chart-html-popover"><img src="http://cdn-horrors.lawrencemcdaniel.com/logo-google-maps-api.png" alt="Google Maps API Logo" width="75"><p>';
         var htmlSuffix = '</p></div>';
         $scope.htmlPopoverIncidentReport = $sce.trustAsHtml(htmlPrefix_ms + "This input box is integrated to Microsoft Cognitive Services. The text you type will be proofed by artificial intelligence and machine learning algorithms, not only for spelling but also for grammar, word choice and phraseology." + htmlSuffix);
         $scope.htmlPopoverLastLocation = $sce.trustAsHtml(htmlPrefix_google + 'This input box is integrated to the Google Maps API using Ajax. Like in Google Maps, fully-formated text of locations matching your criteria are listed just below the input box. Try typing "fish market in tokyo".' + htmlSuffix);
