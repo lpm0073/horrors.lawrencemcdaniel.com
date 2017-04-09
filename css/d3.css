@@ -86,13 +86,16 @@
 
 .gears-sun path {
   fill: yellow;
+  opacity: 0.50;
 }
 
 .gears-planet path {
-  fill: #9ecae1;
+  fill: gold;
+  opacity: 0.75;
 }
 
 .gears-annulus path {
   fill: #563d7c;      /* royal purple */
+  opacity: 0.5;
 }
 /*-------------------------- D3 Gears - END ----------------------------------*/
