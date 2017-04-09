@@ -11,6 +11,7 @@
         ctrl.userInfo = {};
         ctrl.saved = false;
         ctrl.message = '';
+        ctrl.response = '';
 
         ctrl.setNemoinfo = function() {
             console.log('NemoformController.setNemoinfo()');
@@ -18,8 +19,16 @@
 
             console.log('user:', ctrl.userInfo);
 
-            var proofed = MSCognitiveService.getProofedText(ctrl.userInfo.incidentReport, '');
-            console.log('Proofed text: ', proofed);
+            var promise = MSCognitiveService.getProofedText(ctrl.userInfo.incidentReport, '');
+            promise.then(
+              function success(response) {
+                ctrl.response = response.data;
+                console.log('Proofed text: ', ctrl.response);
+              },
+              function failure(response) {
+                control.log('something terrible happened: ', response);
+              });
+
 
             ctrl.saved = true;
             ctrl.message = 'Your information has been saved!';

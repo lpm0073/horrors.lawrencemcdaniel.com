@@ -30,6 +30,8 @@
         --------------------------------------------------------------------------------------------*/
         service.getProofedText = function (val, context) {
 
+          val = 'Ha vefun triingf owt theBin gspeller by typying a sentance or clcking teh sampels bellow';
+
           console.log('MSCognitiveService.getProofedText()');
           console.log('val: ', val);
           console.log('conntext: ', context);
@@ -48,6 +50,7 @@
           });
 
           return response;
+
         };
 
 
