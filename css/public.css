@@ -95,42 +95,7 @@ border-bottom-color: gray;
 
 /* END PAGE */
 
-/** HEADER **/
-.app-header {
-  border-radius: 0;
-  border: 0;
-  background-image: url('../images/Little_Shop_Of_Horrors_Pic.png');
-  background-position: left bottom;
-  background-size: 400px;
-  height: 300px;
-  margin-top: 50px;
-  background-color: #563d7c;      /* royal purple */
-  background-repeat: no-repeat;
-}
 
-.google-logo {
-  position: relative;
-  float: right;
-  margin-right: 10px;
-  background-color: transparent;
-
-  top: 5px;
-  right: 0px;
-  width: 275px;
-}
-
-.gears-logo {
-  position: relative;
-  float: right;
-  clear: right;
-  margin-right: 5px;
-  margin-top: 20px;
-  background-color: transparent;
-
-  bottom: 0px;
-  right: 0px;
-  height: 200px;
-}
 
 
 /* END HEADER */
