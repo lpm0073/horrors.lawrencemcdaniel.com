@@ -13,7 +13,7 @@
         ctrl.receivedResultsFromBingProofService = false;
         ctrl.message = '';
         ctrl.response = '';
-        ctrl.userInfo.incidentReport = 'Ha vefun triingf owt theBin gspeller by typying a sentance or clcking teh sampels bellow';
+        ctrl.userInfo.incidentReport = '';
 
         // Form initializations
         var htmlPrefix_ms = '<div class="chart-html-popover"><img src="images/logo-microsoft.png" alt="MS Cognitive Services Logo" width="75"><p>';
