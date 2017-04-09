@@ -46,6 +46,8 @@
     left: 0;
 }
 
+
+/*-------------- App Header ----------------------------------------------------*/
 .app-banner-title-lawrence {
   width: 500px;
   position: absolute;
@@ -142,6 +144,9 @@
   height: 200px;
 }
 
+/*-------------- App Header ----------------------------------------------------*/
+
+
 /* APP Styles */
 
 /* HOME PAGE TILES */
@@ -152,7 +157,7 @@
 .home-tile {
   width: 100%;
   height: 500px;
-  margin-bottom: 15px;
+  margin-bottom: 3px;
   position: relative;
   border: 2px solid #F1F1F1 ;
   border-radius: 5px;
@@ -371,6 +376,7 @@
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+
   .finding-nemo-form-column  {
     width: 95%;
   }
@@ -380,21 +386,51 @@
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
   }
+
+  .home-tile {
+    height: 250px;
+  }
+
+  .app-banner-title-lawrence {
+    width: 100%;
+    top: 100px;
+    right: 75px;
+    font-size: 2.5em;
+    padding-left: 0px;
+    padding-top:0px;
+  }
+
+  .app-banner-title {
+    width: 100%;
+    top: 125px;
+    right: 5%;
+    font-size: 1em;
+  }
+
+  .app-banner-subtitle {
+    width: 100%;
+    top: 150px;
+    right: 5%;
+    font-size: .75em;
+  }
+
+  /** HEADER **/
+  .app-header {
+    height: 200px;
+    margin-top: 30px;
+  }
+
+  .app-header img {
+    visibility: hidden;
+  }
+
+  .gears-logo {
+    visibility: hidden;
+  }
+
 
 }
-
-
 /********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
 @media (max-width: 479px) {
-  .finding-nemo-form-column  {
-    width: 95%;
-  }
-
-  .multi-column-list {
-    -webkit-column-count: 1; /* Chrome, Safari, Opera */
-    -moz-column-count: 1; /* Firefox */
-    column-count: 1;
-  }
-
 
 }
