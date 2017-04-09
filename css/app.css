@@ -93,8 +93,17 @@
 
 .chart-html-popover {
   margin: 10px;
+  color: black;
+  font-size: .85em;
+  font-weight: lighter;
   font-style: italic;
   background-color: white;
+}
+
+.chart-html-popover p {
+  margin-top: 5px;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 

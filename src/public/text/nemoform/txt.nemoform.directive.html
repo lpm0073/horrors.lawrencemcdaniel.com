@@ -20,7 +20,18 @@
             placeholder="Where did you last see Nemo? (ex: Saint Thomas, VI)"
             uib-typeahead="address for address in getLocation($viewValue)"
             typeahead-loading="loadingLocations"
-            typeahead-no-results="noResults">
+            typeahead-no-results="noResults"
+
+            uib-popover-html="htmlPopoverLastLocation"
+            popover-placement="bottom"
+            popover-trigger="'outsideClick'"
+            popover-animation="true"
+            popover-is-open="popoverIsOpen"
+            popover-popup-delay="1000"
+            popover-title="Did you know?"
+            ng-click="popoverIsOpen = !popoverIsOpen"
+            >  <!-- closing tag for lastLocation input  -->
+
             <span ng-if="nemoForm.lastLocation.$invalid && nemoForm.lastLocation.$touched">
                 <small>We must know where you last saw Nemo.</small>
             </span>
@@ -113,7 +124,7 @@
                     popover-trigger="'focus'"
                     popover-animation="true"
                     popover-is-open="popoverIsOpen"
-                    popover-popup-delay="2000"
+                    popover-popup-delay="1000"
                     popover-title="Did you know?"
                     ng-click="popoverIsOpen = !popoverIsOpen"
                     >  <!-- closing tag for incidentReport input -->
