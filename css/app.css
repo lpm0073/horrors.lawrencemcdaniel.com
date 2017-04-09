@@ -1,5 +1,17 @@
 /* APP Styles */
 
+/* NAVIGATION MENU */
+
+.nav.navbar-nav.navbar-right li a {
+    color: #563d7c;      /* royal purple */
+}
+
+.navbar-header a {
+  color: #563d7c;      /* royal purple */
+}
+/* END NAVIGATION MENU */
+
+
 .svg-container {
     /*background-color: purple;*/
     display: inline-block;
