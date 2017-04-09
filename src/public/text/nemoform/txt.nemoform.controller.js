@@ -4,8 +4,8 @@
     angular.module('public')
     .controller('NemoformController', NemoformController);
 
-    NemoformController.$inject = ['NemoService', '$scope', '$http', 'MSCognitiveService'];
-    function NemoformController(NemoService, $scope, $http, MSCognitiveService) {
+    NemoformController.$inject = ['NemoService', '$scope', '$http', 'MSCognitiveService', 'GoogleApiService'];
+    function NemoformController(NemoService, $scope, $http, MSCognitiveService, GoogleApiService) {
       console.log('NemoformController instantiated');
         var ctrl = this;
         ctrl.userInfo = {};
@@ -27,21 +27,12 @@
 
 
         /*-----------------------BOOTSTRAP TYPEAHEAD (Location) ------------------------------*/
+        $scope.getLocation = function(val) {
 
-          $scope.getLocation = function(val) {
-            console.log('NemoformController.getLocation()');
-            return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
-              params: {
-                address: val,
-                sensor: false
-              }
-            }).then(function(response){
-              return response.data.results.map(function(item){
-                return item.formatted_address;
-              });
-            });
-          };
+          console.log('NemoformController.getLocation()');
+          return GoogleApiService.getLocation(val);
 
+        };
           /*-----------------------END BOOTSTRAP TYPEAHEAD (Location) ------------------------------*/
 
 
