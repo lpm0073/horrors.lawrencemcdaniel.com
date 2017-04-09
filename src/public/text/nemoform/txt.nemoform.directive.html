@@ -106,7 +106,17 @@
                     id="incidentReport"
                     name="incidentReport"
                     placeholder="Elaborate on your last interaction with Nemo."
-                    ng-model="ctrl.userInfo.incidentReport">
+                    ng-model="ctrl.userInfo.incidentReport"
+
+                    uib-popover-html="htmlPopoverIncidentReport"
+                    popover-placement="top-left"
+                    popover-trigger="'focus'"
+                    popover-animation="true"
+                    popover-is-open="popoverIsOpen"
+                    popover-popup-delay="2000"
+                    popover-title="Did you know?"
+                    ng-click="popoverIsOpen = !popoverIsOpen"
+                    >  <!-- closing tag for incidentReport input -->
           </div>
 
 
