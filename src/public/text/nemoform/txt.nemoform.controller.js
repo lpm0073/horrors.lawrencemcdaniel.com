@@ -13,20 +13,21 @@
         ctrl.message = '';
         ctrl.response = '';
 
+
         ctrl.setNemoinfo = function() {
             console.log('NemoformController.setNemoinfo()');
             NemoService.setNemoinfo(ctrl.userInfo);
 
-            console.log('user:', ctrl.userInfo);
-
+            ctrl.userInfo.incidentReport = 'Ha vefun triingf owt theBin gspeller by typying a sentance or clcking teh sampels bellow';
             var promise = MSCognitiveService.getProofedText(ctrl.userInfo.incidentReport, '');
+
             promise.then(
               function success(response) {
                 ctrl.response = response.data;
-                console.log('Proofed text: ', ctrl.response);
+                console.log('http promise success.');
               },
               function failure(response) {
-                control.log('something terrible happened: ', response);
+                console.log('http promise failure. something terrible happened: ', response);
               });
 
 

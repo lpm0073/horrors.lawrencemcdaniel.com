@@ -122,9 +122,11 @@
       </p>
   </div>
 
-  <div>
+  <p>{{ctrl.userInfo.incidentReport}}</p>
+
+  <div ng-repeat="token in ctrl.response.flaggedTokens">
     <p >
-        {{ctrl.response}}
+        {{token.offset}}: {{token.token}} - change to: <span ng-repeat="suggestion in token.suggestions">{{suggestion.suggestion}} </span>
     </p>
   </div>
 </div>
