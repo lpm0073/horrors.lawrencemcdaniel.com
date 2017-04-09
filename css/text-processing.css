@@ -74,7 +74,10 @@
   margin-left: 2.5%;
   margin-right: 2.5%;
   margin-bottom: 20px;
+  
 }
+
+
 .finding-nemo-form label  {
   width: 95%;
   margin-left: 5px;
@@ -94,15 +97,7 @@
   color: red;
 }
 
-/*
-.finding-nemo-form img  {
-  position: absolute;
-  bottom: 25%;
-  right: 5%;
-  width: 40%;
-  box-shadow: 0 1px 5px 1px #000;
-}
-*/
+
 
 .finding-nemo-form panel  {
   position: absolute;
