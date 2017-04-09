@@ -2,6 +2,19 @@
 
 /* NAVIGATION MENU */
 
+.footer-text {
+  color: #563d7c;      /* royal purple */
+  text-align: center;
+}
+
+.footer-text a {
+  color: #563d7c;      /* royal purple */
+}
+
+.footer-text a:hover {
+  color: gold;
+}
+
 .nav.navbar-nav.navbar-right li a {
     color: #563d7c;      /* royal purple */
 }
