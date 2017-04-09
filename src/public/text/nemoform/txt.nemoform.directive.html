@@ -9,7 +9,14 @@
 
         <!-- ---------------------------------------- -->
         <!-- UI Bootstrap Typeahead using http: Google Maps API  -->
-        <div class="form-group">
+        <div class="form-group"
+              uib-popover-html="htmlPopoverLastLocation"
+              popover-placement="top"
+              popover-trigger="outsideClick"
+              popover-animation="true"
+              popover-popup-delay="750"
+              popover-title="Did you know?"
+              >
             <label for="lastLocation">Anonymous Tip</label>
             <input type="text"
             class="form-control"
@@ -21,15 +28,6 @@
             uib-typeahead="address for address in getLocation($viewValue)"
             typeahead-loading="loadingLocations"
             typeahead-no-results="noResults"
-
-            uib-popover-html="htmlPopoverLastLocation"
-            popover-placement="bottom"
-            popover-trigger="'outsideClick'"
-            popover-animation="true"
-            popover-is-open="popoverIsOpen"
-            popover-popup-delay="1000"
-            popover-title="Did you know?"
-            ng-click="popoverIsOpen = !popoverIsOpen"
             >  <!-- closing tag for lastLocation input  -->
 
             <span ng-if="nemoForm.lastLocation.$invalid && nemoForm.lastLocation.$touched">
@@ -107,7 +105,14 @@
 
         <div class="finding-nemo-form-column">
 
-          <div class="form-group">
+          <div class="form-group"
+              uib-popover-html="htmlPopoverIncidentReport"
+              popover-trigger="outsideClick"
+              popover-placement="top-right"
+              popover-animation="true"
+              popover-popup-delay="750"
+              popover-title="Did you know?"
+                >
               <label for="incidentReport">Incident Report</label>
               <input type="textarea"
                     style="height:200px; padding-bottom: 150px;"
@@ -118,16 +123,9 @@
                     name="incidentReport"
                     placeholder="Elaborate on your last interaction with Nemo."
                     ng-model="ctrl.userInfo.incidentReport"
-
-                    uib-popover-html="htmlPopoverIncidentReport"
-                    popover-placement="top-left"
-                    popover-trigger="'focus'"
-                    popover-animation="true"
-                    popover-is-open="popoverIsOpen"
-                    popover-popup-delay="1000"
-                    popover-title="Did you know?"
-                    ng-click="popoverIsOpen = !popoverIsOpen"
                     >  <!-- closing tag for incidentReport input -->
+            <!--
+          -->
           </div>
 
 
