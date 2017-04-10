@@ -2,15 +2,21 @@
     "use strict";
 
     angular.module('public')
-    .controller('CognitionController', CognitionController);
+    .controller('CognitionController', CognitionController)
+    .directive('cgVision', cgVision);
 
     CognitionController.$inject = [];
     function CognitionController() {
+      console.log('CognitionController instantiated');
         var ctrl = this;
-        ctrl.isNew = true;
-
-        console.log('CognitionController instantiated');
-
 
     }
+
+    cgVision.$inject = [];
+    function cgVision() {
+      return {
+          templateUrl: 'src/public/cognition/cg.vision.directive.html'
+      };
+    }
+
 })();

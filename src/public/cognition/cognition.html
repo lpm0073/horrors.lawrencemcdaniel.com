@@ -1,59 +1,32 @@
-<div ng-if="d3Ctrl.isNew"><h2>Hello there!</h2></div>
+<head>
+</head>
 
-<div id="d3-content" class="container">
-  <div id="" class="row">
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.d3">
-        <div class="home-tile">
-        <span>Cognition-1</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.charts">
-        <div class="home-tile">
-          <span>Cognition-2</span>
-        </div>
-      </a>
-    </div>
+  <div class="page-content" ng-controller="ChartsController">
 
+    <div class="page-header">
+      <h2>Cognitive Back-end Services</h2>
+      <p>These service turn mundane operations into gee-whiz experiences. yadda yadda</p>
 
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.cognition">
-        <div class="home-tile">
-          <span>Cognition-3</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.angularjs">
-        <div class="home-tile">
-        <span>Cognition-4</span>
-        </div>
-      </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Cognition-5</span>
-        </div>
-      </a>
+      <!-- <div class="three-column-div">
+        <p><span>Customizable</span> Make the charts your own. Configure an extensive set of options to perfectly match the look and feel of your website.</p>
+        <p><span>HTML5/SVG</span> Cross-browser compatibility (adopting VML for older IE versions) and cross-platform portability to iOS and new Android releases. No plugins are needed.</p>
+        <p><span>Dynamic Data</span> Connect to your data in real time using a variety of data connection tools and protocols.</p>
+      </div>
+
+      <div class="page-alert" uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)">{{alert.msg}}</div>
+      -->
     </div>
 
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Cognition-6</span>
-        </div>
-      </a>
+  <div id="sankey" class="widget widget-right">
+    <h3>Computer Vision</h3>
+    <p>This feature returns information about visual content found in an image. Use tagging, descriptions and domain-specific models to identify content and label it with confidence. Apply the adult/racy settings to enable automated restriction of adult content. Identify image types and color schemes in pictures.</p>
+    <p>Please try vision feature analysis demo by uploading a local image, or providing an image URL. We don’t keep your images for this demo unless you give us permission.</p>
+    <cg-vision></cg-vision>
+    <div>
+      <div class="widget-credit widget-credit-author">Credit: <a href="https://www.microsoft.com/cognitive-services/en-us/computer-vision-api" target="_blank">Microsoft Cognitive Services</a></div>
+      <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/cognition" target="_blank" >Get the source code</a></div>
     </div>
-    <div class="col-lg-6 col-sm-12 col-xs-12">
-      <a ui-sref="public.home">
-        <div class="home-tile">
-        <span>Cognition-7</span>
-        </div>
-      </a>
-    </div>
-
   </div>
+
+
 </div>

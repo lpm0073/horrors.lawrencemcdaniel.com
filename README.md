@@ -7,11 +7,6 @@ Production Site: [Click Here](http://horrors.lawrencemcdaniel.com)
 
 **It's coding time! Woohoo!!!**
 
-## Time to Complete
-It should take about an 1 hours or less. (This is just an estimate. People's backgrounds differ, so for some people it will take longer to complete.)
-
-**Ask questions in [Week 5 Discussion Forum](https://www.coursera.org/learn/single-page-web-apps-with-angularjs/discussions/weeks/5) if you get stuck! We are all learning, and going through getting stuck and then unstuck (even with someone’s help) can be a very valuable learning experience!**
-
 
 ## About this blog
 
@@ -20,6 +15,9 @@ It should take about an 1 hours or less. (This is just an estimate. People's bac
 
 **D3 Animations**
 When the user clicks on the `Sign Up` button, they should be taken to a view that lets them "sign up" for the newsletter (that will never come :-) ) of the restaurant. The sign up form should ask for the following information: first name, last name, email address, and phone number. It should also ask the user to specify the menu number that's their favorite dish. (The menu number is the `short_name` attribute of each menu item).
+
+**Microsoft Cognitive Services**
+
 
 **Google Charts:**
 When the user clicks on `My Info` button, they should be taken to another view where it shows them their "registered" information, including the favorite menu item they picked. When showing the favorite menu item, display the picture of the menu item as well as its title and description.
