@@ -11,10 +11,10 @@
         var ctrl = this;
         var source_code = '';
 
-        ctrl.getHtml = function() {
+        ctrl.getSourceCode = function(url) {
           console.log('CognitionController.ContentsOf() called');
 
-          var promise = PrettyPrinter.getContentByUrl('css/d3.css');
+          var promise = PrettyPrinter.getContentByUrl(url);
 
           promise.then(
             function success(response) {
@@ -27,7 +27,7 @@
 
         };
 
-        ctrl.getHtml();
+        ctrl.getSourceCode('css/d3.css');
 
     }
 
