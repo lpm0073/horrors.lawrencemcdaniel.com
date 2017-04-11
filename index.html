@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+  Custom AngularJS sites by Lawrence McDaniel
+  About me: http://lawrencemcdaniel.com
+            https://www.linkedin.com/in/lawrencemcdaniel/
+  Contact: lpm0073@gmail.com
+-->
 <html lang="en" ng-app="Horrors" ng-strict-di>
   <head>
     <title>Shop of Horrors</title>
@@ -44,6 +50,7 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/d3.css">
     <link rel="stylesheet" href="css/text-processing.css">
+    <link rel="stylesheet" href="css/sunburst.css">       <!-- for pretty print-->
 
     <script type="application/ld+json">/*<![CDATA[*/{
   "@context": "http://schema.org",
@@ -166,6 +173,7 @@
         <div class="footer-text">&copy; Copyright <a target="_blank" href="http://lawrencemcdaniel.com">lawrencemcdaniel.com</a></div>
     </footer>
 
+    <!-- 3rd party libraries: angularjs, bootstrap, etc. -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
@@ -191,6 +199,7 @@
     <script type="text/javascript" src="src/common/common.module.js"></script>
     <script type="text/javascript" src="src/common/common.mscognitive.service.js"></script>
     <script type="text/javascript" src="src/common/common.googleapi.service.js"></script>
+    <script type="text/javascript" src="src/common/common.prettyprinter.service.js"></script>
     <script type="text/javascript" src="src/common/loading/loading.component.js"></script>
     <script type="text/javascript" src="src/common/loading/loading.interceptor.js"></script>
 
