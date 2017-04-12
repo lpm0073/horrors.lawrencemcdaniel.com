@@ -7,6 +7,7 @@
 .footer-text {
   color: #563d7c;      /* royal purple */
   text-align: center;
+  font-size: .75em;
 }
 
 .footer-text a {
@@ -14,7 +15,7 @@
 }
 
 .footer-text a:hover {
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 .nav.navbar-nav.navbar-right li a {
@@ -84,7 +85,7 @@
 .app-banner-title span {
   opacity: 0.5;
   /*color:#266CF8;         matching blue to the shop of horrors "OF" text */
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 
@@ -93,7 +94,7 @@
   position: absolute;
   top: 190px;
   right: 10px;
-  color:gold;
+  color:DarkGoldenRod;
   opacity: 0.5;
   text-align: right;
   font-size: 1em;
@@ -212,7 +213,7 @@
   color: white;
 }
 .home-tile-credit-author a:hover {
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 .home-tile-credit-sourcecode  {
@@ -223,7 +224,7 @@
   color: white;
 }
 .home-tile-credit-sourcecode a:hover {
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 
@@ -321,7 +322,7 @@
   color: #563d7c;      /* royal purple */;
 }
 .widget-credit-author a:hover {
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 .widget-credit-sourcecode  {
@@ -333,7 +334,7 @@
   color: #563d7c;      /* royal purple */;
 }
 .widget-credit-sourcecode a:hover {
-  color: gold;
+  color: DarkGoldenRod;
 }
 
 /*-------------- Widget: View Source Code -----------------------*/
