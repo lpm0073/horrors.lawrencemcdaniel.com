@@ -1,16 +1,14 @@
 <head>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
-
 </head>
-
-
 <div id="cg-vision" class="widget-object" ng-controller="ViewSourcecodeController as ctrl">
 
   <div class="widget-view-sourcecode">
     <button type="button" class="btn btn-warning btn-block" ng-click="isCollapsed = !isCollapsed">View Source Code</button>
   	<hr>
-  	<div uib-collapse="isCollapsed">
+  	<div uib-collapse="isCollapsed" ng-if="!isCollapsed">
   		<div class="well well-lg">
+
         <uib-tabset active="active">
           <uib-tab index="0" heading="JS">
             <pretty-printer source-code="src/common/common.viewsourcecode.controller.js"></pretty-printer>
