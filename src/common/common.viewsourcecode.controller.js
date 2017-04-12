@@ -12,6 +12,11 @@
 
         $scope.isCollapsed = true;    /* Bootstrap collapsable "view sourcode" button */
 
+        ctrl.html = $scope.html;
+        ctrl.css = $scope.css;
+        ctrl.js = $scope.js;
+
+
     }
 
     ViewSourcecode.$inject = [];

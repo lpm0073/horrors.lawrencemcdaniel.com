@@ -8,14 +8,14 @@
 
         <uib-tabset active="active">
           <uib-tab index="0" heading="JS">
-            <pretty-printer source-code="src/common/common.viewsourcecode.controller.js"></pretty-printer>
+            <pretty-printer source-code="{{ctrl.js}}"></pretty-printer>
           </uib-tab>  <!-- JS -->
           <uib-tab index="1" heading="HTML">
-            <pretty-printer source-code="src/common/common.viewsourcecode.directive.html"></pretty-printer>
+            <pretty-printer source-code="{{ctrl.html}}"></pretty-printer>
           </uib-tab>  <!-- HTML -->
 
           <uib-tab index="2" heading="CSS">
-            <pretty-printer source-code="css/app.css"></pretty-printer>
+            <pretty-printer source-code="{{ctrl.css}}"></pretty-printer>
           </uib-tab>  <!-- CSS -->
 
         </uib-tabset>
