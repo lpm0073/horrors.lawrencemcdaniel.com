@@ -28,15 +28,15 @@
     function resizeChart () {
         chart.draw(data, options);
     }
-    if (document.addEventListener) {
-        window.addEventListener('resize', resizeChart);
+    if (document.getElementById('combochart_div').addEventListener) {
+        document.getElementById('combochart_div').addEventListener('resize', resizeChart);
     }
-    else if (document.attachEvent) {
-        window.attachEvent('onresize', resizeChart);
+    else if (document.getElementById('combochart_div').attachEvent) {
+        document.getElementById('combochart_div').attachEvent('onresize', resizeChart);
     }
-    else {
-        window.resize = resizeChart;
-    }
+    // else {
+    //     window.resize = resizeChart;
+    // }
 
   }
 

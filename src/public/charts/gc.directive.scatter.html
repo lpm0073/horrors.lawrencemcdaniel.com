@@ -49,15 +49,15 @@
           console.log('resizeChart - scatter');
            chart.draw(data, options);
        }
-       if (document.addEventListener) {
-           window.addEventListener('resize', resizeChart);
+       if (document.getElementById('scatter_dual_y').addEventListener) {
+           document.getElementById('scatter_dual_y').addEventListener('resize', resizeChart);
        }
-       else if (document.attachEvent) {
-           window.attachEvent('onresize', resizeChart);
+       else if (document.getElementById('scatter_dual_y').attachEvent) {
+           document.getElementById('scatter_dual_y').attachEvent('onresize', resizeChart);
        }
-       else {
-           window.resize = resizeChart;
-       }
+      //  else {
+      //      window.resize = resizeChart;
+      //  }
 
      }
     </script>
