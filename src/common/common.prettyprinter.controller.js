@@ -10,6 +10,7 @@
         console.log('PrettyPrinterController instantiated', $scope.sourceCode);
         var ctrl = this;
 
+        ctrl.sourceCode = $scope.sourceCode;
         var promise = $http.get($scope.sourceCode);
 
         promise.then(

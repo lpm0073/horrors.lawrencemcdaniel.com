@@ -1,6 +1,8 @@
 /* APP Styles */
 
-/* NAVIGATION MENU */
+
+
+/*-------------- Bootstrap Navigation Menu -----------------------*/
 
 .footer-text {
   color: #563d7c;      /* royal purple */
@@ -47,7 +49,7 @@
 }
 
 
-/*-------------- App Header ----------------------------------------------------*/
+/*-------------- App Header -----------------------*/
 .app-banner-title-lawrence {
   width: 500px;
   position: absolute;
@@ -144,7 +146,7 @@
   height: 200px;
 }
 
-/*-------------- App Header ----------------------------------------------------*/
+/*-------------- App Header ---------------------*/
 
 
 /* APP Styles */
@@ -334,6 +336,33 @@
   color: gold;
 }
 
+/*-------------- Widget: View Source Code -----------------------*/
+.widget-view-sourcecode {
+  visibility: visible;
+}
+
+.widget-prettyprint-title {
+  text-align: right;
+  margin-top: 3%;
+  margin-bottom: 1%;
+  margin-right: 3%;
+  color: DarkGoldenRod;
+}
+
+.widget-prettyprint-credit {
+  text-align: right;
+  font-size: .8em;
+  margin-right: 3%;
+}
+
+.widget-prettyprint-credit a {
+  color: DarkGoldenRod;
+}
+
+.widget-prettyprint-credit a:hover {
+  color: green;
+}
+
 
 /** End Widgets **/
 
@@ -350,6 +379,7 @@
 }
 
 
+/*-------------- Responsive Styling -----------------------*/
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
@@ -376,6 +406,10 @@
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+
+  .widget-view-sourcecode {
+    visibility: hidden;
+  }
 
   .finding-nemo-form-column  {
     width: 95%;

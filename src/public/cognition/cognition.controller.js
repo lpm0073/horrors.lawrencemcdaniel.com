@@ -3,12 +3,14 @@
 
     angular.module('public')
     .controller('CognitionController', CognitionController)
-    .directive('cgVision', cgVision);
+    .directive('cgVision', cgVision)
 
-    CognitionController.$inject = ['$http'];
-    function CognitionController($http) {
+    CognitionController.$inject = ['$scope'];
+    function CognitionController($scope) {
       console.log('CognitionController instantiated');
         var ctrl = this;
+
+        $scope.isCollapsed = true;    /* Bootstrap collapsable "view sourcode" button */
 
     }
 
