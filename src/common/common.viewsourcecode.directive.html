@@ -1,4 +1,24 @@
+<head>
+  <link rel="stylesheet" href="css/prettify.css">
+  <!-- <link rel="stylesheet" href="css/sunburst.css">
+  <script type="text/javascript" src="lib/prettify.js"></script> -->
+  <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</head>
+
 <div id="cg-vision" class="widget-object" ng-controller="ViewSourcecodeController as ctrl">
+
+  <h2>Mic Check</h2>
+  <pre class="prettyprint">
+    <code>
+      #include &lt;iostream&gt;
+
+      int main() {
+        std::cout << "Hello, Prettify!\n";
+      }
+    </code>
+  </pre>
+
 
   <div class="widget-view-sourcecode">
     <button type="button" class="btn btn-warning btn-block" ng-click="isCollapsed = !isCollapsed">View Source Code</button>
