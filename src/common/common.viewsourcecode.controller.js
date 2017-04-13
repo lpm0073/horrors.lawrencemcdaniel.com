@@ -12,10 +12,7 @@
 
         $scope.isCollapsed = true;    /* Bootstrap collapsable "view sourcode" button */
 
-        ctrl.html = $scope.html;
-        ctrl.css = $scope.css;
-        ctrl.js = $scope.js;
-
+        ctrl.tabs = JSON.parse($scope.tabs);
 
     }
 
@@ -25,9 +22,7 @@
       var ddo = {
           // restrict: "E",
           scope: {
-            html: '@',
-            css: '@',
-            js: '@'
+            tabs: '@'
           },
           controller: ViewSourcecodeController,
           controllerAs: 'ctrl',

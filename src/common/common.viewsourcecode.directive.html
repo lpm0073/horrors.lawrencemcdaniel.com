@@ -1,23 +1,16 @@
 <div id="cg-vision" class="widget-object" ng-controller="ViewSourcecodeController as ctrl">
 
   <div class="widget-view-sourcecode">
+    <p ng-repeat="(tab, path) in ctrl.tabs">index={{$index}} heading={{tab}} path={{path}}</p>
+
+
     <button type="button" class="btn btn-warning btn-block" ng-click="isCollapsed = !isCollapsed">View Source Code</button>
   	<hr>
   	<div uib-collapse="isCollapsed" ng-if="!isCollapsed">
   		<div class="well well-lg">
 
         <uib-tabset active="active">
-          <uib-tab index="0" heading="JS">
-            <pretty-printer source-code="{{ctrl.js}}"></pretty-printer>
-          </uib-tab>  <!-- JS -->
-          <uib-tab index="1" heading="HTML">
-            <pretty-printer source-code="{{ctrl.html}}"></pretty-printer>
-          </uib-tab>  <!-- HTML -->
-
-          <uib-tab index="2" heading="CSS">
-            <pretty-printer source-code="{{ctrl.css}}"></pretty-printer>
-          </uib-tab>  <!-- CSS -->
-
+          <uib-tab ng-repeat="(tab, path) in ctrl.tabs" index=$index heading={{tab}}><pretty-printer source-code="{{path}}"></pretty-printer></uib-tab>
         </uib-tabset>
 
       </div>    <!-- class="well well-lg" -->
