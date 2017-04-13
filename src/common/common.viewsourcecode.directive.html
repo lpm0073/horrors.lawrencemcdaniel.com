@@ -7,6 +7,7 @@
   		<div class="well well-lg">
 
         <uib-tabset active="active">
+          <!-- NOTE: the syntax for $index is quirky. it's actually wrong (a bug). -->
           <uib-tab ng-repeat="(tab, path) in ctrl.tabs" index=$index heading={{tab}}><pretty-printer source-code="{{path}}"></pretty-printer></uib-tab>
         </uib-tabset>
 
