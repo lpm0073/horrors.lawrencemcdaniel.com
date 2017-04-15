@@ -1,1 +1,20 @@
-<h2>Area Chart</h2>
+<div id="areachart" class="widget widget-right">
+  <h3>Line/Area Chart</h3>
+  <p>An <code>area</code> chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.</p>
+  <gc-areachart
+  uib-popover-html="htmlPopoverArea"
+  popover-placement="top-left"
+  popover-trigger="'mouseenter'"
+  popover-animation="true"
+  popover-is-open="popoverIsOpen"
+  ng-click="popoverIsOpen = !popoverIsOpen"
+  >
+  </gc-areachart>
+  <div>
+    <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/areachart" target="_blank">Google Inc.</a></div>
+    <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+  </div>
+  <view-sourcecode
+    tabs='{ "html":"src/public/charts/gc.areachart.directive.html", "js":"src/public/charts/charts.controller.js" }'>
+  </view-sourcecode>
+</div>
