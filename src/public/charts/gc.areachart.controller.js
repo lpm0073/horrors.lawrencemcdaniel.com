@@ -1,14 +1,20 @@
-/*
- * Google Maps API key: AIzaSyAHkLhDno7SF63GKneZsS08IpAfnpZzS4k
- *                https://developers.google.com/maps/documentation/javascript/
- *
- */
 (function () {
     "use strict";
 
     angular.module('public')
     .controller('GCAreaChartController', GCAreaChartController)
     .directive('gcAreachart', GCAreachartDirective);
+
+    function GCAreachartDirective() {
+      var ddo = {
+          controller: GCAreaChartController,
+          controllerAs: 'ctrl',
+          templateUrl: 'src/public/charts/gc.areachart.directive.html'
+          };
+
+      return ddo;
+    }
+
 
     GCAreaChartController.$inject = ['$scope', '$sce'];
     function GCAreaChartController($scope, $sce) {
@@ -24,18 +30,45 @@
 
       /* ---------- popover initializations ----------*/
 
+      /* ---------- Google Chart ----------*/
+      google.charts.load('current', {'packages':['corechart'], 'callback': drawChart});
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2013',  1000,      400],
+          ['2014',  1170,      460],
+          ['2015',  660,       1120],
+          ['2016',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('areachart_div'));
+        chart.draw(data, options);
+
+        function resizeChart () {
+            chart.draw(data, options);
+        }
+        if (document.getElementById('areachart_div').addEventListener) {
+            document.getElementById('areachart_div').addEventListener('resize', resizeChart);
+        }
+        else if (document.getElementById('areachart_div').attachEvent) {
+            document.getElementById('areachart_div').attachEvent('onresize', resizeChart);
+        }
+        else {
+            window.resize = resizeChart;
+        }
+
+      }
+
+
 
   }  /* GCAreaChartController() */
-
-    GCAreachartDirective.$inject = [];
-    function GCAreachartDirective() {
-      return {
-          controller: GCAreaChartController,
-          controllerAs: 'ctrl',
-          templateUrl: 'src/public/charts/gc.areachart.directive.html'
-      };
-    }
-
 
 
 })();
