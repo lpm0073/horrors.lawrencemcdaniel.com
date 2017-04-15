@@ -53,6 +53,10 @@ function routeConfig ($stateProvider) {
       url: '/combochart',
       templateUrl: 'src/public/charts/gc.combochart.html'
     })
+    .state('public.gantt', {
+      url: '/gantt',
+      templateUrl: 'src/public/charts/gc.gantt.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

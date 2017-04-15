@@ -11,7 +11,6 @@
     .directive('gcGeochart', gcGeochart)
     .directive('gcTreemap', gcTreemap)
     .directive('gcPolynomial', gcPolynomial)
-    .directive('gcGantt', gcGantt)
     .directive('gcGeointensity', gcGeointensity)
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
@@ -116,13 +115,6 @@
     function gcScatter() {
       return {
           templateUrl: 'src/public/charts/gc.scatter.directive.html'
-      };
-    }
-
-    gcGantt.$inject = [];
-    function gcGantt() {
-      return {
-          templateUrl: 'src/public/charts/gc.gantt.directive.html'
       };
     }
 
