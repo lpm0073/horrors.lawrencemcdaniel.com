@@ -49,6 +49,10 @@ function routeConfig ($stateProvider) {
       url: '/candlestick',
       templateUrl: 'src/public/charts/gc.candlestick.html'
     })
+    .state('public.combochart', {
+      url: '/combochart',
+      templateUrl: 'src/public/charts/gc.combochart.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

@@ -1,9 +1,30 @@
-<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script type="text/javascript">
-/*      google.charts.load('current', {'packages':['corechart']}); */
-      google.charts.setOnLoadCallback(drawVisualization);
+(function () {
+    "use strict";
 
-      function drawVisualization() {
+    angular.module('public')
+    .controller('GCComboChartController', GCComboChartController)
+    .directive('gcCombochart', GCCombochartDirective);
+
+    function GCCombochartDirective() {
+      var ddo = {
+          controller: GCComboChartController,
+          controllerAs: 'ctrl',
+          template: '<div id="combochart_div" class="widget-object"></div>'
+          };
+
+      return ddo;
+    }
+
+
+    GCComboChartController.$inject = ['$scope', '$sce'];
+    function GCComboChartController($scope, $sce) {
+        console.log('GCComboChartController instantiated');
+        var ctrl = this;
+
+      /* ---------- Google Chart ----------*/
+      google.charts.load('current', {'packages':['corechart'], 'callback': drawChart});
+
+      function drawChart() {
         // Some raw data (not necessarily accurate)
         var data = google.visualization.arrayToDataTable([
          ['Month', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
@@ -34,11 +55,14 @@
     else if (document.getElementById('combochart_div').attachEvent) {
         document.getElementById('combochart_div').attachEvent('onresize', resizeChart);
     }
-    // else {
-    //     window.resize = resizeChart;
-    // }
+    else {
+        window.resize = resizeChart;
+    }
 
   }
 
-    </script>
-    <div id="combochart_div" class="widget-object"></div>
+
+  }  /* GCComboChartController() */
+
+
+})();

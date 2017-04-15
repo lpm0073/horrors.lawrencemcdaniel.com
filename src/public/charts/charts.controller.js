@@ -15,7 +15,6 @@
     .directive('gcGeointensity', gcGeointensity)
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
-    .directive('gcCombochart', gcCombochart)
     .directive('gcOrgchart', gcOrgchart)
     .directive('gcGuages', gcGuages)
     .directive('gcWordtree', gcWordtree)
@@ -103,13 +102,6 @@
     function gcOrgchart() {
       return {
           templateUrl: 'src/public/charts/gc.orgchart.directive.html'
-      };
-    }
-
-    gcCombochart.$inject = [];
-    function gcCombochart() {
-      return {
-          templateUrl: 'src/public/charts/gc.combochart.directive.html'
       };
     }
 
