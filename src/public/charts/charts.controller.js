@@ -17,7 +17,6 @@
     .directive('gcBubble', gcBubble)
     .directive('gcSankey', gcSankey)
     .directive('gcCombochart', gcCombochart)
-    .directive('gcBarchart', gcBarchart)
     .directive('gcOrgchart', gcOrgchart)
     .directive('gcGuages', gcGuages)
     .directive('gcCandlestick', gcCandlestick)
@@ -113,13 +112,6 @@
     function gcOrgchart() {
       return {
           templateUrl: 'src/public/charts/gc.orgchart.directive.html'
-      };
-    }
-
-    gcBarchart.$inject = [];
-    function gcBarchart() {
-      return {
-          templateUrl: 'src/public/charts/gc.barchart.directive.html'
       };
     }
 

@@ -41,6 +41,10 @@ function routeConfig ($stateProvider) {
       url: '/areachart',
       templateUrl: 'src/public/charts/gc.areachart.html'
     })
+    .state('public.barchart', {
+      url: '/barchart',
+      templateUrl: 'src/public/charts/gc.barchart.html'
+    })
     .state('public.charts.areachart', {
       url: '/charts/areachart',
       templateUrl: 'src/public/charts/gc.areachart.html'
