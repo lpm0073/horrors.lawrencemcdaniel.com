@@ -30,7 +30,7 @@
         console.log('ChartsController instantiated');
         var ctrl = this;
 
-        /* ---------- initializatoin of closeable alert ----------*/
+        /* ---------- initialization of closeable alert ----------*/
         $scope.alerts = [
           { type: 'danger', msg: 'Did you know? All of these charts are made with HTML5, and, they are highly interactive. Hover your cursor over the graph to see popout annotations and graph animations.' }
         ];
@@ -85,112 +85,112 @@
     gcAreachart.$inject = [];
     function gcAreachart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.areachart.html'
+          templateUrl: 'src/public/charts/gc.areachart.directive.html'
       };
     }
 
     gcPiechart.$inject = [];
     function gcPiechart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.piechart.html'
+          templateUrl: 'src/public/charts/gc.piechart.directive.html'
       };
     }
 
     gcWordtree.$inject = [];
     function gcWordtree() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.wordtree.html'
+          templateUrl: 'src/public/charts/gc.wordtree.directive.html'
       };
     }
 
     gcCandlestick.$inject = [];
     function gcCandlestick() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.candlestick.html'
+          templateUrl: 'src/public/charts/gc.candlestick.directive.html'
       };
     }
 
     gcGuages.$inject = [];
     function gcGuages() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.guages.html'
+          templateUrl: 'src/public/charts/gc.guages.directive.html'
       };
     }
 
     gcOrgchart.$inject = [];
     function gcOrgchart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.orgchart.html'
+          templateUrl: 'src/public/charts/gc.orgchart.directive.html'
       };
     }
 
     gcBarchart.$inject = [];
     function gcBarchart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.barchart.html'
+          templateUrl: 'src/public/charts/gc.barchart.directive.html'
       };
     }
 
     gcCombochart.$inject = [];
     function gcCombochart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.combochart.html'
+          templateUrl: 'src/public/charts/gc.combochart.directive.html'
       };
     }
 
     gcSankey.$inject = [];
     function gcSankey() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.sankey.html'
+          templateUrl: 'src/public/charts/gc.sankey.directive.html'
       };
     }
 
     gcBubble.$inject = [];
     function gcBubble() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.bubble.html'
+          templateUrl: 'src/public/charts/gc.bubble.directive.html'
       };
     }
 
     gcScatter.$inject = [];
     function gcScatter() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.scatter.html'
+          templateUrl: 'src/public/charts/gc.scatter.directive.html'
       };
     }
 
     gcGantt.$inject = [];
     function gcGantt() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.gantt.html'
+          templateUrl: 'src/public/charts/gc.gantt.directive.html'
       };
     }
 
     gcGeointensity.$inject = [];
     function gcGeointensity() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.geointensity.html'
+          templateUrl: 'src/public/charts/gc.geointensity.directive.html'
       };
     }
 
     gcPolynomial.$inject = [];
     function gcPolynomial() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.polynomial.html'
+          templateUrl: 'src/public/charts/gc.polynomial.directive.html'
       };
     }
 
     gcTreemap.$inject = [];
     function gcTreemap() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.treemap.html'
+          templateUrl: 'src/public/charts/gc.treemap.directive.html'
       };
     }
 
     gcGeochart.$inject = [];
     function gcGeochart() {
       return {
-          templateUrl: 'src/public/charts/gc.directive.geochart.html'
+          templateUrl: 'src/public/charts/gc.geochart.directive.html'
       };
     }
 
