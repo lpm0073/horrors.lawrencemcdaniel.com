@@ -14,7 +14,6 @@
     .directive('gcGantt', gcGantt)
     .directive('gcGeointensity', gcGeointensity)
     .directive('gcScatter', gcScatter)
-    .directive('gcBubble', gcBubble)
     .directive('gcSankey', gcSankey)
     .directive('gcCombochart', gcCombochart)
     .directive('gcOrgchart', gcOrgchart)
@@ -126,13 +125,6 @@
     function gcSankey() {
       return {
           templateUrl: 'src/public/charts/gc.sankey.directive.html'
-      };
-    }
-
-    gcBubble.$inject = [];
-    function gcBubble() {
-      return {
-          templateUrl: 'src/public/charts/gc.bubble.directive.html'
       };
     }
 

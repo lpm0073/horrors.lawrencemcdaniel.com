@@ -45,9 +45,9 @@ function routeConfig ($stateProvider) {
       url: '/barchart',
       templateUrl: 'src/public/charts/gc.barchart.html'
     })
-    .state('public.charts.areachart', {
-      url: '/charts/areachart',
-      templateUrl: 'src/public/charts/gc.areachart.html'
+    .state('public.bubblechart', {
+      url: '/bubblechart',
+      templateUrl: 'src/public/charts/gc.bubble.html'
     })
     .state('public.text', {
       url: '/text',
