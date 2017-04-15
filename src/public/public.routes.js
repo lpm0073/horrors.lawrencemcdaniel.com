@@ -37,6 +37,10 @@ function routeConfig ($stateProvider) {
       controller: 'ChartsController',
       controllerAs: 'chartsCtrl'
     })
+    .state('public.charts.areachart', {
+      url: '/charts/areachart',
+      templateUrl: 'src/public/charts/gc.areachart.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',
