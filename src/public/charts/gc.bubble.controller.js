@@ -65,9 +65,9 @@
         else if (document.getElementById('noAura_div').attachEvent) {
             document.getElementById('noAura_div').attachEvent('onresize', resizeChart);
         }
-        // else {
-        //     window.resize = resizeChart;
-        // }
+        else {
+            window.resize = resizeChart;
+        }
 
       }
 

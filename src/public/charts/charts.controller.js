@@ -18,7 +18,6 @@
     .directive('gcCombochart', gcCombochart)
     .directive('gcOrgchart', gcOrgchart)
     .directive('gcGuages', gcGuages)
-    .directive('gcCandlestick', gcCandlestick)
     .directive('gcWordtree', gcWordtree)
     .directive('gcPiechart', gcPiechart);
 
@@ -90,13 +89,6 @@
     function gcWordtree() {
       return {
           templateUrl: 'src/public/charts/gc.wordtree.directive.html'
-      };
-    }
-
-    gcCandlestick.$inject = [];
-    function gcCandlestick() {
-      return {
-          templateUrl: 'src/public/charts/gc.candlestick.directive.html'
       };
     }
 
