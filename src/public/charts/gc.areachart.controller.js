@@ -9,7 +9,7 @@
       var ddo = {
           controller: GCAreaChartController,
           controllerAs: 'ctrl',
-          templateUrl: 'src/public/charts/gc.areachart.directive.html'
+          template: '<div id="areachart_div" class="widget-object"></div>'
           };
 
       return ddo;
