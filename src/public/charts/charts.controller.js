@@ -22,8 +22,7 @@
     .directive('gcGuages', gcGuages)
     .directive('gcCandlestick', gcCandlestick)
     .directive('gcWordtree', gcWordtree)
-    .directive('gcPiechart', gcPiechart)
-    .directive('gcAreachart', gcAreachart);
+    .directive('gcPiechart', gcPiechart);
 
     ChartsController.$inject = ['$scope', '$log', '$sce'];
     function ChartsController($scope, $log, $sce) {
@@ -81,13 +80,6 @@
 
 
   }  /* ChartsController() */
-
-    gcAreachart.$inject = [];
-    function gcAreachart() {
-      return {
-          templateUrl: 'src/public/charts/gc.areachart.directive.html'
-      };
-    }
 
     gcPiechart.$inject = [];
     function gcPiechart() {
