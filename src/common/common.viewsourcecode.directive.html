@@ -1,7 +1,7 @@
 <head>
   <!-- <link rel="stylesheet" href="css/prettify.css"> -->
   <!-- <script type="text/javascript" src="lib/prettify.js"></script> -->
-
+  <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
   <link rel="stylesheet" href="css/sunburst.css">
 
 </head>
@@ -18,7 +18,13 @@
             <!-- NOTE: the syntax for $index is quirky. it's actually wrong (a bug). -->
             <uib-tab ng-repeat="(tab, path) in ctrl.tabs" index=$index heading={{tab}}><div><pretty-printer source-code="{{path}}"></pretty-printer></div></uib-tab>
           </uib-tabset>
-          <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
+
+          <script type="text/javascript">
+                setTimeout(function() {
+                    PR.prettyPrint();
+                }, 350);
+          </script>
+
         </div>    <!-- class="well well-lg" -->
 
     	</div>   <!-- uib-collapse="isCollapsed" -->
