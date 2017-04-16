@@ -111,6 +111,10 @@ function routeConfig ($stateProvider) {
       url: '/nemoform',
       templateUrl: 'src/public/text/nemoform/txt.nemoform.html'
     })
+    .state('public.wordcloud', {
+      url: '/wordcloud',
+      templateUrl: 'src/public/text/wordcloud/txt.wordcloud.html'
+    })
     .state('public.d3', {
       url: '/d3',
       templateUrl: 'src/public/d3/d3.html',
