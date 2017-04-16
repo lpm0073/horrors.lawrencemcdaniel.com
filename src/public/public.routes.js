@@ -89,6 +89,10 @@ function routeConfig ($stateProvider) {
       url: '/scatter',
       templateUrl: 'src/public/charts/gc.scatter.html'
     })
+    .state('public.treemap', {
+      url: '/treemap',
+      templateUrl: 'src/public/charts/gc.treemap.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

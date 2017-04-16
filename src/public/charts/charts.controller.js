@@ -8,7 +8,6 @@
 
     angular.module('public')
     .controller('ChartsController', ChartsController)
-    .directive('gcTreemap', gcTreemap)
     .directive('gcWordtree', gcWordtree);
 
     ChartsController.$inject = ['$scope', '$log', '$sce'];
@@ -72,13 +71,6 @@
     function gcWordtree() {
       return {
           templateUrl: 'src/public/charts/gc.wordtree.directive.html'
-      };
-    }
-
-    gcTreemap.$inject = [];
-    function gcTreemap() {
-      return {
-          templateUrl: 'src/public/charts/gc.treemap.directive.html'
       };
     }
 
