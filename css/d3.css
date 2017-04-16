@@ -34,13 +34,6 @@
 
 /*-------------------------- D3 Rotating Voronoi ----------------------------------*/
 
-/*#rotating-voronoi  {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-width: 625px;
-}*/
 
 #rotating-voronoi path {
   fill: #fff;            /* NOTE:  fill color needs to match general d3-directive class background-color*/
@@ -49,15 +42,6 @@
 }
 /*-------------------------- D3 Rotating Voronoi - END ----------------------------------*/
 
-/*-------------------------- D3 Collision ----------------------------------*/
-
-/*#collision-detection {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}*/
-/*-------------------------- D3 Collision - END ----------------------------------*/
 
 /*-------------------------- D3 Gears ----------------------------------*/
 #gears {
@@ -105,33 +89,23 @@
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
-  .d3-directive {
-    width: 74%;
-  }
 
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
 
-  .d3-directive {
-    width: 74%;
-  }
 
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
 
-  .d3-directive {
-    width: 74%;
-  }
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
 
   .d3-directive {
-    width: 98%;
     background-color: #fff;      /* royal purple */
     height: 250px;
   }
@@ -142,7 +116,6 @@
 @media (max-width: 479px) {
 
   .d3-directive {
-    width: 98%;
     background-color: #fff;      /* royal purple */
     height: 250px;
   }
