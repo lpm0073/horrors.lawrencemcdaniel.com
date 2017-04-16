@@ -112,6 +112,10 @@ function routeConfig ($stateProvider) {
     .state('public.collisiondetection', {
       url: '/collision',
       templateUrl: 'src/public/d3/d3.collisiondetection.html'
+    })
+    .state('public.gears', {
+      url: '/gears',
+      templateUrl: 'src/public/d3/d3.gears.html'
     });
 }
 })();
