@@ -85,6 +85,10 @@ function routeConfig ($stateProvider) {
       url: '/sankey',
       templateUrl: 'src/public/charts/gc.sankey.html'
     })
+    .state('public.scatter', {
+      url: '/scatter',
+      templateUrl: 'src/public/charts/gc.scatter.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',
