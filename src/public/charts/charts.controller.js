@@ -12,7 +12,6 @@
     .directive('gcPolynomial', gcPolynomial)
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
-    .directive('gcOrgchart', gcOrgchart)
     .directive('gcWordtree', gcWordtree)
     .directive('gcPiechart', gcPiechart);
 
@@ -84,13 +83,6 @@
     function gcWordtree() {
       return {
           templateUrl: 'src/public/charts/gc.wordtree.directive.html'
-      };
-    }
-
-    gcOrgchart.$inject = [];
-    function gcOrgchart() {
-      return {
-          templateUrl: 'src/public/charts/gc.orgchart.directive.html'
       };
     }
 

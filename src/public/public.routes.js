@@ -69,6 +69,10 @@ function routeConfig ($stateProvider) {
       url: '/guages',
       templateUrl: 'src/public/charts/gc.guages.html'
     })
+    .state('public.orgchart', {
+      url: '/orgchart',
+      templateUrl: 'src/public/charts/gc.orgchart.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

@@ -1,7 +1,28 @@
-<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script type="text/javascript">
-/*      google.charts.load('current', {packages:["orgchart"]}); */
-      google.charts.setOnLoadCallback(drawChart);
+(function () {
+    "use strict";
+
+    angular.module('public')
+    .controller('GCOrgchartController', GCOrgchartController)
+    .directive('gcOrgchart', GCOrgchartDirective);
+
+    function GCOrgchartDirective() {
+      var ddo = {
+          controller: GCOrgchartController,
+          controllerAs: 'ctrl',
+          template: '<div id="orgchart_div" class="widget-object"></div>'
+          };
+
+      return ddo;
+    }
+
+
+    GCOrgchartController.$inject = ['$scope', '$sce'];
+    function GCOrgchartController($scope, $sce) {
+        console.log('GCOrgchartController instantiated');
+        var ctrl = this;
+
+      /* ---------- Google Chart ----------*/
+      google.charts.load('current', {'packages':['orgchart'], 'callback': drawChart});
 
       function drawChart() {
         var data = new google.visualization.DataTable();
@@ -39,10 +60,14 @@
         else if (document.getElementById('orgchart_div').attachEvent) {
             document.getElementById('orgchart_div').attachEvent('onresize', resizeChart);
         }
-        // else {
-        //     window.resize = resizeChart;
-        // }
+        else {
+            window.resize = resizeChart;
+        }
 
       }
-   </script>
-    <div id="orgchart_div" class="widget-object"></div>
+
+
+  }  /* GCOrgchartController() */
+
+
+})();
