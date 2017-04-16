@@ -1,7 +1,28 @@
-<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  -->
-    <script type="text/javascript">
-/*      google.charts.load("current", {packages:["intensitymap"]}); */
-      google.charts.setOnLoadCallback(drawChart);
+(function () {
+    "use strict";
+
+    angular.module('public')
+    .controller('GCGeoIntensityController', GCGeoIntensityController)
+    .directive('gcGeointensity', GCGeoIntensityDirective);
+
+    function GCGeoIntensityDirective() {
+      var ddo = {
+          controller: GCGeoIntensityController,
+          controllerAs: 'ctrl',
+          template: '<div id="geointensity_div" class="widget-object"></div>'
+          };
+
+      return ddo;
+    }
+
+
+    GCGeoIntensityController.$inject = ['$scope', '$sce'];
+    function GCGeoIntensityController($scope, $sce) {
+        console.log('GCGeoIntensityController instantiated');
+        var ctrl = this;
+
+      /* ---------- Google Chart ----------*/
+      google.charts.load('current', {'packages':['intensitymap'], 'callback': drawChart});
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
@@ -31,10 +52,13 @@
         else if (document.getElementById('geointensity_div').attachEvent) {
             document.getElementById('geointensity_div').attachEvent('onresize', resizeChart);
         }
-        // else {
-        //     window.resize = resizeChart;
-        // }
+        else {
+            window.resize = resizeChart;
+        }
 
       }
-    </script>
-    <div id="geointensity_div" class="widget-object"></div>
+
+  }  /* GCGeoIntensityController() */
+
+
+})();
