@@ -6,7 +6,9 @@
 
   function d3ParticlesDirective() {
     var ddo =  {
-        templateUrl: 'src/public/d3/d3.particles.directive.html'
+        controller: D3particlesController,
+        controllerAs: 'ctrl',
+        template: '<div id="d3-particles" class="d3-directive"></div>'
         };
 
     return ddo;

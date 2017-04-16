@@ -6,7 +6,9 @@
 
   function d3RotatingVoronoiDirective() {
     var ddo = {
-        templateUrl: 'src/public/d3/d3.rotatingvoronoi.directive.html'
+        controller: D3rotatingvoronoiController,
+        controllerAs: 'ctrl',
+        template: '<div id="rotating-voronoi" class="d3-directive"></div>'
         };
 
     return ddo;

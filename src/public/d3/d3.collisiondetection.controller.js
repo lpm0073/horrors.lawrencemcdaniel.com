@@ -7,7 +7,9 @@
 
   function d3CollisionDetectionDirective() {
     var ddo =  {
-        templateUrl: 'src/public/d3/d3.collisiondetection.directive.html'
+        controller: D3collisiondetectionController,
+        controllerAs: 'ctrl',
+        template: '<div id="collision-detection" class="d3-directive"></div>'
         };
 
     return ddo;

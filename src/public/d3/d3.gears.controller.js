@@ -6,7 +6,9 @@
 
   function d3Gears() {
     var ddo =  {
-        templateUrl: 'src/public/d3/d3.gears.directive.html'
+        controller: D3gearsController,
+        controlleAs: 'ctrl',
+        template: '<div id="gears" class="d3-directive"></div>'
         };
 
     return ddo;
