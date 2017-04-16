@@ -7,8 +7,7 @@
     "use strict";
 
     angular.module('public')
-    .controller('ChartsController', ChartsController)
-    .directive('gcWordtree', gcWordtree);
+    .controller('ChartsController', ChartsController);
 
     ChartsController.$inject = ['$scope', '$log', '$sce'];
     function ChartsController($scope, $log, $sce) {
@@ -67,11 +66,5 @@
 
   }  /* ChartsController() */
 
-    gcWordtree.$inject = [];
-    function gcWordtree() {
-      return {
-          templateUrl: 'src/public/charts/gc.wordtree.directive.html'
-      };
-    }
 
 })();

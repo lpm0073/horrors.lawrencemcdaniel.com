@@ -93,6 +93,10 @@ function routeConfig ($stateProvider) {
       url: '/treemap',
       templateUrl: 'src/public/charts/gc.treemap.html'
     })
+    .state('public.wordtree', {
+      url: '/wordtree',
+      templateUrl: 'src/public/charts/gc.wordtree.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',
