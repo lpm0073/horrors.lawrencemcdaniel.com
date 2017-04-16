@@ -120,6 +120,10 @@ function routeConfig ($stateProvider) {
     .state('public.particles', {
       url: '/particles',
       templateUrl: 'src/public/d3/d3.particles.html'
+    })
+    .state('public.rotatingvoronoi', {
+      url: '/rotatingvoronoi',
+      templateUrl: 'src/public/d3/d3.rotatingvoronoi.html'
     });
 }
 })();

@@ -1,7 +1,18 @@
 (function () {
 
   angular.module('public')
-  .controller('D3gearsController', D3gearsController);
+  .controller('D3gearsController', D3gearsController)
+  .directive('d3Gears', d3Gears);
+
+  function d3Gears() {
+    var ddo =  {
+        templateUrl: 'src/public/d3/d3.gears.directive.html'
+        };
+
+    return ddo;
+  }
+
+
 
   D3gearsController.$inject = [];
   function D3gearsController() {

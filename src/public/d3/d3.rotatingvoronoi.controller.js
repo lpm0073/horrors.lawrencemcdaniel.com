@@ -1,7 +1,18 @@
 (function () {
 
   angular.module('public')
-  .controller('D3rotatingvoronoiController', D3rotatingvoronoiController);
+  .controller('D3rotatingvoronoiController', D3rotatingvoronoiController)
+  .directive('d3RotatingVoronoi', d3RotatingVoronoiDirective);
+
+  function d3RotatingVoronoiDirective() {
+    var ddo = {
+        templateUrl: 'src/public/d3/d3.rotatingvoronoi.directive.html'
+        };
+
+    return ddo;
+  }
+
+
 
   D3rotatingvoronoiController.$inject = [];
   function D3rotatingvoronoiController() {
