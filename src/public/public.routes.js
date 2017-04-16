@@ -57,6 +57,10 @@ function routeConfig ($stateProvider) {
       url: '/gantt',
       templateUrl: 'src/public/charts/gc.gantt.html'
     })
+    .state('public.geochart', {
+      url: '/geochart',
+      templateUrl: 'src/public/charts/gc.geochart.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

@@ -8,7 +8,6 @@
 
     angular.module('public')
     .controller('ChartsController', ChartsController)
-    .directive('gcGeochart', gcGeochart)
     .directive('gcTreemap', gcTreemap)
     .directive('gcPolynomial', gcPolynomial)
     .directive('gcGeointensity', gcGeointensity)
@@ -138,13 +137,5 @@
           templateUrl: 'src/public/charts/gc.treemap.directive.html'
       };
     }
-
-    gcGeochart.$inject = [];
-    function gcGeochart() {
-      return {
-          templateUrl: 'src/public/charts/gc.geochart.directive.html'
-      };
-    }
-
 
 })();
