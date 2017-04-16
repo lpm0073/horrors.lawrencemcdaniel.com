@@ -1,18 +1,30 @@
 <div id="barchart" class="widget widget-right">
-  <h3>Bar Chart</h3>
-  <p><code>bar</code> charts are rendered in the browser using SVG or VML, whichever is appropriate for the user's browser. Bar charts display tooltips when the user hovers over the data.</p>
-  <about-googlecharts></about-googlecharts>
-  <gc-barchart
-  uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
-  tooltip-placement="top"
-  tooltip-trigger="'mouseenter'"
-  tooltip-enable="!false">
-  </gc-barchart>
-  <div>
-    <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/barchart" target="_blank">Google Inc.</a></div>
-    <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+  <div class="widget-header">
+    <h3>Bar Chart</h3>
+    <p><code>bar</code> charts are rendered in the browser using SVG or VML, whichever is appropriate for the user's browser. Bar charts display tooltips when the user hovers over the data.</p>
   </div>
-  <view-sourcecode
-    tabs='{ "HTML":"src/public/charts/gc.barchart.html", "JS":"src/public/charts/gc.barchart.controller.js" }'>
-  </view-sourcecode>
+
+  <!-- right sidebar -->
+  <div class="widget-sidebar">
+    <about-googlecharts></about-googlecharts>
+  </div>
+
+  <div class="widget-body">
+    <gc-barchart
+    uib-tooltip="Hover your mouse over the bars and the chart legend to see how this chart is animated."
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-barchart>
+    <div>
+      <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/barchart" target="_blank">Google Inc.</a></div>
+      <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+    </div>
+  </div>
+  <div class="widget-footer">
+    <view-sourcecode
+      tabs='{ "HTML":"src/public/charts/gc.barchart.html", "JS":"src/public/charts/gc.barchart.controller.js" }'>
+    </view-sourcecode>
+  </div>
+
 </div>

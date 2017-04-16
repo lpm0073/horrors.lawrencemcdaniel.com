@@ -17,8 +17,8 @@
 }
 
 .widget-object {
-  width: 74%;
   height: inherit;
+  width: 100%;
   min-height: 400px;
   background-color: white;
 /*  border:1px solid green; */
@@ -50,6 +50,19 @@
   text-align: justify;
 }
 
+.widget-body {
+  position: relative;
+  float: left;
+  width: 74%;
+}
+
+.widget-header {
+
+}
+
+.widget-footer {
+
+}
 .widget-credit  {
   position: relative;
   margin-top: 10px;

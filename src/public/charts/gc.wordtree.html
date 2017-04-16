@@ -1,20 +1,44 @@
+<!--
+<div class="widget-header">
+</div>
+
+<div class="widget-sidebar">
+</div>
+
+<div class="widget-body">
+</div>
+
+<div class="widget-footer">
+</div>
+-->
 <div id="wordtree" class="widget widget-left">
-  <h3>Word Tree</h3>
-  <p>A <code>word tree</code> depicts multiple parallel sequences of words. It could be used to show which words most often follow or precede a target word (e.g., "Cats are...") or to show a hierarchy of terms (e.g., a decision tree).</p>
-  <p>Word trees are rendered in the browser using SVG, which means it will work in all modern browsers (e.g., Chrome, Firefox, Opera, and Internet Explorer 9+). Like all Google charts, word trees display tooltips when the user hovers over the data.</p>
-  <p>Example: Suppose you've collected a set of phrases about cats (e.g., "cats eat mice", "cats are better than kittens") and you want to highlight the most important attributes from the set.</p>
-  <about-googlecharts></about-googlecharts>
-  <gc-wordtree
-  uib-tooltip="Charts can shine a spotlight on more than just numbers and statistics. Using HTML5 and Angular it is possible to bring attention to just about anything!"
-  tooltip-placement="top"
-  tooltip-trigger="'mouseenter'"
-  tooltip-enable="!false">
-  </gc-wordtree>
-  <div>
-    <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/wordtree" target="_blank">Google Inc.</a></div>
-    <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+  <div class="widget-header">
+    <h3>Word Tree</h3>
+    <p>A <code>word tree</code> depicts multiple parallel sequences of words. It could be used to show which words most often follow or precede a target word (e.g., "Cats are...") or to show a hierarchy of terms (e.g., a decision tree).</p>
+    <p>Word trees are rendered in the browser using SVG, which means it will work in all modern browsers (e.g., Chrome, Firefox, Opera, and Internet Explorer 9+). Like all Google charts, word trees display tooltips when the user hovers over the data.</p>
+    <p>Example: Suppose you've collected a set of phrases about cats (e.g., "cats eat mice", "cats are better than kittens") and you want to highlight the most important attributes from the set.</p>
   </div>
-  <view-sourcecode
-    tabs='{ "HTML":"src/public/charts/gc.wordtree.html", "JS":"src/public/charts/gc.wordtree.controller.js" }'>
-  </view-sourcecode>
+
+  <div class="widget-sidebar">
+    <about-googlecharts></about-googlecharts>
+  </div>
+
+  <div class="widget-body">
+    <gc-wordtree
+    uib-tooltip="Charts can shine a spotlight on more than just numbers and statistics. Using HTML5 and Angular it is possible to bring attention to just about anything!"
+    tooltip-placement="top"
+    tooltip-trigger="'mouseenter'"
+    tooltip-enable="!false">
+    </gc-wordtree>
+    <div>
+      <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/wordtree" target="_blank">Google Inc.</a></div>
+      <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+    </div>
+  </div>
+
+  <div class="widget-footer">
+    <view-sourcecode
+      tabs='{ "HTML":"src/public/charts/gc.wordtree.html", "JS":"src/public/charts/gc.wordtree.controller.js" }'>
+    </view-sourcecode>
+  </div>
 </div>
