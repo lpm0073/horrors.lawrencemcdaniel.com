@@ -1,7 +1,29 @@
-<!--   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  -->
-   <script type="text/javascript">
-/*     google.charts.load("current", {packages:["corechart"]}); */
-     google.charts.setOnLoadCallback(drawChart);
+(function () {
+    "use strict";
+
+    angular.module('public')
+    .controller('GCPolynomialController', GCPolynomialController)
+    .directive('gcPolynomial', GCPolynomialDirective);
+
+    function GCPolynomialDirective() {
+      var ddo = {
+          controller: GCPolynomialController,
+          controllerAs: 'ctrl',
+          template: '<div id="polynomial2_div" class="widget-object"></div>'
+          };
+
+      return ddo;
+    }
+
+
+    GCPolynomialController.$inject = ['$scope', '$sce'];
+    function GCPolynomialController($scope, $sce) {
+        console.log('GCPolynomialController instantiated');
+        var ctrl = this;
+
+     /* ---------- Google Chart ----------*/
+     google.charts.load('current', {'packages':['corechart'], 'callback': drawChart});
+
      function drawChart() {
        var data = google.visualization.arrayToDataTable([
          ['Age', 'Weight'],
@@ -39,10 +61,15 @@
        else if (document.getElementById('polynomial2_div').attachEvent) {
            document.getElementById('polynomial2_div').attachEvent('onresize', resizeChart);
        }
-      //  else {
-      //      window.resize = resizeChart;
-      //  }
+       else {
+           window.resize = resizeChart;
+       }
 
      }
-   </script>
-  <div id='polynomial2_div' class="widget-object"></div>
+
+
+
+  }  /* GCPolynomialController() */
+
+
+})();

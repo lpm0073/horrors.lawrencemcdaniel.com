@@ -77,6 +77,10 @@ function routeConfig ($stateProvider) {
       url: '/piechart',
       templateUrl: 'src/public/charts/gc.piechart.html'
     })
+    .state('public.polynomial', {
+      url: '/polynomial',
+      templateUrl: 'src/public/charts/gc.polynomial.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

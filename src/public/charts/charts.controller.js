@@ -9,7 +9,6 @@
     angular.module('public')
     .controller('ChartsController', ChartsController)
     .directive('gcTreemap', gcTreemap)
-    .directive('gcPolynomial', gcPolynomial)
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
     .directive('gcWordtree', gcWordtree);
@@ -89,13 +88,6 @@
     function gcScatter() {
       return {
           templateUrl: 'src/public/charts/gc.scatter.directive.html'
-      };
-    }
-
-    gcPolynomial.$inject = [];
-    function gcPolynomial() {
-      return {
-          templateUrl: 'src/public/charts/gc.polynomial.directive.html'
       };
     }
 
