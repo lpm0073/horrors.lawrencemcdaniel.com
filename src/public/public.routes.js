@@ -109,11 +109,9 @@ function routeConfig ($stateProvider) {
       url: '/wordcloud',
       templateUrl: 'src/public/text/wordcloud/txt.wordcloud.html'
     })
-    .state('public.d3', {
-      url: '/d3',
-      templateUrl: 'src/public/d3/d3.html',
-      controller: 'D3Controller',
-      controllerAs: 'd3Ctrl'
+    .state('public.collisiondetection', {
+      url: '/collision',
+      templateUrl: 'src/public/d3/d3.collisiondetection.html'
     });
 }
 })();

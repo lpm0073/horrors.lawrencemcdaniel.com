@@ -9,7 +9,6 @@
     angular.module('public')
     .controller('D3Controller', D3Controller)
     .directive('d3Gears', d3Gears)
-    .directive('d3CollisionDetection', d3CollisionDetection)
     .directive('d3RotatingVoronoi', d3RotatingVoronoi)
     .directive('d3Particles', d3Particles)
 
@@ -27,13 +26,6 @@
     function d3Gears() {
       return {
           templateUrl: 'src/public/d3/d3.gears.directive.html'
-      };
-    }
-
-    d3CollisionDetection.$inject = [];
-    function d3CollisionDetection() {
-      return {
-          templateUrl: 'src/public/d3/d3.collisiondetection.directive.html'
       };
     }
 

@@ -1,7 +1,19 @@
 (function () {
 
   angular.module('public')
-  .controller('D3collisiondetectionController', D3collisiondetectionController);
+  .controller('D3collisiondetectionController', D3collisiondetectionController)
+  .directive('d3CollisionDetection', d3CollisionDetectionDirective);
+
+
+  function d3CollisionDetectionDirective() {
+    var ddo =  {
+        templateUrl: 'src/public/d3/d3.collisiondetection.directive.html'
+        };
+
+    return ddo;
+  }
+
+
 
   D3collisiondetectionController.$inject = [];
   function D3collisiondetectionController() {
