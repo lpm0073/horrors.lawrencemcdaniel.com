@@ -9,8 +9,7 @@
     angular.module('public')
     .controller('D3Controller', D3Controller)
     .directive('d3Gears', d3Gears)
-    .directive('d3RotatingVoronoi', d3RotatingVoronoi)
-    .directive('d3Particles', d3Particles)
+    .directive('d3RotatingVoronoi', d3RotatingVoronoi);
 
     D3Controller.$inject = [];
     function D3Controller() {
@@ -36,11 +35,5 @@
       };
     }
 
-    d3Particles.$inject = [];
-    function d3Particles() {
-      return {
-          templateUrl: 'src/public/d3/d3.particles.directive.html'
-      };
-    }
 
 })();

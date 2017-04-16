@@ -1,7 +1,17 @@
 (function () {
 
   angular.module('public')
-  .controller('D3particlesController', D3particlesController);
+  .controller('D3particlesController', D3particlesController)
+  .directive('d3Particles', d3ParticlesDirective);
+
+  function d3ParticlesDirective() {
+    var ddo =  {
+        templateUrl: 'src/public/d3/d3.particles.directive.html'
+        };
+
+    return ddo;
+  }
+
 
   D3particlesController.$inject = [];
   function D3particlesController() {

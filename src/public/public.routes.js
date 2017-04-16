@@ -116,6 +116,10 @@ function routeConfig ($stateProvider) {
     .state('public.gears', {
       url: '/gears',
       templateUrl: 'src/public/d3/d3.gears.html'
+    })
+    .state('public.particles', {
+      url: '/particles',
+      templateUrl: 'src/public/d3/d3.particles.html'
     });
 }
 })();
