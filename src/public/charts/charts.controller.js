@@ -12,8 +12,7 @@
     .directive('gcPolynomial', gcPolynomial)
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
-    .directive('gcWordtree', gcWordtree)
-    .directive('gcPiechart', gcPiechart);
+    .directive('gcWordtree', gcWordtree);
 
     ChartsController.$inject = ['$scope', '$log', '$sce'];
     function ChartsController($scope, $log, $sce) {
@@ -71,13 +70,6 @@
 
 
   }  /* ChartsController() */
-
-    gcPiechart.$inject = [];
-    function gcPiechart() {
-      return {
-          templateUrl: 'src/public/charts/gc.piechart.directive.html'
-      };
-    }
 
     gcWordtree.$inject = [];
     function gcWordtree() {

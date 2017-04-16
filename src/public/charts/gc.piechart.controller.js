@@ -1,7 +1,28 @@
-<!--    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script type="text/javascript">
-/*      google.charts.load('current', {'packages':['corechart']}); */
-      google.charts.setOnLoadCallback(drawChart);
+(function () {
+    "use strict";
+
+    angular.module('public')
+    .controller('GCPiechartController', GCPiechartController)
+    .directive('gcPiechart', GCPiechartDirective);
+
+    function GCPiechartDirective() {
+      var ddo = {
+          controller: GCPiechartController,
+          controllerAs: 'ctrl',
+          template: '<div id="piechart" class="widget-object"></div>'
+          };
+
+      return ddo;
+    }
+
+
+    GCPiechartController.$inject = ['$scope', '$sce'];
+    function GCPiechartController($scope, $sce) {
+        console.log('GCPiechartController instantiated');
+        var ctrl = this;
+
+      /* ---------- Google Chart ----------*/
+      google.charts.load('current', {'packages':['corechart'], 'callback': drawChart});
 
       function drawChart() {
 
@@ -32,10 +53,14 @@
         else if (document.getElementById('piechart').attachEvent) {
             document.getElementById('piechart').attachEvent('onresize', resizeChart);
         }
-        // else {
-        //     window.resize = resizeChart;
-        // }
+        else {
+            window.resize = resizeChart;
+        }
 
       }
-    </script>
-    <div id="piechart" class="widget-object"></div>
+
+
+  }  /* GCPiechartController() */
+
+
+})();
