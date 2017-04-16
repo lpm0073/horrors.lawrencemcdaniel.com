@@ -9,20 +9,21 @@
   <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
   <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
 
-      <gc-geochart
-      uib-popover-html="htmlPopoverGeo"
-      popover-placement="top"
-      popover-trigger="'mouseenter'"
-      popover-animation="true"
-      popover-is-open="popoverIsOpen"
-      ng-click="popoverIsOpen = !popoverIsOpen"
-      >
-      </gc-geochart>
-      <div>
-        <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart" target="_blank">Google Inc.</a></div>
-        <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
-      </div>
-      <view-sourcecode
-        tabs='{ "HTML":"src/public/charts/gc.geochart.html", "JS":"src/public/charts/gc.geochart.controller.js" }'>
-      </view-sourcecode>
+  <about-googlecharts></about-googlecharts>
+  <gc-geochart
+  uib-popover-html="htmlPopoverGeo"
+  popover-placement="top"
+  popover-trigger="'mouseenter'"
+  popover-animation="true"
+  popover-is-open="popoverIsOpen"
+  ng-click="popoverIsOpen = !popoverIsOpen"
+  >
+  </gc-geochart>
+  <div>
+    <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart" target="_blank">Google Inc.</a></div>
+    <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+  </div>
+  <view-sourcecode
+    tabs='{ "HTML":"src/public/charts/gc.geochart.html", "JS":"src/public/charts/gc.geochart.controller.js" }'>
+  </view-sourcecode>
 </div>
