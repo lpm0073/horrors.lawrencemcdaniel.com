@@ -81,6 +81,10 @@ function routeConfig ($stateProvider) {
       url: '/polynomial',
       templateUrl: 'src/public/charts/gc.polynomial.html'
     })
+    .state('public.sankey', {
+      url: '/sankey',
+      templateUrl: 'src/public/charts/gc.sankey.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',
