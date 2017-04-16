@@ -2,7 +2,17 @@
     "use strict";
 
     angular.module('public')
-    .controller('NemoformController', NemoformController);
+    .controller('NemoformController', NemoformController)
+    .directive('txtNemoform', txtNemoform);
+
+    function txtNemoform() {
+      var ddo = {
+          templateUrl: 'src/public/text/nemoform/txt.nemoform.directive.html'
+        };
+
+      return ddo;
+    }
+
 
     NemoformController.$inject = ['NemoService', '$scope', '$http', '$sce', 'MSCognitiveService', 'GoogleApiService'];
     function NemoformController(NemoService, $scope, $http, $sce, MSCognitiveService, GoogleApiService) {

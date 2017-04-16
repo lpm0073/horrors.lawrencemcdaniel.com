@@ -1,7 +1,17 @@
 (function () {
 
   angular.module('public')
-  .controller('TxtwordcloudController', TxtwordcloudController);
+  .controller('TxtwordcloudController', TxtwordcloudController)
+  .directive('txtWordcloud', txtWordcloud);
+
+  function txtWordcloud() {
+    var ddo =  {
+        templateUrl: 'src/public/text/wordcloud/txt.wordcloud.directive.html'
+        };
+
+    return ddo;
+  }
+
 
   TxtwordcloudController.$inject = [];
   function TxtwordcloudController() {

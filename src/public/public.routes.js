@@ -101,12 +101,6 @@ function routeConfig ($stateProvider) {
       url: '/wordtree',
       templateUrl: 'src/public/charts/gc.wordtree.html'
     })
-    .state('public.text', {
-      url: '/text',
-      templateUrl: 'src/public/text/text.html',
-      controller: 'TextController',
-      controllerAs: 'textCtrl'
-    })
     .state('public.nemoform', {
       url: '/nemoform',
       templateUrl: 'src/public/text/nemoform/txt.nemoform.html'
