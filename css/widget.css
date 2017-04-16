@@ -1,6 +1,10 @@
 /** Begin Widgets **/
 .widget {
     /*background-color: pink;*/
+    position: relative;
+    top: 0px;
+    left: 0px;
+
     background-color: white;
     border-radius: 5px;
     width: 75%%;
@@ -117,23 +121,62 @@
   color: green;
 }
 
+/*-------------------------- Widget Sidebar ----------------------------------*/
+.widget-sidebar {
+  visibility: hidden;
+  position: relative;
+  float: right;
+  top: 0px;
+  right: 0  %;
+  width: 25%;
+  height: 500px;
+  border-left: 3px solid;
+  border-color: #f1f1f1;
+  padding-left: 0px;
+  margin-left: 1%;
+}
 
+.widget-sidebar p {
+font-size: .75em;
+font-style: italic;
+color: #555;
+margin-left: 5px;
+padding-left: 5px;
+}
+
+.widget-sidebar h4 {
+  font-family: 'Permanent Marker', cursive;
+  color: #563d7c;      /* royal purple */
+  font-size: .85em;
+}
+/*-------------------------- Widget Sidebar  ----------------------------------*/
 /** End Widgets **/
 
 /*-------------- Responsive Styling -----------------------*/
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
+  .widget-sidebar {
+    visibility: visible;
+  }
 
 }
 
 /********** Medium devices only **********/
 @media (min-width: 992px) and (max-width: 1199px) {
+  .widget-sidebar {
+    visibility: visible;
+  }
 
 }
 
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {
+  .widget-sidebar {
+    visibility: visible;
+  }
+
+
 
 }
 
