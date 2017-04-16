@@ -65,6 +65,10 @@ function routeConfig ($stateProvider) {
       url: '/geointensity',
       templateUrl: 'src/public/charts/gc.geointensity.html'
     })
+    .state('public.guages', {
+      url: '/guages',
+      templateUrl: 'src/public/charts/gc.guages.html'
+    })
     .state('public.text', {
       url: '/text',
       templateUrl: 'src/public/text/text.html',

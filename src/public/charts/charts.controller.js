@@ -13,7 +13,6 @@
     .directive('gcScatter', gcScatter)
     .directive('gcSankey', gcSankey)
     .directive('gcOrgchart', gcOrgchart)
-    .directive('gcGuages', gcGuages)
     .directive('gcWordtree', gcWordtree)
     .directive('gcPiechart', gcPiechart);
 
@@ -85,13 +84,6 @@
     function gcWordtree() {
       return {
           templateUrl: 'src/public/charts/gc.wordtree.directive.html'
-      };
-    }
-
-    gcGuages.$inject = [];
-    function gcGuages() {
-      return {
-          templateUrl: 'src/public/charts/gc.guages.directive.html'
       };
     }
 
