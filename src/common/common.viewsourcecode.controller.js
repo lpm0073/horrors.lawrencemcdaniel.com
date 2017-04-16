@@ -10,7 +10,7 @@
         console.log('ViewSourcecodeController instantiated');
         var ctrl = this;
 
-        $scope.isCollapsed = false;    /* Bootstrap collapsable "view sourcode" button */
+        $scope.isCollapsed = true;    /* Bootstrap collapsable "view sourcode" button */
 
         /*
           the name and http URI of each tab window is passed in

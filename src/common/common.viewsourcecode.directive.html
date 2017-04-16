@@ -3,15 +3,14 @@
   <!-- <script type="text/javascript" src="lib/prettify.js"></script> -->
 
   <link rel="stylesheet" href="css/sunburst.css">
-  <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
 
 </head>
 
-<div id="cg-vision" class="widget-object" ng-controller="ViewSourcecodeController as ctrl">
+<div id="cg-vision" class="widget-object widget-sourcecode" ng-controller="ViewSourcecodeController as ctrl">
 
   <div class="widget-view-sourcecode">
 
-    <button type="button" class="btn btn-warning btn-block" ng-click="isCollapsed = !isCollapsed">Hide Source Code</button>
+    <button type="button" class="btn btn-warning btn-block" ng-click="isCollapsed = !isCollapsed">Show Source Code</button>
   	<hr>
       <div uib-collapse="isCollapsed" ng-if="!isCollapsed">
         <div class="well well-lg">
@@ -19,6 +18,7 @@
             <!-- NOTE: the syntax for $index is quirky. it's actually wrong (a bug). -->
             <uib-tab ng-repeat="(tab, path) in ctrl.tabs" index=$index heading={{tab}}><div><pretty-printer source-code="{{path}}"></pretty-printer></div></uib-tab>
           </uib-tabset>
+          <script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=sunburst"></script>
         </div>    <!-- class="well well-lg" -->
 
     	</div>   <!-- uib-collapse="isCollapsed" -->
