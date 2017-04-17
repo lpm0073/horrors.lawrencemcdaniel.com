@@ -1,36 +1,43 @@
-<div id="areachart" class="widget widget-right">
-  <!-- title and header section -->
-  <div class="widget-header">
-    <h3>Line/Area Chart</h3>
-    <p>An <code>area</code> chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.</p>
-  </div>
 
-  <!-- right sidebar -->
-  <div class="widget-sidebar">
-    <about-googlecharts></about-googlecharts>
-  </div>
+  <div id="areachart" class="widget widget-right">
 
-  <!-- body -->
-  <div class="widget-body">
-    <gc-areachart
-    uib-popover-html="htmlPopoverArea"
-    popover-placement="top-left"
-    popover-trigger="'mouseenter'"
-    popover-animation="true"
-    popover-is-open="popoverIsOpen"
-    ng-click="popoverIsOpen = !popoverIsOpen"
-    >
-    </gc-areachart>
-    <div>
-      <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/areachart" target="_blank">Google Inc.</a></div>
-      <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
-    </div>
-  </div>
+    <!-- right sidebar -->
+    <aside>
+      <div class="widget-sidebar">
+        <about-googlecharts></about-googlecharts>
+      </div>
+    </aside>
 
-  <!-- footer -->
-  <div class="widget-footer">
-    <view-sourcecode
-      tabs='{ "HTML": "src/public/charts/gc.areachart.html", "js":"src/public/charts/gc.areachart.controller.js" }'>
-    </view-sourcecode>
+    <section>
+      <!-- title and header section -->
+      <div class="widget-header">
+        <h3>Line/Area Chart</h3>
+        <p>An <code>area</code> chart that is rendered within the browser using SVG or VML. Displays tips when hovering over points.</p>
+      </div>
+
+      <!-- body -->
+      <div class="widget-body">
+        <gc-areachart
+        uib-popover-html="htmlPopoverArea"
+        popover-placement="top-left"
+        popover-trigger="'mouseenter'"
+        popover-animation="true"
+        popover-is-open="popoverIsOpen"
+        ng-click="popoverIsOpen = !popoverIsOpen"
+        >
+        </gc-areachart>
+        <div>
+          <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/areachart" target="_blank">Google Inc.</a></div>
+          <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="widget-footer">
+        <view-sourcecode
+          tabs='{ "HTML": "src/public/charts/gc.areachart.html", "js":"src/public/charts/gc.areachart.controller.js" }'>
+        </view-sourcecode>
+      </div>
+    </section>
+
   </div>
-</div>

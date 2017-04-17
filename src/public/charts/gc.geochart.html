@@ -1,40 +1,45 @@
-<div id="geochart" class="widget widget-left">
-  <div class="widget-header">
-    <h3>Region Map</h3>
-    <p>A <code>geochart</code> is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
-      <ul>
-        <li>The region mode colors whole regions, such as countries, provinces, or states.</li>
-        <li>The markers mode uses circles to designate regions that are scaled according to a value that you specify.</li>
-        <li>The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").</li>
-      </ul>
-    <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
-    <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
+  <div id="geochart" class="widget widget-left">
 
-  </div>
+    <aside>
+      <div class="widget-sidebar">
+        <about-googlecharts></about-googlecharts>
+      </div>
+    </aside>
 
-  <div class="widget-sidebar">
-    <about-googlecharts></about-googlecharts>
-  </div>
+    <section>
+      <div class="widget-header">
+        <h3>Region Map</h3>
+        <p>A <code>geochart</code> is a map of a country, a continent, or a region with areas identified in one of three ways:</p>
+          <ul>
+            <li>The region mode colors whole regions, such as countries, provinces, or states.</li>
+            <li>The markers mode uses circles to designate regions that are scaled according to a value that you specify.</li>
+            <li>The text mode labels the regions with identifiers (e.g., "Russia" or "Asia").</li>
+          </ul>
+        <p>A geochart is rendered within the browser using SVG or VML. Note that the geochart is not scrollable or draggable, and it's a line drawing rather than a terrain map</p>
+        <p>The <code>regions</code> style fills entire regions (typically countries) with colors corresponding to the values that you assign.</p>
 
-  <div class="widget-body">
-    <gc-geochart
-    uib-popover-html="htmlPopoverGeo"
-    popover-placement="top"
-    popover-trigger="'mouseenter'"
-    popover-animation="true"
-    popover-is-open="popoverIsOpen"
-    ng-click="popoverIsOpen = !popoverIsOpen"
-    >
-    </gc-geochart>
-    <div>
-      <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart" target="_blank">Google Inc.</a></div>
-      <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
-    </div>
-  </div>
+      </div>
 
-  <div class="widget-footer">
-    <view-sourcecode
-      tabs='{ "HTML":"src/public/charts/gc.geochart.html", "JS":"src/public/charts/gc.geochart.controller.js" }'>
-    </view-sourcecode>
+      <div class="widget-body">
+        <gc-geochart
+        uib-popover-html="htmlPopoverGeo"
+        popover-placement="top"
+        popover-trigger="'mouseenter'"
+        popover-animation="true"
+        popover-is-open="popoverIsOpen"
+        ng-click="popoverIsOpen = !popoverIsOpen"
+        >
+        </gc-geochart>
+        <div>
+          <div class="widget-credit widget-credit-author">Credit: <a href="https://developers.google.com/chart/interactive/docs/gallery/geochart" target="_blank">Google Inc.</a></div>
+          <div class="widget-credit widget-credit-sourcecode"><a href="https://github.com/lpm0073/horrors.lawrencemcdaniel.com/tree/master/src/public/charts" target="_blank" >Get the source code</a></div>
+        </div>
+      </div>
+
+      <div class="widget-footer">
+        <view-sourcecode
+          tabs='{ "HTML":"src/public/charts/gc.geochart.html", "JS":"src/public/charts/gc.geochart.controller.js" }'>
+        </view-sourcecode>
+      </div>
+    </section>
   </div>
-</div>
