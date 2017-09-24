@@ -1,14 +1,11 @@
 // Word cloud layout by Jason Davies, http://www.jasondavies.com/word-cloud/
 // Algorithm due to Jonathan Feinberg, http://static.mrfeinberg.com/bv_ch03.pdf
 (function(exports) {
+  console.log('diffy w exports called.');
 
 
-  cloud.$inject = ['d3Factory'];
-  function cloud(d3Promise) {
-    console.log('d3.layout.cloud()');
-
-    d3Promise.d3().then(function() {
-      console.log('d3.layout.cloud() -- promise returned');
+    function cloud() {
+      console.log('d3.layout.cloud - cloud()');
       var size = [256, 256],
           text = cloudText,
           font = cloudFont,
@@ -24,183 +21,180 @@
           timer = null,
           cloud = {};
 
-      cloud.start = function() {
-          var board = zeroArray((size[0] >> 5) * size[1]),
-              bounds = null,
-              n = words.length,
-              i = -1,
-              tags = [],
-              data = words.map(function(d, i) {
-                  d.text = text.call(this, d, i);
-                  d.font = font.call(this, d, i);
-                  d.style = fontStyle.call(this, d, i);
-                  d.weight = fontWeight.call(this, d, i);
-                  d.rotate = rotate.call(this, d, i);
-                  d.size = ~~fontSize.call(this, d, i);
-                  d.padding = padding.call(this, d, i);
-                  return d;
-              }).sort(function(a, b) { return b.size - a.size; });
+        cloud.start = function() {
+            var board = zeroArray((size[0] >> 5) * size[1]),
+                bounds = null,
+                n = words.length,
+                i = -1,
+                tags = [],
+                data = words.map(function(d, i) {
+                    d.text = text.call(this, d, i);
+                    d.font = font.call(this, d, i);
+                    d.style = fontStyle.call(this, d, i);
+                    d.weight = fontWeight.call(this, d, i);
+                    d.rotate = rotate.call(this, d, i);
+                    d.size = ~~fontSize.call(this, d, i);
+                    d.padding = padding.call(this, d, i);
+                    return d;
+                }).sort(function(a, b) { return b.size - a.size; });
 
-          if (timer) clearInterval(timer);
-          timer = setInterval(step, 0);
-          step();
+            if (timer) clearInterval(timer);
+            timer = setInterval(step, 0);
+            step();
 
-          return cloud;
+            return cloud;
 
-          function step() {
-              var start = +new Date,
-                  d;
-              while (+new Date - start < timeInterval && ++i < n && timer) {
-                  d = data[i];
-                  d.x = (size[0] * (Math.random() + .5)) >> 1;
-                  d.y = (size[1] * (Math.random() + .5)) >> 1;
-                  cloudSprite(d, data, i);
-                  if (d.hasText && place(board, d, bounds)) {
-                      tags.push(d);
-                      event.word(d);
-                      if (bounds) cloudBounds(bounds, d);
-                      else bounds = [{x: d.x + d.x0, y: d.y + d.y0}, {x: d.x + d.x1, y: d.y + d.y1}];
-                      // Temporary hack
-                      d.x -= size[0] >> 1;
-                      d.y -= size[1] >> 1;
-                  }
-              }
-              if (i >= n) {
-                  cloud.stop();
-                  event.end(tags, bounds);
-              }
-          }
-      }
+            function step() {
+                var start = +new Date,
+                    d;
+                while (+new Date - start < timeInterval && ++i < n && timer) {
+                    d = data[i];
+                    d.x = (size[0] * (Math.random() + .5)) >> 1;
+                    d.y = (size[1] * (Math.random() + .5)) >> 1;
+                    cloudSprite(d, data, i);
+                    if (d.hasText && place(board, d, bounds)) {
+                        tags.push(d);
+                        event.word(d);
+                        if (bounds) cloudBounds(bounds, d);
+                        else bounds = [{x: d.x + d.x0, y: d.y + d.y0}, {x: d.x + d.x1, y: d.y + d.y1}];
+                        // Temporary hack
+                        d.x -= size[0] >> 1;
+                        d.y -= size[1] >> 1;
+                    }
+                }
+                if (i >= n) {
+                    cloud.stop();
+                    event.end(tags, bounds);
+                }
+            }
+        }
 
-      cloud.stop = function() {
-          if (timer) {
-              clearInterval(timer);
-              timer = null;
-          }
-          return cloud;
-      };
+        cloud.stop = function() {
+            if (timer) {
+                clearInterval(timer);
+                timer = null;
+            }
+            return cloud;
+        };
 
-      cloud.timeInterval = function(x) {
-          if (!arguments.length) return timeInterval;
-          timeInterval = x == null ? Infinity : x;
-          return cloud;
-      };
+        cloud.timeInterval = function(x) {
+            if (!arguments.length) return timeInterval;
+            timeInterval = x == null ? Infinity : x;
+            return cloud;
+        };
 
-      function place(board, tag, bounds) {
-          var perimeter = [{x: 0, y: 0}, {x: size[0], y: size[1]}],
-              startX = tag.x,
-              startY = tag.y,
-              maxDelta = Math.sqrt(size[0] * size[0] + size[1] * size[1]),
-              s = spiral(size),
-              dt = Math.random() < .5 ? 1 : -1,
-              t = -dt,
-              dxdy,
-              dx,
-              dy;
+        function place(board, tag, bounds) {
+            var perimeter = [{x: 0, y: 0}, {x: size[0], y: size[1]}],
+                startX = tag.x,
+                startY = tag.y,
+                maxDelta = Math.sqrt(size[0] * size[0] + size[1] * size[1]),
+                s = spiral(size),
+                dt = Math.random() < .5 ? 1 : -1,
+                t = -dt,
+                dxdy,
+                dx,
+                dy;
 
-          while (dxdy = s(t += dt)) {
-              dx = ~~dxdy[0];
-              dy = ~~dxdy[1];
+            while (dxdy = s(t += dt)) {
+                dx = ~~dxdy[0];
+                dy = ~~dxdy[1];
 
-              if (Math.min(dx, dy) > maxDelta) break;
+                if (Math.min(dx, dy) > maxDelta) break;
 
-              tag.x = startX + dx;
-              tag.y = startY + dy;
+                tag.x = startX + dx;
+                tag.y = startY + dy;
 
-              if (tag.x + tag.x0 < 0 || tag.y + tag.y0 < 0 ||
-                  tag.x + tag.x1 > size[0] || tag.y + tag.y1 > size[1]) continue;
-              // TODO only check for collisions within current bounds.
-              if (!bounds || !cloudCollide(tag, board, size[0])) {
-                  if (!bounds || collideRects(tag, bounds)) {
-                      var sprite = tag.sprite,
-                          w = tag.width >> 5,
-                          sw = size[0] >> 5,
-                          lx = tag.x - (w << 4),
-                          sx = lx & 0x7f,
-                          msx = 32 - sx,
-                          h = tag.y1 - tag.y0,
-                          x = (tag.y + tag.y0) * sw + (lx >> 5),
-                          last;
-                      for (var j = 0; j < h; j++) {
-                          last = 0;
-                          for (var i = 0; i <= w; i++) {
-                              board[x + i] |= (last << msx) | (i < w ? (last = sprite[j * w + i]) >>> sx : 0);
-                          }
-                          x += sw;
-                      }
-                      delete tag.sprite;
-                      return true;
-                  }
-              }
-          }
-          return false;
-      }
+                if (tag.x + tag.x0 < 0 || tag.y + tag.y0 < 0 ||
+                    tag.x + tag.x1 > size[0] || tag.y + tag.y1 > size[1]) continue;
+                // TODO only check for collisions within current bounds.
+                if (!bounds || !cloudCollide(tag, board, size[0])) {
+                    if (!bounds || collideRects(tag, bounds)) {
+                        var sprite = tag.sprite,
+                            w = tag.width >> 5,
+                            sw = size[0] >> 5,
+                            lx = tag.x - (w << 4),
+                            sx = lx & 0x7f,
+                            msx = 32 - sx,
+                            h = tag.y1 - tag.y0,
+                            x = (tag.y + tag.y0) * sw + (lx >> 5),
+                            last;
+                        for (var j = 0; j < h; j++) {
+                            last = 0;
+                            for (var i = 0; i <= w; i++) {
+                                board[x + i] |= (last << msx) | (i < w ? (last = sprite[j * w + i]) >>> sx : 0);
+                            }
+                            x += sw;
+                        }
+                        delete tag.sprite;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
-      cloud.words = function(x) {
-          if (!arguments.length) return words;
-          words = x;
-          return cloud;
-      };
+        cloud.words = function(x) {
+            if (!arguments.length) return words;
+            words = x;
+            return cloud;
+        };
 
-      cloud.size = function(x) {
-          if (!arguments.length) return size;
-          size = [+x[0], +x[1]];
-          return cloud;
-      };
+        cloud.size = function(x) {
+            if (!arguments.length) return size;
+            size = [+x[0], +x[1]];
+            return cloud;
+        };
 
-      cloud.font = function(x) {
-          if (!arguments.length) return font;
-          font = d3.functor(x);
-          return cloud;
-      };
+        cloud.font = function(x) {
+            if (!arguments.length) return font;
+            font = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.fontStyle = function(x) {
-          if (!arguments.length) return fontStyle;
-          fontStyle = d3.functor(x);
-          return cloud;
-      };
+        cloud.fontStyle = function(x) {
+            if (!arguments.length) return fontStyle;
+            fontStyle = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.fontWeight = function(x) {
-          if (!arguments.length) return fontWeight;
-          fontWeight = d3.functor(x);
-          return cloud;
-      };
+        cloud.fontWeight = function(x) {
+            if (!arguments.length) return fontWeight;
+            fontWeight = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.rotate = function(x) {
-          if (!arguments.length) return rotate;
-          rotate = d3.functor(x);
-          return cloud;
-      };
+        cloud.rotate = function(x) {
+            if (!arguments.length) return rotate;
+            rotate = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.text = function(x) {
-          if (!arguments.length) return text;
-          text = d3.functor(x);
-          return cloud;
-      };
+        cloud.text = function(x) {
+            if (!arguments.length) return text;
+            text = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.spiral = function(x) {
-          if (!arguments.length) return spiral;
-          spiral = spirals[x + ""] || x;
-          return cloud;
-      };
+        cloud.spiral = function(x) {
+            if (!arguments.length) return spiral;
+            spiral = spirals[x + ""] || x;
+            return cloud;
+        };
 
-      cloud.fontSize = function(x) {
-          if (!arguments.length) return fontSize;
-          fontSize = d3.functor(x);
-          return cloud;
-      };
+        cloud.fontSize = function(x) {
+            if (!arguments.length) return fontSize;
+            fontSize = d3.functor(x);
+            return cloud;
+        };
 
-      cloud.padding = function(x) {
-          if (!arguments.length) return padding;
-          padding = d3.functor(x);
-          return cloud;
-      };
+        cloud.padding = function(x) {
+            if (!arguments.length) return padding;
+            padding = d3.functor(x);
+            return cloud;
+        };
 
-      return d3.rebind(cloud, event, "on");
-
-    }); /* D3 promise returned */
-
-  }   /* Cloud() */
+        return d3.rebind(cloud, event, "on");
+    }
 
     function cloudText(d) {
         return d.text;

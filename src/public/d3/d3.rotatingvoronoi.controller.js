@@ -25,6 +25,7 @@
        * primary animation drawing function
        *----------------------------------------------------------------------------------*/
        function draw() {
+         console.log('D3rotatingvoronoiController.draw()');
 
          d3.select("#rotating-voronoi").select("svg").remove();
 
@@ -77,7 +78,7 @@
            d3.range(1e-6, 2 * Math.PI, 2 * Math.PI / n).map(function(θ, i) {
              var point = [cx + Math.cos(θ) * r, cy + Math.sin(θ) * r];
              d3.timer(function(elapsed) {
-               var angle = θ + δθ * elapsed / 60;
+               var angle = θ + δθ * elapsed / 45;
                point[0] = cx + Math.cos(angle) * r;
                point[1] = cy + Math.sin(angle) * r;
              }, 0, start);
@@ -108,7 +109,7 @@
 
        /* --------------------------- Responsive behavior ------------------------------------*/
        function resizeChart () {
-         console.log('resize()');
+         console.log('D3rotatingvoronoiController.resize()');
          draw();
        }
        if (document.addEventListener) {

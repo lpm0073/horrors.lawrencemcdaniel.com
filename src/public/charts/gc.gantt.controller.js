@@ -9,7 +9,7 @@
       var ddo = {
           controller: GCGanttChartController,
           controllerAs: 'ctrl',
-          template: '<div id="gantt_div" class="widget-object"></div>'
+          templateUrl: 'src/public/charts/gc.gantt.directive.html'
           };
 
       return ddo;
@@ -29,6 +29,7 @@
         }
 
         function drawChart() {
+          console.log('GCGanttChartController.drawChart()');
 
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Task ID');
@@ -68,8 +69,8 @@
           chart.draw(data, options);
 
           function resizeChart () {
-              console.log('resizeChart - gantt');
-              chart.draw(data, options);
+            console.log('GCGanttChartController.resizeChart()');
+            chart.draw(data, options);
           }
           if (document.getElementById('gantt_div').addEventListener) {
               document.getElementById('gantt_div').addEventListener('resize', resizeChart);

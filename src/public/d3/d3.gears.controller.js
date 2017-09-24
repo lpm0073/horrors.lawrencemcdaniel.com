@@ -28,7 +28,7 @@
           height = 0,
           radius = 0,
           offset = 0,
-          speed = 4,
+          speed = 2,
           start = Date.now(),
           svg = null,
           frame = null;
@@ -37,18 +37,20 @@
       * primary animation drawing function
       *----------------------------------------------------------------------------------*/
       function draw() {
+        console.log('D3gearsController.draw()');
 
         d3.select("#gears").select("svg").remove();
 
         width = element.getBoundingClientRect().width;
         height = element.getBoundingClientRect().height;
-        radius = width / 10;
+        if (height <= width) radius = height / 10
+        else radius = width / 10;
 
         svg = d3.select("#gears").append("svg")
             .attr("width", width)
             .attr("height", height)
             .append("g")
-            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.55)")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(.90)")
             .append("g");
 
         frame = svg.append("g").datum({radius: Infinity});
@@ -103,8 +105,8 @@
       function gear(d) {
         var n = d.teeth,
             r2 = Math.abs(d.radius),
-            r0 = r2 - 8,
-            r1 = r2 + 8,
+            r0 = r2 - 5,
+            r1 = r2 + 5,
             r3 = d.annulus ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,
             da = Math.PI / n,
             a0 = -Math.PI / 2 + (d.annulus ? Math.PI / n : 0),
@@ -131,7 +133,8 @@
 
       /* --------------------------- Responsive behavior ------------------------------------*/
       function resizeChart () {
-          draw();
+        console.log('D3gearsController.resizeChart()');
+        draw();
       }
       if (document.addEventListener) {
           window.addEventListener('resize', resizeChart);

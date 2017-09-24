@@ -9,7 +9,7 @@
       var ddo = {
           controller: GCBubbleChartController,
           controllerAs: 'ctrl',
-          template: '<div id="noAura_div" class="widget-object"></div>'
+          templateUrl: 'src/public/charts/gc.bubble.directive.html'
           };
 
       return ddo;
@@ -25,6 +25,7 @@
       google.charts.load('current', {'packages':['corechart'], 'callback': drawChart});
 
       function drawChart() {
+        console.log('GCBubbleChartController.drawChart()');
 
         var data = google.visualization.arrayToDataTable([
           ['ID', 'Life Expectancy', 'Fertility Rate', 'Region',     'Population'],
@@ -57,7 +58,8 @@
         chart.draw(data, options);
 
         function resizeChart () {
-            chart.draw(data, options);
+          console.log('GCBubbleChartController.resizeChart()');
+          chart.draw(data, options);
         }
         if (document.getElementById('noAura_div').addEventListener) {
             document.getElementById('noAura_div').addEventListener('resize', resizeChart);

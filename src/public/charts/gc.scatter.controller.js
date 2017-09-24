@@ -9,7 +9,7 @@
       var ddo = {
           controller: GCScatterController,
           controllerAs: 'ctrl',
-          template: '<div id="scatter_dual_y"  class="widget-object"></div>'
+          templateUrl: 'src/public/charts/gc.scatter.directive.html'
           };
 
       return ddo;

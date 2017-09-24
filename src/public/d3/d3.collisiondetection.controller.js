@@ -36,7 +36,7 @@
              width = element.getBoundingClientRect().width,
              height = element.getBoundingClientRect().height;
 
-         var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
+         var nodes = d3.range(300).map(function() { return {radius: Math.random() * 12 + 4}; }),
              root = nodes[0],
              color = d3.scale.category20b();
 
@@ -76,7 +76,6 @@
          svg.on("mousemove", mousemove);
 
          function mousemove() {
-           console.log('mousemove()');
 
            var p1 = d3.mouse(this);
            root.px = p1[0];
@@ -112,7 +111,8 @@
 
        /* --------------------------- Responsive behavior ------------------------------------*/
        function resizeChart () {
-        /*   draw(); */
+         console.log('D3collisiondetectionController.resizeChart()');
+         draw();
        }
        if (document.addEventListener) {
            window.addEventListener('resize', resizeChart);

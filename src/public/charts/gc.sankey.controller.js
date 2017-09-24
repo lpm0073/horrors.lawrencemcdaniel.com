@@ -25,6 +25,8 @@
      google.charts.load('current', {'packages':['sankey'], 'callback': drawChart});
 
     function drawChart() {
+      console.log('GCSankeyController.drawChart()');
+
      var data = new google.visualization.DataTable();
      data.addColumn('string', 'From');
      data.addColumn('string', 'To');
@@ -87,7 +89,7 @@
      chart.draw(data, options);
 
      function resizeChart () {
-         console.log('resizeChart - sankey');
+         console.log('GCSankeyController.resizeChart()');
          chart.draw(data, options);
      }
      if (document.getElementById('sankey_multiple').addEventListener) {
