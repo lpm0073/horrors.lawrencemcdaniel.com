@@ -21,6 +21,7 @@
     console.log('D3gearsController instantiated');
 
     d3Promise.d3().then(function() {
+      console.log('D3gearsController d3 promise returned');
       var element = d3.select('#gears').node(),
           x = Math.sin(2 * Math.PI / 3),
           y = Math.cos(2 * Math.PI / 3),
