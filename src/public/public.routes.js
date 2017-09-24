@@ -121,6 +121,10 @@ function routeConfig ($stateProvider) {
       url: '/particles',
       templateUrl: 'src/public/d3/d3.particles.html'
     })
+    .state('public.voronoi-tessellation', {
+      url: '/voronoi-tessellation',
+      templateUrl: 'src/public/d3/d3.voronoi-tessellation.html'
+    })
     .state('public.rotatingvoronoi', {
       url: '/rotatingvoronoi',
       templateUrl: 'src/public/d3/d3.rotatingvoronoi.html'
