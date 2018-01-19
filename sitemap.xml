@@ -130,6 +130,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>http://horrors.lawrencemcdaniel.com/#!/delaunay-force-mesh</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>http://horrors.lawrencemcdaniel.com/#!/voronoi-tessellation</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>

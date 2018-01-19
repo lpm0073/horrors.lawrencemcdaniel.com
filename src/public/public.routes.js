@@ -125,6 +125,10 @@ function routeConfig ($stateProvider) {
       url: '/voronoi-tessellation',
       templateUrl: 'src/public/d3/d3.voronoi-tessellation.html'
     })
+    .state('public.delaunay-force-mesh', {
+      url: '/delaunay-force-mesh',
+      templateUrl: 'src/public/d3/d3.delaunay-force-mesh.html'
+    })
     .state('public.rotatingvoronoi', {
       url: '/rotatingvoronoi',
       templateUrl: 'src/public/d3/d3.rotatingvoronoi.html'

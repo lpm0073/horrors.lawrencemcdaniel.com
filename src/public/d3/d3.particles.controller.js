@@ -8,7 +8,7 @@
     var ddo =  {
         controller: D3particlesController,
         controllerAs: 'ctrl',
-        template: '<div id="d3-particles" class="d3-directive"></div>'
+        template: 'src/public/d3/d3.delaunay-force-mesh.directive.html'
         };
 
     return ddo;
@@ -84,7 +84,7 @@
 
        /* invoke the draw function */
        draw();
-      
+
     });
 
 
