@@ -1,3 +1,8 @@
+<p align="left">
+  <a href="https://lawrencemcdaniel.com" target="_blank">
+   <img src="https://img.shields.io/badge/hack.d-Lawrence%20McDaniel-orange.svg" alt="Hack.d Lawrence McDaniel">
+  </a>
+</p>
 # Lawrence's Little Shop of Horrors
 
 A sandbox full of AngularJS code samples, D3 animation examples, Google Charts, and more
